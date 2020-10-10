@@ -1,0 +1,23 @@
+{
+  "name": "practicum_ya",
+  "version": "1.0.0",
+  "description": "test project",
+  "main": "index.js",
+  "dependencies": {
+    "express": "4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elkabelaya/mf.messenger.praktikum.yandex.git"
+  },
+  "author": "elkabelaya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elkabelaya/mf.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/elkabelaya/mf.messenger.praktikum.yandex#readme"
+}
