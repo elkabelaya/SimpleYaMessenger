@@ -1,1 +1,82 @@
 <!--регистрация (с формой, имена полей: first_name, second_name, login, email, password, phone),-->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <title>login</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/login.css">
+</head>
+<body>
+  <section class="widget">
+    <section class="widget-login">
+
+      <header class="widget-login__header">
+        <h1 class="widget-login__title">Регистрация</h1>
+      </header>
+      <main  class="widget-login__content">
+        <form action="" class="widget-login__form">
+
+          <div  class="widget-register__content">
+
+            
+              <div class="widget-register__input-group">
+
+                <input id="login" class="widget-login__input"  placeholder="Фамилия" pattern="[А-Яа-я\-]]{2,15}" onfocus="this.placeholder = ''"/>
+                <label for="login" class="widget-login__input-label">Фамилия</label>
+                <div class="widget-login__requirements">Используйте русские буквы, дефис</div>
+              </div>
+
+              <div class="widget-register__input-group">
+                <input id="login" class="widget-login__input"  placeholder="Имя" pattern="[А-Яа-я\-]]{2,15}" onfocus="this.placeholder = ''"/>
+                <label for="login" class="widget-login__input-label">Имя</label>
+                <div class="widget-login__requirements">Используйте русские буквы, дефис</div>
+              </div>
+
+
+              <div class="widget-register__input-group">
+
+                <input id="login" class="widget-login__input"  placeholder="Логин" pattern="[A-Za-z0-9_]{6,15}" onfocus="this.placeholder = ''"/>
+                <label for="login" class="widget-login__input-label">Логин</label>
+                <div class="widget-login__requirements">Используйте латинские буквы, цифры, подчеркивание</div>
+              </div>
+
+              <div class="widget-register__input-group">
+
+                <input id="login" class="widget-login__input" type="email" placeholder="Почта" onfocus="this.placeholder = ''"/>
+                <label for="login" class="widget-login__input-label">Почта</label>
+                <div class="widget-login__requirements">Невалидный адрес</div>
+
+              </div>
+
+              <div class="widget-register__input-group">
+
+                <input id="password" class="widget-login__input" placeholder="Телефон" pattern="\+[0-9]{11}" onfocus="this.placeholder = ''"/>
+                <label for="password" class="widget-login__input-label">Телефон</label>
+                <label for="login" class="widget-login__requirements">Введите номер в формате +71231112233</label>
+              </div>
+
+              <div class="widget-register__input-group">
+
+                <input id="password" class="widget-login__input" type="password" placeholder="Пароль" pattern="\S{6,15}" onfocus="this.placeholder = ''"/>
+                <label for="password" class="widget-login__input-label">Пароль</label>
+                <div class="widget-login__requirements">Не менее 6 символов: буквы, цифры, спецсимволы </div>
+
+              </div>
+
+          </div>
+
+          <div class="widget-login__action">
+            <button class="widget-login__button">Зарегистрироваться</button>
+
+          </div>
+
+
+        </form>
+        <a class="widget-login__link" href = "/src/html/login/">Войти</a>
+      </main>
+    </section>
+  </section>
+</body>
+</html>

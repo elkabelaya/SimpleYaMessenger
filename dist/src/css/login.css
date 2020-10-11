@@ -133,3 +133,20 @@ input:invalid:placeholder-shown ~.widget-login__requirements {
   padding-top: 13px;
   color: var(--main-components-color);
 }
+
+.widget-register__input-group{
+  display: flex;
+  flex-direction: row;
+}
+
+.widget-register__content{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.widget-register__input-group {
+  display: flex;
+  flex-direction: column;
+  width:166px;
+}
