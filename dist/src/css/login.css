@@ -67,13 +67,6 @@
 }
 
 
-.widget-login__input:focus::placeholder {
-  visibility: hidden;
-}
-
-.widget-login__input:focus::placeholder {
-  color: var(--main-inactive-text-color);
-}
 
 .widget-login__input-label {
   order:1;
