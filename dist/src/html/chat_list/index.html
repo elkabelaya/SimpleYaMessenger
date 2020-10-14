@@ -1,5 +1,4 @@
 <!--список чатов,-->
-<!--лента переписки (поле для ввода сообщения: message),,-->
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -10,21 +9,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/c/4.7.0/css/font-awesome.min.css"/>
   <link rel="stylesheet" href="../../css/base.css">
   <link rel="stylesheet" href="../../css/chat_list.css">
+  <link rel="stylesheet" href="../../css/chat_empty.css">
 </head>
 
 <body>
       <main  class="widget-chat-list__content">
 
         <div class="widget-chat-list__list">
-          <div class="widget-chat-list__profile"> Профиль > </div>
-          
+          <a class="widget-chat-list__profile" href = "../../html/user_settings"> Профиль > </a>
+
           <div class="widget-chat-list__search">
             <input id="search" class="widget-chat-list__search-input" type="text"  placeholder=" " />
             <label for="search"><span class="widget-chat-list_search-placeholder">&#xF002; </span> Поиск</label>
           </div>
-
-          <ul class ="widget-chat-list__items">
-            <li class="widget-chat-list__item">
+          <!--обернуто в ссылку, чтобы срабатывал переход на страницу с версткой чата, в реальной версии этого не будет-->
+          <a href="../../html/messages/">
+          <div class ="widget-chat-list__items">
+            <div class="widget-chat-list__item">
               <img src="../../../images/empty_logo.png" alt="avatar" />
               <div class="widget-chat-list__about">
                 <div class="widget-chat-list__item-name">Андрей</div>
@@ -34,9 +35,9 @@
                 <div class="widget-chat-list__item-time">10:49</div>
                 <mark class="widget-chat-list__item-alert">2</mark>
               </div>
-            </li>
+            </div>
 
-            <li class="widget-chat-list__item">
+            <div class="widget-chat-list__item">
                 <img src="../../../images/empty_logo.png" alt="avatar" />
                 <div class="widget-chat-list__about">
                   <div class="widget-chat-list__item-name">Киноклуб</div>
@@ -46,9 +47,9 @@
                   <div class="widget-chat-list__item-time">12:00</div>
                   <mark class="widget-chat-list__item-alert"></mark>
                 </div>
-              </li>
+              </div>
 
-              <li class="widget-chat-list__item">
+              <div class="widget-chat-list__item">
                   <img src="../../../images/empty_logo.png" alt="avatar" />
                   <div class="widget-chat-list__about">
                     <div class="widget-chat-list__item-name">Илья</div>
@@ -58,9 +59,9 @@
                     <div class="widget-chat-list__item-time">15:12</div>
                     <mark class="widget-chat-list__item-alert">4</mark>
                   </div>
-                </li>
+                </div>
 
-                <li class="widget-chat-list__item">
+                <div class="widget-chat-list__item">
                     <img src="../../../images/empty_logo.png" alt="avatar" />
                     <div class="widget-chat-list__about">
                       <div class="widget-chat-list__item-name">Вадим</div>
@@ -70,9 +71,9 @@
                       <div class="widget-chat-list__item-time">Пт</div>
                       <mark class="widget-chat-list__item-alert"></mark>
                     </div>
-                  </li>
+                  </div>
 
-                  <li class="widget-chat-list__item">
+                  <div class="widget-chat-list__item">
                       <img src="../../../images/empty_logo.png" alt="avatar" />
                       <div class="widget-chat-list__about">
                         <div class="widget-chat-list__item-name">тет-а-теты</div>
@@ -82,8 +83,8 @@
                         <div class="widget-chat-list__item-time">Ср</div>
                         <mark class="widget-chat-list__item-alert"></mark>
                       </div>
-                    </li>
-                    <li class="widget-chat-list__item">
+                    </div>
+                    <div class="widget-chat-list__item">
                         <img src="../../../images/empty_logo.png" alt="avatar" />
                         <div class="widget-chat-list__about">
                           <div class="widget-chat-list__item-name">1,2,3</div>
@@ -93,9 +94,9 @@
                           <div class="widget-chat-list__item-time">Пн</div>
                           <mark class="widget-chat-list__item-alert"></mark>
                         </div>
-                      </li>
+                      </div>
 
-                      <li class="widget-chat-list__item">
+                      <div class="widget-chat-list__item">
                           <img src="../../../images/empty_logo.png" alt="avatar" />
                           <div class="widget-chat-list__about">
                             <div class="widget-chat-list__item-name">Design Destroyer</div>
@@ -105,9 +106,9 @@
                             <div class="widget-chat-list__item-time">Пн</div>
                             <mark class="widget-chat-list__item-alert"></mark>
                           </div>
-                        </li>
+                        </div>
 
-                        <li class="widget-chat-list__item">
+                        <div class="widget-chat-list__item">
                             <img src="../../../images/empty_logo.png" alt="avatar" />
                             <div class="widget-chat-list__about">
                               <div class="widget-chat-list__item-name">Day.</div>
@@ -117,9 +118,9 @@
                               <div class="widget-chat-list__item-time">1 Мая 2020</div>
                               <mark class="widget-chat-list__item-alert"></mark>
                             </div>
-                          </li>
+                          </div>
 
-                            <li class="widget-chat-list__item">
+                            <div class="widget-chat-list__item">
                               <img src="../../../images/empty_logo.png" alt="avatar" />
                               <div class="widget-chat-list__about">
                                 <div class="widget-chat-list__item-name">Стас Рогозин</div>
@@ -129,9 +130,9 @@
                                 <div class="widget-chat-list__item-time">12 Апр 2020</div>
                                 <mark class="widget-chat-list__item-alert">4</mark>
                               </div>
-                            </li>
+                            </div>
 
-            <li class="widget-chat-list__item">
+            <div class="widget-chat-list__item">
                 <img src="../../../images/empty_logo.png" alt="avatar" />
                 <div class="widget-chat-list__about">
                   <div class="widget-chat-list__item-name">Андрей</div>
@@ -141,10 +142,10 @@
                   <div class="widget-chat-list__item-time">10:49</div>
                   <mark class="widget-chat-list__item-alert">2</mark>
                 </div>
-              </li>
+              </div>
 
 
-                <li class="widget-chat-list__item">
+                <div class="widget-chat-list__item">
                   <img src="../../../images/empty_logo.png" alt="avatar" />
                   <div class="widget-chat-list__about">
                     <div class="widget-chat-list__item-name">Андрей</div>
@@ -154,10 +155,10 @@
                     <div class="widget-chat-list__item-time">10:49</div>
                     <mark class="widget-chat-list__item-alert">2</mark>
                   </div>
-                </li>
+                </div>
 
 
-                  <li class="widget-chat-list__item">
+                  <div class="widget-chat-list__item">
                     <img src="../../../images/empty_logo.png" alt="avatar" />
                     <div class="widget-chat-list__about">
                       <div class="widget-chat-list__item-name">Андрей</div>
@@ -167,10 +168,10 @@
                       <div class="widget-chat-list__item-time">10:49</div>
                       <mark class="widget-chat-list__item-alert">2</mark>
                     </div>
-                  </li>
+                  </div>
 
 
-                    <li class="widget-chat-list__item">
+                    <div class="widget-chat-list__item">
                       <img src="../../../images/empty_logo.png" alt="avatar" />
                       <div class="widget-chat-list__about">
                         <div class="widget-chat-list__item-name">Андрей</div>
@@ -180,10 +181,10 @@
                         <div class="widget-chat-list__item-time">10:49</div>
                         <mark class="widget-chat-list__item-alert">2</mark>
                       </div>
-                    </li>
+                    </div>
 
 
-                      <li class="widget-chat-list__item">
+                      <div class="widget-chat-list__item">
                         <img src="../../../images/empty_logo.png" alt="avatar" />
                         <div class="widget-chat-list__about">
                           <div class="widget-chat-list__item-name">Андрей</div>
@@ -193,10 +194,10 @@
                           <div class="widget-chat-list__item-time">10:49</div>
                           <mark class="widget-chat-list__item-alert">2</mark>
                         </div>
-                      </li>
+                      </div>
 
 
-                        <li class="widget-chat-list__item">
+                        <div class="widget-chat-list__item">
                           <img src="../../../images/empty_logo.png" alt="avatar" />
                           <div class="widget-chat-list__about">
                             <div class="widget-chat-list__item-name">Андрей</div>
@@ -206,59 +207,13 @@
                             <div class="widget-chat-list__item-time">10:49</div>
                             <mark class="widget-chat-list__item-alert">2</mark>
                           </div>
-                        </li>
-          </ul>
+                        </div>
+          </div>
+          </a>
         </div>
 
-        <div class="widget-chat-chat__main">
-          <div class="widget-chat-chat__header">
-            <img src="../../../images/empty_logo.png" alt="avatar" />
-
-            <div class="widget-chat-list__about">
-              <div class="widget-chat-list__item-name">Вадим</div>
-              <div class="widget-chat-list__item-message">Был 5 минут назад</div>
-            </div>
-
-          </div>
-
-          <div class="widget-chat-chat__history">
-            <ul class="widget-chat-list__items">
-              <li class="widget-chat-chat__item">
-                <div class="widget-chat-chat__item-time" >19 июня</div>
-                <div class="widget-chat-chat__item-message">
-                  Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
-
-                  Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
-                  <div class="widget-chat-chat__item-message-time">11:56</div>
-                </div>
-                <div class="widget-chat-chat__item-image">
-                  <img src = "../../../images/chat_image.png"/>
-                  <div class="widget-chat-chat__item-image-time">11:56</div>
-                </div>
-                <div class="widget-chat-chat__item-message">
-                  Что думаешь?
-                  <div class="widget-chat-chat__item-message-time">11:56</div>
-                </div>
-
-              </li>
-
-              <li class="widget-chat-chat__item">
-                <div class="widget-chat-chat__item-response-message">
-                  Круто!
-                  <div class="widget-chat-chat__item-message-time">11:56</div>
-                </div>
-
-              </li>
-
-
-          </div>
-
-          <div class="widget-chat__send">
-            <input type="text" name="message" id="message" placeholder ="Сообщение"></input>
-            <button id="close-image"><img src="../../../images/chat_send_button.png"></button>
-
-
-          </div>
+        <div class="widget-chat-chat__empty">
+          Выберите чат чтобы отправить сообщение
 
         </div>
 
