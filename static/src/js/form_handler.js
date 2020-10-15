@@ -1,6 +1,9 @@
 function printData(){
   let formData = new FormData(document.getElementsByTagName("form")[0]);
-  for (let pair of formData.entries()) {
-      console.log(pair[0]+ ', ' + pair[1]);
-  }
+  let result = {};
+  for (var key of formData.keys()) {
+		result[key] = formData.get(key);
+	}
+  console.log(result);
+
 }
