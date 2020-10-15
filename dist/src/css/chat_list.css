@@ -13,15 +13,6 @@
   min-width: 310px;
 }
 
-.widget-chat-list__chat {
-  width: 100%;
-}
-
-.widget-chat-chat__header {
-  display: flex;
-  border-bottom: 1px solid var(--main-delimiter-color);
-  padding: 10px 0;
-}
 .widget-chat-list__profile {
   text-align: right;
   font-weight: 500;
@@ -85,6 +76,13 @@
   flex-direction: row;
   justify-content:
 }
+
+.widget-chat-list__item img{
+  width:47px;
+  height:47px;
+  border-radius: 47px;
+}
+
 .widget-chat-list__item.active{
   background-color: var(--main-selected-background-color);
 }

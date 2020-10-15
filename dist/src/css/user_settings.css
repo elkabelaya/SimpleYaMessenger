@@ -1,19 +1,23 @@
 
-.widget-login {
+.widget-user {
   height: 460px;
   width: 340px;
-
   display: flex;
   flex-direction: column;
-  flex: 0 0 auto;
+  background: var(--main-background-color);
 
-
-
-  padding: 30px;
-  background: --main-background-color;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.14);
-  border-radius: 12px;
 }
+
+.widget-user__avatar{
+  align-self: center;
+  width:131px;
+  height:131px;
+  border-radius: 131px;
+}
+
+
+
+
 
 .widget-login__form {
   display:flex;

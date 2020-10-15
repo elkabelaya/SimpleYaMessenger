@@ -6,6 +6,22 @@
   justify-content: space-between;
   padding: 0 20px;
 }
+.widget-chat-list__chat {
+  width: 100%;
+}
+
+.widget-chat-chat__header {
+  display: flex;
+  border-bottom: 1px solid var(--main-delimiter-color);
+  padding: 10px 0;
+}
+
+.widget-chat-chat__header img{
+  width:47px;
+  height:47px;
+  border-radius: 47px;
+}
+
 .widget-chat-chat__history{
   overflow-y: scroll;
   font-weight: 500;
