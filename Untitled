@@ -1,1 +1,0 @@
-curl -H 'Host: rutube.dev' -H 'Content-Type: application/json; charset=UTF-8' -H 'Accept: */*' -H 'Cookie: uuid=AFD5CEF5-2410-4DD5-AF8D-79E31FDEDAB2' -H 'x-ally: 1' -H 'User-Agent: ios.black.rutube.dev' -H 'Accept-Language: ru-RU;q=1, en-RU;q=0.9' --compressed 'http://rutube.dev/api/video/history/actual/?format=json'
