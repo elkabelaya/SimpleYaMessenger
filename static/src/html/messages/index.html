@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="../../css/base.css">
   <link rel="stylesheet" href="../../css/chat_list.css">
   <link rel="stylesheet" href="../../css/chat_messages.css">
+  <script type="text/javascript" src="../../js/form_handler.js"></script>
 </head>
 
 <body>
@@ -255,12 +256,12 @@
 
 
         </div>
-        <div class="widget-chat__send">
+        <form onsubmit="printData();return false;" action="" class="widget-chat__send">
           <input type="text" name="message" id="message" placeholder ="Сообщение"></input>
           <button id="close-image"><img src="../../../images/chat_send_button.png"></button>
 
 
-        </div>
+        </form>
 
 
 

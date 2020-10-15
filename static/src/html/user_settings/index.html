@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="../../css/page.css">
   <link rel="stylesheet" href="../../css/login.css">
   <link rel="stylesheet" href="../../css/user_settings.css">
+  <script type="text/javascript" src="../../js/form_handler.js"></script>
 </head>
 <body>
   <div class="page">
@@ -24,19 +25,19 @@
 
       <img class="widget-user__avatar" id="avatar" name="avatar" src="../../../images/empty_logo.jpg" />
       <main  class="widget-login__content">
-        <form action="" class="widget-login__form">
+        <form action="" onsubmit="printData();return false;" class="widget-login__form">
 
           <div  class="widget-register__content">
               <div class="widget-register__input-group">
-                <input id="login" class="widget-login__input"  placeholder="Имя" pattern="[А-Яа-я\-]]{2,15}" onfocus="this.placeholder = ''" value="Василий"/>
-                <label for="login" class="widget-login__input-label">Имя</label>
+                <input id="first_name" name="first_name" class="widget-login__input"  placeholder="Имя" pattern="[А-Яа-я\-]{2,15}" onfocus="this.placeholder = ''" value="Василий"/>
+                <label for="first_name" class="widget-login__input-label">Имя</label>
                 <div class="widget-login__requirements">Используйте русские буквы, дефис</div>
               </div>
 
               <div class="widget-register__input-group">
 
-                <input id="login" class="widget-login__input"  placeholder="Фамилия" pattern="[А-Яа-я\-]]{2,15}" onfocus="this.placeholder = ''" value="Пупкин"/>
-                <label for="login" class="widget-login__input-label">Фамилия</label>
+                <input id="second_name" name="second_name" class="widget-login__input"  placeholder="Фамилия" pattern="[А-Яа-я\-]{2,15}" onfocus="this.placeholder = ''" value="Пупкин"/>
+                <label for="second_name" class="widget-login__input-label">Фамилия</label>
                 <div class="widget-login__requirements">Используйте русские буквы, дефис</div>
               </div>
 
@@ -45,14 +46,14 @@
 
               <div class="widget-register__input-group">
 
-                <input id="login" class="widget-login__input"  placeholder="Логин" pattern="[A-Za-z0-9_]{6,15}" onfocus="this.placeholder = ''" value="Pupkin"/>
+                <input id="login" name="login" class="widget-login__input"  placeholder="Логин" pattern="[A-Za-z0-9_]{6,15}" onfocus="this.placeholder = ''" value="Pupkin"/>
                 <label for="login" class="widget-login__input-label">Логин</label>
                 <div class="widget-login__requirements">Используйте латинские буквы, цифры, подчеркивание</div>
               </div>
 
               <div class="widget-register__input-group">
 
-                <input id="display_name" class="widget-login__input"  placeholder="Ник" pattern="[А-Яа-я]{2,15}" onfocus="this.placeholder = ''" value="Пупок"/>
+                <input id="display_name" name="display_name" class="widget-login__input"  placeholder="Ник" pattern="[А-Яа-я]{2,15}" onfocus="this.placeholder = ''" value="Пупок"/>
                 <label for="display_name" class="widget-login__input-label">Ник</label>
                 <div class="widget-login__requirements">Используйте русские буквы</div>
               </div>
@@ -62,31 +63,31 @@
 
               <div class="widget-register__input-group">
 
-                <input id="password" class="widget-login__input" placeholder="Телефон" pattern="\+[0-9]{11}" onfocus="this.placeholder = ''" value="+71231112233"/>
-                <label for="password" class="widget-login__input-label">Телефон</label>
+                <input id="phone" name="phone" class="widget-login__input" placeholder="Телефон" pattern="\+[0-9]{11}" onfocus="this.placeholder = ''" value="+71231112233"/>
+                <label for="phone" class="widget-login__input-label">Телефон</label>
                 <label for="login" class="widget-login__requirements">Введите номер в формате +71231112233</label>
               </div>
 
               <div class="widget-register__input-group">
 
-                <input id="login" class="widget-login__input" type="email" placeholder="Почта" onfocus="this.placeholder = ''"  value="pupkin@mail.com"/>
-                <label for="login" class="widget-login__input-label">Почта</label>
+                <input id="email" name="email" class="widget-login__input" type="email" placeholder="Почта" onfocus="this.placeholder = ''"  value="pupkin@mail.com"/>
+                <label for="email" class="widget-login__input-label">Почта</label>
                 <div class="widget-login__requirements">Невалидный адрес</div>
 
               </div>
 
               <div class="widget-register__input-group">
 
-                <input id="password" class="widget-login__input" type="password" placeholder="Пароль" pattern="\S{6,15}" onfocus="this.placeholder = ''" value="71231112233"/>
-                <label for="password" class="widget-login__input-label">Пароль</label>
+                <input id="oldPassword" name="oldPassword" class="widget-login__input" type="password" placeholder="Пароль" pattern="\S{6,15}" onfocus="this.placeholder = ''" value="71231112233"/>
+                <label for="oldPassword" class="widget-login__input-label">Пароль</label>
                 <div class="widget-login__requirements">Не менее 6 символов: буквы, цифры, спецсимволы </div>
 
               </div>
 
               <div class="widget-register__input-group">
 
-                <input id="password" class="widget-login__input" type="password" placeholder="Новый пароль" pattern="\S{6,15}" onfocus="this.placeholder = ''"/>
-                <label for="password" class="widget-login__input-label">Пароль</label>
+                <input id="newPassword" name="newPassword" class="widget-login__input" type="password" placeholder="Новый пароль" pattern="\S{6,15}" onfocus="this.placeholder = ''"/>
+                <label for="newPassword" class="widget-login__input-label">Пароль</label>
                 <div class="widget-login__requirements">Не менее 6 символов: буквы, цифры, спецсимволы </div>
 
               </div>

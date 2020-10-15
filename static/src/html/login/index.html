@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter">
   <link rel="stylesheet" href="../../css/base.css">
   <link rel="stylesheet" href="../../css/login.css">
+  <script type="text/javascript" src="../../js/form_handler.js"></script>
 </head>
 <body>
   <section class="widget">
@@ -15,14 +16,15 @@
       <header class="widget-login__header">
         <h1 class="widget-login__title">Вход</h1>
       </header>
+
       <main  class="widget-login__content">
-        <form action="" class="widget-login__form">
+        <form onsubmit="printData();return false;" class="widget-login__form">
 
 
           <div  class="widget-login__content">
             <div class="widget-login__input-group">
 
-              <input id="login" class="widget-login__input" type="email" placeholder="Почта" onfocus="this.placeholder = ''"/>
+              <input name="login" class="widget-login__input" type="email" placeholder="Почта" onfocus="this.placeholder = ''"/>
               <label for="login" class="widget-login__input-label">Почта</label>
               <div class="widget-login__requirements">Некоректно написано</div>
 
@@ -30,7 +32,7 @@
 
             <div class="widget-login__input-group">
 
-              <input id="password" class="widget-login__input" type="password" placeholder="Пароль" onfocus="this.placeholder = ''"/>
+              <input name="password" class="widget-login__input" type="password" placeholder="Пароль" onfocus="this.placeholder = ''"/>
               <label for="password" class="widget-login__input-label">Пароль</label>
               <label for="login" class="widget-login__requirements">Некоректный пароль</label>
             </div>
