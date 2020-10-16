@@ -96,7 +96,6 @@
   margin-right: 10px;
   margin-left: 10px;
   overflow: hidden;
-  white-space: nowrap;
 
 }
 .widget-chat-list__data {
@@ -119,6 +118,8 @@
   line-height: 15px;
   color: var(--main-inactive-text-color);
   text-overflow: ellipsis;
+  overflow:hidden;
+  height:32px;
 
 }
 .widget-chat-list__item-time {
