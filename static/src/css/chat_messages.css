@@ -56,7 +56,7 @@
   max-width: 402px;
   margin: 5px auto 5px 0;
 }
-.widget-chat-chat__item-message span {
+.widget-chat-chat__item-message time {
   font-size: 9px;
   color: var(--main-inactive-text-color);
   float: right;
@@ -93,7 +93,7 @@
     margin: 5px 0 5px auto;
     background-color: var(--main-selected-background-color);
 }
-.widget-chat-chat__item-response-message span {
+.widget-chat-chat__item-response-message time {
   font-size: 9px;
   color: var(--main-components-color);
   float: right;
