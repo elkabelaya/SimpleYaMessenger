@@ -14,28 +14,27 @@
 </head>
 
 <body>
-      <main  class="widget-chat-list__content">
+      <div  class="widget-chat-list__content">
 
-        <div class="widget-chat-list__list">
+        <aside class="widget-chat-list__list">
           <a class="widget-chat-list__profile" href = "../../html/user_settings"> Профиль > </a>
 
-          <div class="widget-chat-list__search">
-            <input id="search" class="widget-chat-list__search-input" type="text"  placeholder=" " />
+          <form  method="POST" class="widget-chat-list__search">
+            <input id="search"  name="search" class="widget-chat-list__search-input" type="text"  placeholder=" " />
             <label for="search"><span class="widget-chat-list_search-placeholder">&#xF002; </span> Поиск</label>
-          </div>
+          </form>
 
 
           <ul class ="widget-chat-list__items">
-            <!--обернуто в ссылку, чтобы срабатывал переход на страницу с версткой чата, в реальной версии этого не будет-->
-              <a href="../../html/messages/">
+
             <li class="widget-chat-list__item">
               <img src="../../../images/empty_logo.jpg" alt="avatar" />
               <div class="widget-chat-list__about">
-                  <div class="widget-chat-list__item-name">Андрей</div>
+                  <h2 class="widget-chat-list__item-name">Андрей</h2>
                   <div class="widget-chat-list__item-message">Изображение</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">10:49</div>
+                <time class="widget-chat-list__item-time">10:49</time>
                 <mark class="widget-chat-list__item-alert">2</mark>
               </div>
             </li>
@@ -47,7 +46,7 @@
                 <div class="widget-chat-list__item-message">Вы: стикер</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">12:00</div>
+                <time class="widget-chat-list__item-time">12:00</time>
                 <mark class="widget-chat-list__item-alert"></mark>
               </div>
             </li>
@@ -59,7 +58,7 @@
                 <div class="widget-chat-list__item-message">Друзья, у меня для вас особенный выпуск новостей!Друзья, у меня для вас особенный выпуск новостей!</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">15:12</div>
+                <time class="widget-chat-list__item-time">15:12</time>
                 <mark class="widget-chat-list__item-alert">4</mark>
               </div>
             </li>
@@ -71,7 +70,7 @@
                 <div class="widget-chat-list__item-message">Вы:круто</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">Пт</div>
+                <time class="widget-chat-list__item-time">Пт</time>
                 <mark class="widget-chat-list__item-alert"></mark>
               </div>
             </li>
@@ -83,7 +82,7 @@
                 <div class="widget-chat-list__item-message">И Human Interface Guidelines и Material Design рекомендуютИ Human Interface Guidelines и Material Design рекомендуют...</div>
               </div>
                 <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">Ср</div>
+                <time class="widget-chat-list__item-time">Ср</time>
               <mark class="widget-chat-list__item-alert"></mark>
             </li>
 
@@ -95,7 +94,7 @@
                 <div class="widget-chat-list__item-message">Миллионы россиян ежедневно проводят десятки часов свое...</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">Пн</div>
+                <time class="widget-chat-list__item-time">Пн</time>
                 <mark class="widget-chat-list__item-alert"></mark>
               </div>
             </li>
@@ -107,7 +106,7 @@
               <div class="widget-chat-list__item-message">В 2008 году художник Jon Rafman  начал собирать...</div>
             </div>
             <div class="widget-chat-list__data">
-              <div class="widget-chat-list__item-time">Пн</div>
+              <time class="widget-chat-list__item-time">Пн</time>
               <mark class="widget-chat-list__item-alert"></mark>
             </div>
             </li>
@@ -119,7 +118,7 @@
                 <div class="widget-chat-list__item-message">Так увлёкся работой по курсу, что совсем забыл его анонсир...</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">1 Мая 2020</div>
+                <time class="widget-chat-list__item-time">1 Мая 2020</time>
                 <mark class="widget-chat-list__item-alert"></mark>
               </div>
             </li>
@@ -131,7 +130,7 @@
                   <div class="widget-chat-list__item-message">Можно или сегодня или завтра вечером.</div>
                 </div>
                 <div class="widget-chat-list__data">
-                  <div class="widget-chat-list__item-time">12 Апр 2020</div>
+                  <time class="widget-chat-list__item-time">12 Апр 2020</time>
                   <mark class="widget-chat-list__item-alert">4</mark>
                 </div>
               </li>
@@ -143,7 +142,7 @@
                 <div class="widget-chat-list__item-message">Изображение</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">10:49</div>
+                <time class="widget-chat-list__item-time">10:49</time>
                 <mark class="widget-chat-list__item-alert">2</mark>
               </div>
             </li>
@@ -156,7 +155,7 @@
                 <div class="widget-chat-list__item-message">Изображение</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">10:49</div>
+                <time class="widget-chat-list__item-time">10:49</time>
                 <mark class="widget-chat-list__item-alert">2</mark>
               </div>
             </li>
@@ -169,7 +168,7 @@
                 <div class="widget-chat-list__item-message">Изображение</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">10:49</div>
+                <time class="widget-chat-list__item-time">10:49</time>
                 <mark class="widget-chat-list__item-alert">2</mark>
               </div>
             </li>
@@ -182,7 +181,7 @@
                 <div class="widget-chat-list__item-message">Изображение</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">10:49</div>
+                <time class="widget-chat-list__item-time">10:49</time>
                 <mark class="widget-chat-list__item-alert">2</mark>
               </div>
             </li>
@@ -195,7 +194,7 @@
                 <div class="widget-chat-list__item-message">Изображение</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">10:49</div>
+                <time class="widget-chat-list__item-time">10:49</time>
                 <mark class="widget-chat-list__item-alert">2</mark>
               </div>
             </li>
@@ -208,71 +207,71 @@
                 <div class="widget-chat-list__item-message">Изображение</div>
               </div>
               <div class="widget-chat-list__data">
-                <div class="widget-chat-list__item-time">10:49</div>
+                <time class="widget-chat-list__item-time">10:49</time>
                 <mark class="widget-chat-list__item-alert">2</mark>
               </div>
             </li>
-          </a>
             </ul>
 
 
-          </div>
+          </aside>
 
         <div class="widget-chat-chat__main">
-          <div class="widget-chat-chat__header">
+          <header class="widget-chat-chat__header">
             <img src="../../../images/empty_logo.jpg" alt="avatar" />
 
             <div class="widget-chat-list__about">
-              <div class="widget-chat-list__item-name">Вадим</div>
+              <h1 class="widget-chat-list__item-name">Вадим</h1>
               <div class="widget-chat-list__item-message">Был 5 минут назад</div>
             </div>
 
+          </header>
+          <main>
+            <div class="widget-chat-chat__history">
+              <div class="widget-chat-list__items">
+
+                  <time class="widget-chat-chat__item-time" >19 июня</time>
+                  <div class="widget-chat-chat__item-message">
+                    Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
+
+                    Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
+
+                    <time class="widget-chat-chat__item-message-time"> 11:56</time>
+                  </div>
+                  <div class="widget-chat-chat__item-image">
+                    <img src = "../../../images/chat_image.png"/>
+
+                    <time class="widget-chat-chat__item-image-time"> 11:56</time>
+                  </div>
+                  <div class="widget-chat-chat__item-message">
+                    Что думаешь?
+                    <time class="widget-chat-chat__item-message-time"> 11:56</time>
+                  </div>
+
+
+                  <div class="widget-chat-chat__item-response-message">
+                    Круто!
+                    <time class="widget-chat-chat__item-message-time"> 11:56</time>
+                  </div>
+
+
+
+
+            </div>
+
+
           </div>
-
-          <div class="widget-chat-chat__history">
-            <div class="widget-chat-list__items">
-
-                <div class="widget-chat-chat__item-time" >19 июня</div>
-                <div class="widget-chat-chat__item-message">
-                  Привет! Смотри, тут всплыл интересный кусок лунной космической истории — НАСА в какой-то момент попросила Хассельблад адаптировать модель SWC для полетов на Луну. Сейчас мы все знаем что астронавты летали с моделью 500 EL — и к слову говоря, все тушки этих камер все еще находятся на поверхности Луны, так как астронавты с собой забрали только кассеты с пленкой.
-
-                  Хассельблад в итоге адаптировал SWC для космоса, но что-то пошло не так и на ракету они так никогда и не попали. Всего их было произведено 25 штук, одну из них недавно продали на аукционе за 45000 евро.
-                  <span ></span>
-                  <span class="widget-chat-chat__item-message-time"> 11:56</span>
-                </div>
-                <div class="widget-chat-chat__item-image">
-                  <img src = "../../../images/chat_image.png"/>
-
-                  <span class="widget-chat-chat__item-image-time"> 11:56</span>
-                </div>
-                <div class="widget-chat-chat__item-message">
-                  Что думаешь?
-                  <span class="widget-chat-chat__item-message-time"> 11:56</span>
-                </div>
+        <!--неуверена, должна ли форма попасть в <main>, но кажется, что должна, тк это основной функционал-->
+          <form  method="POST" class="widget-chat__send">
+            <input type="text" name="message" id="message" placeholder ="Сообщение"></input>
+            <button id="close-image" type="submit"><img src="../../../images/chat_send_button.png"></button>
 
 
-                <div class="widget-chat-chat__item-response-message">
-                  Круто!
-                  <span class="widget-chat-chat__item-message-time"> 11:56</span>
-                </div>
+          </form>
+        </main>
 
 
-
-
-          </div>
-
-
-        </div>
-        <form onsubmit="printData();return false;" action="" class="widget-chat__send">
-          <input type="text" name="message" id="message" placeholder ="Сообщение"></input>
-          <button id="close-image"><img src="../../../images/chat_send_button.png"></button>
-
-
-        </form>
-
-
-
-      </main>
+      </div>
 
 </body>
 </html>
