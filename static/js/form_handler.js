@@ -1,3 +1,4 @@
+"use strict";
 document.addEventListener("DOMContentLoaded", () => {
     let form;
     for (const i in Object.values(document.forms)) {
