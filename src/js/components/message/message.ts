@@ -5,8 +5,8 @@ import {template as itemTemplate} from "./message.tmpl.js";
 
 export default class Message extends Component {
 
-  constructor(props: IMessageCtx, attr:object) {
-    super(undefined, itemTemplate, {class: getMessageClassByType(props.type)} , props);
+  constructor(props: IMessageCtx) {
+    super("div", itemTemplate, {class: getMessageClassByType(props.type)} , props);
   }
 
   setProps(props:IMessageCtx){
@@ -15,7 +15,7 @@ export default class Message extends Component {
 
 }
 
-function getMessageClassByType(type){
+function getMessageClassByType(type:EMessageType){
   switch(type){
     case EMessageType.date:
       return "widget-chat-chat__item-time";

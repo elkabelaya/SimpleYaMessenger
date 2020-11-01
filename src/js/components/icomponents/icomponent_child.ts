@@ -4,11 +4,11 @@
 export interface  IComponentChild<T> {
   componentClass: INewableComponent<T>,
   componentCtx: object | object[],
-  componentAttrs?: object,
+  componentAttrs: object,
   rootElement: string,
 }
 
 
 export interface INewableComponent<T> {
-	new( ...props: object[] ): T;
+	new( ...props: any[] ): T;
 }

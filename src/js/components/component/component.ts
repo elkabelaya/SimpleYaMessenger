@@ -59,7 +59,7 @@ export default class Component implements IComponent{
 
   _componentDidMount() {
   	this.componentDidMount();
-    this._eventBus.emit(Component.EVENTS.FLOW_CDU, null, this._props);
+    this._eventBus.emit(Component.EVENTS.FLOW_CDU, {}, this._props);
   }
 
 	// Может переопределять пользователь, необязательно трогать
@@ -101,15 +101,16 @@ export default class Component implements IComponent{
     this._element.innerHTML = "";
     const compiled = this._templator.compile(this._props);
     let query;
+    let component:HTMLElement;
     while(compiled.length){
       this._element.appendChild(compiled[0]);
     }
-    //let documentFragment: DocumentFragment = document.createDocumentFragment()
 
     for (let child of this._children){
       query = this._element.querySelector(child.rootElement);
       if (!!query){
-        this._element.querySelector(child.rootElement).appendChild( new child.componentClass(child.componentCtx,child.componentAttrs).element);
+        component = new child.componentClass(child.componentCtx,child.componentAttrs).element;
+        query.appendChild( component );
       }
     }
     //return element;
@@ -125,12 +126,12 @@ export default class Component implements IComponent{
     })
   }
 
-  _createDocumentElement(tagName: string, attributes: object) {
+  _createDocumentElement(tagName: string, attributes: any) {
     let element =  document.createElement(tagName);
+    Object.keys(attributes).forEach(item => {
+        element.setAttribute(item, attributes[item]);
+    });
 
-    for (let attribute in attributes){
-      element.setAttribute(attribute, attributes[attribute]);
-    }
     return element;
   }
 

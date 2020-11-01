@@ -1,11 +1,11 @@
 import {template as itemTemplate} from "./messages_widget.tmpl.js"
 import { IComponent } from "../../components/icomponents/icomponent.js";
-import Component from "../../components/component/component.js";
 import { IComponentChild } from "../../components/icomponents/icomponent_child.js";
 import Message from "../../components/message/message.js";
+import FormWidget from "../form_widget/form_widget.js";
 //import style from "../../../css/account_widget.css";
 
-export default class MessagesWidget extends Component {
+export default class MessagesWidget extends FormWidget {
 
   constructor(chats:object[] = []) {
     let data:IComponentChild<IComponent>[] = new Array(chats.length);
@@ -13,10 +13,11 @@ export default class MessagesWidget extends Component {
       data[i]= ({
         componentClass: Message,
         componentCtx: chats[i],
-        rootElement:".widget-chat-list__items"
+        rootElement:".widget-chat-list__items",
+        componentAttrs:{}
       });
 
     }
-    super(undefined, itemTemplate, {class:"widget-chat-chat__content"}, undefined, undefined, data);
+    super("div", itemTemplate, {class:"widget-chat-chat__content"}, undefined, undefined, data);
   }
 }

@@ -1,35 +1,43 @@
 import {IEventBus, IEventBusCallbackFunction} from "./ievent_bus"
 
 export default class EventBus implements IEventBus {
-  _listeners:object;
+  _listeners:Map<string,IEventBusCallbackFunction[]>;
 
   constructor() {
-    this._listeners = {};
+    this._listeners = new Map();
   }
 
   on(event:string, callback:IEventBusCallbackFunction): void {
-    if (!this._listeners[event]) {
-      this._listeners[event] = [];
+    let eventListeners:IEventBusCallbackFunction[]|undefined = this._listeners.get(event);
+    if (!eventListeners) {
+      eventListeners = [];
+      this._listeners.set(event,eventListeners);
     }
 
-    this._listeners[event].push(callback);
+    eventListeners.push(callback);
   }
 
   off(event:string, callback:IEventBusCallbackFunction): void{
-	  if (!this._listeners[event]) {
+    let eventListeners:IEventBusCallbackFunction[]|undefined = this._listeners.get(event);
+	  if (!eventListeners) {
       throw new Error(`Нет события: ${event}`);
     }
 
-    this._listeners[event] = this._listeners[event].filter(
-      (listener: IEventBusCallbackFunction) => listener !== callback
-    );
+    this._listeners.set(event,eventListeners.filter(
+        (listener: IEventBusCallbackFunction) => listener !== callback
+      ));
+
   }
 
   emit(event:string, ...args:object[]): void{
-    if (!this._listeners[event]) {
+    let eventListeners:IEventBusCallbackFunction[]|undefined = this._listeners.get(event);
+	  if (!eventListeners) {
       return;
     }
 
-    this._listeners[event].forEach( (listener:IEventBusCallbackFunction)=> listener(...args));
+    eventListeners.forEach( (listener:IEventBusCallbackFunction)=> listener(...args));
+
+
+
   }
 }

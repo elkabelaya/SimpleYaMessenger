@@ -2,7 +2,6 @@ import {template as itemTemplate} from "./messenger_widget.tmpl.js"
 import { IComponent } from "../../components/icomponents/icomponent.js";
 import Component from "../../components/component/component.js";
 import { IComponentChild } from "../../components/icomponents/icomponent_child.js";
-import Message from "../../components/message/message.js";
 import ChatListWidget from "../chat_list_widget/chat_list_widget.js";
 import MessagesWidget from "../messages_widget/messages_widget.js";
 
@@ -15,16 +14,18 @@ export default class MessengerWidget extends Component {
       {
         componentClass: ChatListWidget,
         componentCtx: chats,
-        rootElement:".widget-chat-list"
+        rootElement:".widget-chat-list",
+        componentAttrs:{}
       },
       {
         componentClass: MessagesWidget,
         componentCtx: messages,
-        rootElement:".widget-chat-chat"
+        rootElement:".widget-chat-chat",
+        componentAttrs:{}
       },
     ];
 
 
-    super(undefined, itemTemplate, undefined, undefined, undefined, data);
+    super("div", itemTemplate, {}, {}, undefined, data);
   }
 }

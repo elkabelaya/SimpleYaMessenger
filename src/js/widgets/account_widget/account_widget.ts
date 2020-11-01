@@ -4,16 +4,17 @@ import Button from  "../../components/button/button.js";
 import Avatar from  "../../components/avatar/avatar.js";
 import {template as itemTemplate} from "./account_widget.tmpl.js"
 import { IComponent } from "../../components/icomponents/icomponent.js";
-import Component from "../../components/component/component.js";
 import { IComponentChild } from "../../components/icomponents/icomponent_child.js";
+import FormWidget from "../form_widget/form_widget.js";
 //import style from "../../../css/account_widget.css";
 
-export default class LoginWidget extends Component {
+export default class LoginWidget extends FormWidget {
 
   constructor() {
     const data:IComponentChild<IComponent>[] = [
       {
         componentClass: Avatar,
+        componentAttrs: {},
         componentCtx: {
           url: "../../../images/empty_logo.jpg",
 
@@ -23,6 +24,7 @@ export default class LoginWidget extends Component {
       {
         componentClass: Input,
         componentCtx: {
+          value: "Василий",
           name: "second_name",
           placeholder: "Фамилия",
           pattern:"[А-Яа-я\\-]]{2,15}",
@@ -56,10 +58,13 @@ export default class LoginWidget extends Component {
       {
         componentClass: Input,
         componentCtx: {
+          value:"Пупок",
+
           name: "display_name",
           type: "email",
           placeholder: "Ник",
-          requirments: "Пупок"
+          pattern:"[А-Яа-я\\-]]{2,15}",
+          requirments: "Введите ник"
         },
         rootElement:".register-widget__content",
         componentAttrs:{style:"width:138px"},
@@ -105,10 +110,11 @@ export default class LoginWidget extends Component {
           title: "Сохранить",
 
         },
-        rootElement:".login-widget__action"
+        rootElement:".login-widget__action",
+        componentAttrs:{}
       },
     ];
-    super(undefined, itemTemplate, undefined, undefined, undefined, data);
+    super("div", itemTemplate, {}, {}, undefined, data);
   }
 
 

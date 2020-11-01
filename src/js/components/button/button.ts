@@ -6,7 +6,7 @@ import {IButtonCtx} from "../../components/icomponents/ibutton.js";
 export default class Button extends Component {
 
   constructor(props: IButtonCtx, attr:object) {
-    super(undefined, buttonItemTemplate, attr, props);
+    super("div", buttonItemTemplate, attr, props);
   }
 
   setProps(props:IButtonCtx){

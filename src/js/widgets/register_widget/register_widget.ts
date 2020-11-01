@@ -4,11 +4,11 @@ import Button from  "../../components/button/button.js";
 import WidgetHeader from  "../../components/widget_header/widget_header.js";
 import {template as loginWidgetTemplate} from "./register_widget.tmpl.js"
 import { IComponent } from "../../components/icomponents/icomponent.js";
-import Component from "../../components/component/component.js";
 import { IComponentChild } from "../../components/icomponents/icomponent_child.js";
+import FormWidget from "../form_widget/form_widget.js";
 //import style from "../../../css/account_widget.css";
 
-export default class LoginWidget extends Component {
+export default class RegisterWidget extends FormWidget {
 
   constructor() {
     const data:IComponentChild<IComponent>[] = [
@@ -18,7 +18,8 @@ export default class LoginWidget extends Component {
           title: "Регистрация",
 
         },
-        rootElement:".login-widget__header"
+        rootElement:".login-widget__header",
+        componentAttrs:{}
       },
       {
         componentClass: Input,
@@ -94,10 +95,11 @@ export default class LoginWidget extends Component {
           title: "Зарегистрироваться",
 
         },
-        rootElement:".login-widget__action"
+        rootElement:".login-widget__action",
+        componentAttrs:{}
       },
     ];
-    super(undefined, loginWidgetTemplate, undefined, undefined, undefined, data);
+    super("div", loginWidgetTemplate, {}, {}, undefined, data);
   }
 
 

@@ -26,12 +26,12 @@
 }
 
 
-input:placeholder-shown + .input__input-label{
+.input__input:placeholder-shown + .input__input-label{
   visibility: hidden;
 
 }
 
-input:focus + .input__input-label{
+.input__input:focus + .input__input-label{
   visibility: visible;
 
 }
@@ -46,17 +46,7 @@ input:focus + .input__input-label{
 
 }
 
-input:invalid ~.input__requirements {
+.input__input.invalid ~.input__requirements {
   visibility: visible;
   max-height: 10px;
-}
-
-input:invalid:focus ~.input__requirements {
-    visibility: hidden;
-    max-height: 0px;
-}
-
-input:invalid:placeholder-shown ~.input__requirements {
-    visibility: hidden;
-    max-height: 0px;
 }

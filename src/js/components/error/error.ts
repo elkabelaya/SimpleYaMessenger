@@ -6,7 +6,7 @@ import {template as itemTemplate} from "./error.tmpl.js";
 export default class Button extends Component {
 
   constructor(props: IErrorCtx, attr:object) {
-    super(undefined, itemTemplate, attr, props);
+    super("div", itemTemplate, attr, props);
   }
 
   setProps(props:IErrorCtx){

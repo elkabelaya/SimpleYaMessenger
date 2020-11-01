@@ -13,29 +13,30 @@ export default class Templator implements ITemplator{
 }
 
 
-  const OBJECT_PATH_DELIMITER = '.';
-  const HTML_ESCAPE_SYMBOLS = {
-      '&': '&amp;',
-      '<': '&lt;',
-      '>': '&gt;',
-      '"': '&quot;',
-      "'": '&#x27;'
-  };
+  const OBJECT_PATH_DELIMITER:string = '.';
+  const HTML_ESCAPE_SYMBOLS:Map<string, string> = new Map([
+      ['&', '&amp;'],
+      ['<', '&lt;'],
+      ['>', '&gt;'],
+      ['"', '&quot;'],
+      ["'", '&#x27;']
+    ]);
 
   const TEMPLATE_REGEXP =/{{ *(.*?) *}}+/g;
   const HTML_ESCAPE_REGEXP =/[&<>"']/g;
+
+
 
   function _isObjectKey( key: string) {
     return key.indexOf(OBJECT_PATH_DELIMITER) > 0;
   }
 
-  function _getValueFromObject( path:string, obj: object,  defaultValue: string|number) {
-    const keys = path.split(OBJECT_PATH_DELIMITER);
+  function _getValueFromObject( path:string, obj: any,  defaultValue: string|number) {
+    const keys:string[] = path.split(OBJECT_PATH_DELIMITER);
 
     let result = obj;
     for (let key of keys) {
       result = result[key];
-
       if (result === undefined) {
         return defaultValue;
       }
@@ -51,7 +52,7 @@ export default class Templator implements ITemplator{
     return template.replace( TEMPLATE_REGEXP, ( _fullMatch:string, group1:string )=>_getParamForTemplateKey( group1, ctx ) );
   }
 
-  function _getParamForTemplateKey( key:string, ctx:object){
+  function _getParamForTemplateKey( key:string, ctx:any){
     const element:unknown = _isObjectKey(key)? _getValueFromObject(key, ctx, ""): ctx[key];
 
     switch (typeof element){
@@ -73,7 +74,7 @@ export default class Templator implements ITemplator{
 
 
   function _sanitise(value = '') {
-      return (value + '').replace(HTML_ESCAPE_REGEXP, (symbol) =>HTML_ESCAPE_SYMBOLS[symbol]);
+      return (value + '').replace(HTML_ESCAPE_REGEXP, (symbol) =>HTML_ESCAPE_SYMBOLS.get(symbol)||'');
   }
 
   function _parseHtmlToObject(html: string): HTMLCollection{
