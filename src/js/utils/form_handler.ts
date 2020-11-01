@@ -12,13 +12,14 @@ export default class FormValidator{
 
 const handleForm: EventListener = (event:Event): void => {
   event.preventDefault();
-  console.log(event)
-  validateForm(event.target);
+
+  validateForm(event.currentTarget);
 
 
 }
 
 function validate(target:HTMLElement){
+  //console.log("validate", isValidInput(target), target);
   if (!isValidInput(target)){
     target.classList.add("invalid");
 
@@ -33,7 +34,7 @@ function isValidInput(input:any){
 
 function validateForm(form:any){
   const inputs = form.querySelectorAll(".input__input");
-  console.log("validateForm")
+  console.log("validateForm",form, inputs);
   inputs.forEach( (input:HTMLElement) => {
     validate(input);
   });
