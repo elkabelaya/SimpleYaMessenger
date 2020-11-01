@@ -1,0 +1,9 @@
+.widget-user__avatar{
+  display: flex;
+  justify-content: space-around;
+}
+.widget-user__avatar img{
+  width:131px;
+  height:131px;
+  border-radius: 131px;
+}

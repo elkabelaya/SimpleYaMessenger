@@ -1,0 +1,11 @@
+.page {
+  display:flex;
+  align-items: center;
+}
+
+.page__back button {
+
+    background-color: transparent;
+    border: 0;
+
+}

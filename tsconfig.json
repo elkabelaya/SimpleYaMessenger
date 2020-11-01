@@ -1,0 +1,12 @@
+{
+  "compilerOptions":
+  {
+    
+    "target": "es6",
+    "outDir": "static/js",
+    "allowJs": true,
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+  },
+  "include": ["src/**/*"],
+
+}
