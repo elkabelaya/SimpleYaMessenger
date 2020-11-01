@@ -1,6 +1,6 @@
 export const template:string =  `<div class="page">
   <nav class="page__back">
-    <a href="../../html/chat_list"><img src="../../../images/chat_back_button.png"></a>
+    <a href="../../html/messenger_widget"><img src="../../../images/chat_back_button.png"></a>
   </nav>
 <div class="widget">
   <div class="widget-user">
@@ -9,7 +9,7 @@ export const template:string =  `<div class="page">
       <form  method="POST" class="widget-login__form">
         <div class="account_widget__avatar"></div>
 
-        <div  class="login-widget__content">
+        <div  class="register-widget__content">
 
         </div>
 

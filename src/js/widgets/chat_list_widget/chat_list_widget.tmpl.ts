@@ -1,5 +1,5 @@
 export const template:string =  `
-        <a class="widget-chat-list__profile" href="../../html/user_settings"> Профиль &gt; </a>
+        <a class="widget-chat-list__profile" href="../../html/account_widget"> Профиль &gt; </a>
 
         <form method="POST" class="widget-chat-list__search">
           <input id="search" name="search" class="widget-chat-list__search-input" type="text" placeholder=" ">

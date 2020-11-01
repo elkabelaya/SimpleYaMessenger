@@ -7,12 +7,16 @@
     "express": "4.17.1"
   },
   "devDependencies": {
+    "less": "^3.12.2",
     "typescript": "^4.0.5"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc",
-    "build": "tsc"
+    "lessc": "lessc",
+    "build:js": "tsc",
+    "build:css": "lessc src/less/styles.less > static/css/styles.css",
+    "build": "tsc && lessc src/less/styles.less > static/css/styles.css"
   },
   "repository": {
     "type": "git",

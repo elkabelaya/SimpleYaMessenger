@@ -1,0 +1,26 @@
+.flex-center-mixin {
+  display: flex;
+  justify-content: center;
+}
+.flex-both-center-mixin {
+  .flex-center-mixin();
+  align-items: center;
+}
+.flex-space-around-mixin {
+  display: flex;
+  justify-content: space-around;
+}
+
+.font-inactive-mixin {
+  color: @main-inactive-text-color;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.font-active-mixin {
+  color: @main-active-text-color;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 13px;
+}

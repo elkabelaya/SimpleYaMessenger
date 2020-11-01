@@ -28,8 +28,8 @@ export default class LoginWidget extends Component {
           pattern:"[А-Яа-я\\-]]{2,15}",
           requirments: "Используйте русские буквы, дефис"
         },
-        rootElement:".login-widget__content",
-        componentAttrs:{width:"138px"},
+        rootElement:".register-widget__content",
+        componentAttrs:{style:"width:138px"},
       },
       {
         componentClass: Input,
@@ -39,8 +39,8 @@ export default class LoginWidget extends Component {
           pattern:"[А-Яа-я\\-]]{2,15}",
           requirments: "Используйте русские буквы, дефис"
         },
-        rootElement:".login-widget__content",
-        componentAttrs:{width:"138px"},
+        rootElement:".register-widget__content",
+        componentAttrs:{style:"width:138px"},
       },
       {
         componentClass: Input,
@@ -50,8 +50,8 @@ export default class LoginWidget extends Component {
           pattern:"[А-Яа-я\\-]]{2,15}",
           requirments: "Используйте латинские буквы, цифры, подчеркивание"
         },
-        rootElement:".login-widget__content",
-        componentAttrs:{width:"138px"},
+        rootElement:".register-widget__content",
+        componentAttrs:{style:"width:138px"},
       },
       {
         componentClass: Input,
@@ -61,8 +61,8 @@ export default class LoginWidget extends Component {
           placeholder: "Ник",
           requirments: "Пупок"
         },
-        rootElement:".login-widget__content",
-        componentAttrs:{width:"138px"},
+        rootElement:".register-widget__content",
+        componentAttrs:{style:"width:138px"},
       },
       {
         componentClass: Input,
@@ -72,8 +72,8 @@ export default class LoginWidget extends Component {
           placeholder: "Почта",
           requirments: "Невалидный адрес"
         },
-        rootElement:".login-widget__content",
-        componentAttrs:{width:"138px"},
+        rootElement:".register-widget__content",
+        componentAttrs:{style:"width:138px"},
       },
       {
         componentClass: Input,
@@ -84,8 +84,8 @@ export default class LoginWidget extends Component {
           pattern:"\\+[0-9]{11}",
           requirments: "Введите номер в формате +71231112233"
         },
-        rootElement:".login-widget__content",
-        componentAttrs:{width:"138px"},
+        rootElement:".register-widget__content",
+        componentAttrs:{style:"width:138px"},
       },
       {
         componentClass: Input,
@@ -96,8 +96,8 @@ export default class LoginWidget extends Component {
           pattern:"\\S{6,15}",
           requirments: "Не менее 6 символов: буквы, цифры, спецсимволы "
         },
-        rootElement:".login-widget__content",
-        componentAttrs:{width:"138px"},
+        rootElement:".register-widget__content",
+        componentAttrs:{style:"width:138px"},
       },
       {
         componentClass: Button,
