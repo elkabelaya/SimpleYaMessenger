@@ -1,6 +1,6 @@
 export const template:string =  `<div class="page">
   <nav class="page__back">
-    <a href="../../html/messenger_widget"><img src="../../../images/chat_back_button.png"></a>
+    <a href="../../messenger_widget"><img src="../../../images/chat_back_button.png"></a>
   </nav>
 <div class="widget">
   <div class="widget-user">

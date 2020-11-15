@@ -1,6 +1,6 @@
-import Component from "../component/component.js";
-import {template as inputTemplate} from "./input.tmpl.js";
-import {IInputCtx} from "../../components/icomponents/iinput.js"
+import Component from "../component/component";
+import {template as inputTemplate} from "./input.tmpl";
+import {IInputCtx} from "../../components/icomponents/iinput"
 //import style from "../../../css/input.css";
 
 export default class Input extends Component {

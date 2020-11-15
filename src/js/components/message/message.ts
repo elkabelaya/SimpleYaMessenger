@@ -1,6 +1,6 @@
-import Component from "../component/component.js";
-import { EMessageType, IMessageCtx } from "../icomponents/imessage.js";
-import {template as itemTemplate} from "./message.tmpl.js";
+import Component from "../component/component";
+import { EMessageType, IMessageCtx } from "../icomponents/imessage";
+import {template as itemTemplate} from "./message.tmpl";
 //import style from "../../../css/button.css";
 
 export default class Message extends Component {

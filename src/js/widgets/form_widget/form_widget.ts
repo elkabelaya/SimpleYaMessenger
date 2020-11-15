@@ -1,9 +1,9 @@
 
-import { IComponent } from "../../components/icomponents/icomponent.js";
-import Component from "../../components/component/component.js";
-import { IComponentChild } from "../../components/icomponents/icomponent_child.js";
-import FormValidator from "../../utils/form_handler.js";
-import Templator from "../../utils/templator/templator.js";
+import { IComponent } from "../../components/icomponents/icomponent";
+import Component from "../../components/component/component";
+import { IComponentChild } from "../../components/icomponents/icomponent_child";
+import FormValidator from "../../utils/form_handler";
+import Templator from "../../utils/templator/templator";
 //import style from "../../../css/account_widget.css";
 
 export default class FormWidget extends Component {

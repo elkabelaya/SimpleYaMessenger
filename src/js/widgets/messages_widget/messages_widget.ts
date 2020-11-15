@@ -1,8 +1,8 @@
-import {template as itemTemplate} from "./messages_widget.tmpl.js"
-import { IComponent } from "../../components/icomponents/icomponent.js";
-import { IComponentChild } from "../../components/icomponents/icomponent_child.js";
-import Message from "../../components/message/message.js";
-import FormWidget from "../form_widget/form_widget.js";
+import {template as itemTemplate} from "./messages_widget.tmpl"
+import { IComponent } from "../../components/icomponents/icomponent";
+import { IComponentChild } from "../../components/icomponents/icomponent_child";
+import Message from "../../components/message/message";
+import FormWidget from "../form_widget/form_widget";
 //import style from "../../../css/account_widget.css";
 
 export default class MessagesWidget extends FormWidget {

@@ -1,14 +1,14 @@
 
-import Input from  "../../components/input/input.js";
-import Button from  "../../components/button/button.js";
-import Avatar from  "../../components/avatar/avatar.js";
-import {template as itemTemplate} from "./account_widget.tmpl.js"
-import { IComponent } from "../../components/icomponents/icomponent.js";
-import { IComponentChild } from "../../components/icomponents/icomponent_child.js";
-import FormWidget from "../form_widget/form_widget.js";
+import Input from  "../../components/input/input";
+import Button from  "../../components/button/button";
+import Avatar from  "../../components/avatar/avatar";
+import {template as itemTemplate} from "./account_widget.tmpl"
+import { IComponent } from "../../components/icomponents/icomponent";
+import { IComponentChild } from "../../components/icomponents/icomponent_child";
+import FormWidget from "../form_widget/form_widget";
 //import style from "../../../css/account_widget.css";
 
-export default class LoginWidget extends FormWidget {
+export default class AccountWidget extends FormWidget {
 
   constructor() {
     const data:IComponentChild<IComponent>[] = [

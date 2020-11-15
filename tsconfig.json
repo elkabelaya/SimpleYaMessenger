@@ -1,6 +1,7 @@
 {
   "compilerOptions":
   {
+    "moduleResolution":"node",
     "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
@@ -11,6 +12,9 @@
     "outDir": "static/js",
     "allowJs": true,
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "types": [
+      "jest"
+    ]
   },
   "include": ["src/**/*"],
 

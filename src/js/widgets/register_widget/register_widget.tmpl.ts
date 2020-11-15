@@ -6,7 +6,7 @@ export const template:string =  `<div class="widget">
                                           <div class="register-widget__content"></div>
                                           <div class="login-widget__action"></div>
                                         </form>
-                                        <a class="login-widget__link" href="/html/login_widget/">У меня есть аккаунт</a>
+                                        <a class="login-widget__link" href="/login_widget/">У меня есть аккаунт</a>
                                       </main>
                                     </div>
                                   </div>`;

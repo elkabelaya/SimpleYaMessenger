@@ -1,8 +1,8 @@
-import {template as componentTemplate} from "./component.tmpl.js"
-import EventBus from "../../utils/event_bus/event_bus.js"
-import Templator from "../../utils/templator/templator.js"
-import {IComponentMeta, IComponent} from "../../components/icomponents/icomponent.js"
-import { IComponentChild } from "../icomponents/icomponent_child.js";
+import {template as componentTemplate} from "./component.tmpl"
+import EventBus from "../../utils/event_bus/event_bus"
+import Templator from "../../utils/templator/templator"
+import {IComponentMeta, IComponent} from "../../components/icomponents/icomponent"
+import { IComponentChild } from "../icomponents/icomponent_child";
 
 
 export default class Component implements IComponent{

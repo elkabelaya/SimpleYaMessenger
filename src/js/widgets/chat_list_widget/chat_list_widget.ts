@@ -1,9 +1,9 @@
 
-import ChatItem from  "../../components/chat_item/chat_item.js";
-import {template as itemTemplate} from "./chat_list_widget.tmpl.js"
-import { IComponent } from "../../components/icomponents/icomponent.js";
-import { IComponentChild } from "../../components/icomponents/icomponent_child.js";
-import FormWidget from "../form_widget/form_widget.js";
+import ChatItem from  "../../components/chat_item/chat_item";
+import {template as itemTemplate} from "./chat_list_widget.tmpl"
+import { IComponent } from "../../components/icomponents/icomponent";
+import { IComponentChild } from "../../components/icomponents/icomponent_child";
+import FormWidget from "../form_widget/form_widget";
 //import style from "../../../css/account_widget.css";
 
 export default class ChatListWidget extends FormWidget {

@@ -1,11 +1,11 @@
 
-import Input from  "../../components/input/input.js";
-import Button from  "../../components/button/button.js";
-import WidgetHeader from  "../../components/widget_header/widget_header.js";
-import {template as loginWidgetTemplate} from "./register_widget.tmpl.js"
-import { IComponent } from "../../components/icomponents/icomponent.js";
-import { IComponentChild } from "../../components/icomponents/icomponent_child.js";
-import FormWidget from "../form_widget/form_widget.js";
+import Input from  "../../components/input/input";
+import Button from  "../../components/button/button";
+import WidgetHeader from  "../../components/widget_header/widget_header";
+import {template as loginWidgetTemplate} from "./register_widget.tmpl"
+import { IComponent } from "../../components/icomponents/icomponent";
+import { IComponentChild } from "../../components/icomponents/icomponent_child";
+import FormWidget from "../form_widget/form_widget";
 //import style from "../../../css/account_widget.css";
 
 export default class RegisterWidget extends FormWidget {

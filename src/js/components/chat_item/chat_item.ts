@@ -1,6 +1,6 @@
-import Component from "../component/component.js";
-import {template as chatItemTemplate} from "./chat_item.tmpl.js";
-import {IChatItemCtx} from "../../components/icomponents/ichat_item.js"
+import Component from "../component/component";
+import {template as chatItemTemplate} from "./chat_item.tmpl";
+import {IChatItemCtx} from "../../components/icomponents/ichat_item"
 //import style from "../../../css/chat_item.css";
 
 export default class ChatItem extends Component {

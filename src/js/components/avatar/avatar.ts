@@ -1,11 +1,11 @@
-import Component from "../component/component.js";
-import { IAvatarCtx } from "../icomponents/iavatar.js";
-import {template as itemTemplate} from "./avatar.tmpl.js";
+import Component from "../component/component";
+import { IAvatarCtx } from "../icomponents/iavatar";
+import {template as itemTemplate} from "./avatar.tmpl";
 //import style from "../../../css/button.css";
 
-export default class Button extends Component {
+export default class Avatar extends Component {
 
-  constructor(props: IAvatarCtx, attr:object) {
+  constructor(props: IAvatarCtx, attr:object = {}) {
     super("div", itemTemplate, attr, props);
   }
 
