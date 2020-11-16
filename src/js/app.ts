@@ -4,23 +4,39 @@ import ChatItem from './components/chat_item/chat_item';
 import Input from './components/input/input';
 import WidgetHeader from './components/widget_header/widget_header';
 import Router from './utils/router/router';
+import {
+  ROUTE_ACCOUNT,
+  ROUTE_ERROR_404,
+  ROUTE_LOGIN,
+  ROUTE_MESSENGER,
+  ROUTE_REGISTER,
+  ROUTE_SAMPLE_AVATAR,
+  ROUTE_SAMPLE_BUTTON,
+  ROUTE_SAMPLE_CHATLIST,
+  ROUTE_SAMPLE_HEADER,
+  ROUTE_SAMPLE_INPUT,
+  ROUTE_UNCKNOWN
+} from './utils/router/routes';
 import AccountWidget from './widgets/account_widget/account_widget';
 import ChatListWidget from './widgets/chat_list_widget/chat_list_widget';
+import ErrorWidget from './widgets/error404_widget/error404_widget';
 import LoginWidget from './widgets/login_widget/login_widget';
 import MessengerWidget from './widgets/messenger_widget/messenger_widget';
 import RegisterWidget from './widgets/register_widget/register_widget';
+import StartWidget from './widgets/start_widget/start_widget';
 
-new Router(".app")
-.use("/login_widget/", LoginWidget)
-.use("/register_widget/", RegisterWidget)
-.use("/account_widget/", AccountWidget)
-.use("/messenger_widget/", MessengerWidget)
-.use("/avatar/", Avatar)
-.use("/widget_header/", WidgetHeader)
-.use("/input/", Input)
-.use("/button/", Button)
-.use("/chat_list/", ChatListWidget)
-.use("/chat_item/", ChatItem)
-.use("/error_404/", ChatItem)
-.use("/chat_item/", ChatItem)
+new Router(".app", ROUTE_ERROR_404)
+.use(ROUTE_UNCKNOWN, StartWidget)
+.use(ROUTE_LOGIN, LoginWidget)
+.use(ROUTE_REGISTER, RegisterWidget)
+.use(ROUTE_ACCOUNT, AccountWidget)
+.use(ROUTE_MESSENGER, MessengerWidget)
+.use(ROUTE_SAMPLE_AVATAR, Avatar)
+.use(ROUTE_SAMPLE_HEADER, WidgetHeader)
+.use(ROUTE_SAMPLE_INPUT, Input)
+.use(ROUTE_SAMPLE_BUTTON, Button)
+.use(ROUTE_SAMPLE_CHATLIST, ChatListWidget)
+.use(ROUTE_SAMPLE_CHATLIST, ChatItem)
+.use(ROUTE_ERROR_404, ErrorWidget)
+.use(ROUTE_SAMPLE_CHATLIST, ChatItem)
 .start();

@@ -1,0 +1,3 @@
+export const template:string =  `<div class="page">
+  Подождите...
+</div>`;

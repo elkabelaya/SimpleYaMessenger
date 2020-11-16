@@ -6,9 +6,14 @@ import {template as itemTemplate} from "./message.tmpl";
 export default class Message extends Component {
 
   constructor(props: IMessageCtx) {
-    super("div", itemTemplate, {class: getMessageClassByType(props.type)} , props);
+    super({class: getMessageClassByType(props.type)} , props);
   }
-
+  get tagName(){
+    return "div";
+  }
+  get template(){
+    return itemTemplate;
+  }
   setProps(props:IMessageCtx){
     super.setProps(props);
   }

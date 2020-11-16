@@ -3,20 +3,25 @@ import { IRequestCTX, METHOD } from "../iutils/ihttp_request";
 import { httpRequest } from "./http_request";
 
 export default class HTTPTransport {
-		static get  (url: string, options?: IHTTPTransportCtx) {
-      return httpRequest( url + queryStringify(options?.data), prepareRequestCTX( METHOD.GET, false, options), options?.timeout);
+	private _url: string
+	constructor (url: string){
+		this._url = url;
+
+	}
+	 get (path: string, options?: IHTTPTransportCtx) {
+      return httpRequest( this._url + path + queryStringify(options?.data), prepareRequestCTX( METHOD.GET, false, options), options?.timeout);
 		}
 
-   static  put (url: string, options?: IHTTPTransportCtx) {
-		 return httpRequest(url, prepareRequestCTX( METHOD.PUT, true, options), options?.timeout);
+   put (path: string, options?: IHTTPTransportCtx) {
+		 return httpRequest(this._url + path , prepareRequestCTX( METHOD.PUT, true, options), options?.timeout);
 		}
 
-   static  post (url: string, options?: IHTTPTransportCtx) {
-		 return httpRequest(url, prepareRequestCTX( METHOD.POST, true, options), options?.timeout);
+   post (path: string, options?: IHTTPTransportCtx) {
+		 return httpRequest(this._url  + path, prepareRequestCTX( METHOD.POST, true, options), options?.timeout);
 		};
 
-    static delete (url: string, options?: IHTTPTransportCtx) {
-	   return httpRequest(url, prepareRequestCTX( METHOD.DELETE, false, options), options?.timeout);
+    delete (path: string, options?: IHTTPTransportCtx) {
+	   return httpRequest(this._url  + path, prepareRequestCTX( METHOD.DELETE, false, options), options?.timeout);
 		}
 
 

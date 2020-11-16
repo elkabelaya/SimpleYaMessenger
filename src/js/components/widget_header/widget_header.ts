@@ -6,9 +6,14 @@ import {IWidgetHeaderCtx} from "../../components/icomponents/iwidget_header";
 export default class WidgetHeader extends Component {
 
   constructor(props: IWidgetHeaderCtx) {
-    super("header", widgetHeaderTemplate, {class:"login-widget__header"}, props);
+    super({class:"login-widget__header"}, props);
   }
-
+  get tagName(){
+    return "header";
+  }
+  get template(){
+    return widgetHeaderTemplate;
+  }
   setProps(props:IWidgetHeaderCtx){
     super.setProps(props);
   }

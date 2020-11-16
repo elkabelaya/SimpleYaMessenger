@@ -7,9 +7,14 @@ export default class Input extends Component {
 
   constructor(props: IInputCtx, attr:object) {
 
-    super("div", inputTemplate, Object.assign({class:"input__input-group"}, attr), props);
+    super(Object.assign({class:"input__input-group"}, attr), props);
   }
-
+  get tagName(){
+    return "div";
+  }
+  get template(){
+    return inputTemplate;
+  }
   setProps(props:IInputCtx){
     super.setProps(props);
   }

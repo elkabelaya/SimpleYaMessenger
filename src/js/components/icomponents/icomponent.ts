@@ -1,3 +1,4 @@
+import  Store from "../../stores/store"
 export interface IComponent {
   readonly element: HTMLElement,
   init(): void,
@@ -11,7 +12,11 @@ export interface IComponent {
 }
 
 export interface  IComponentMeta {
-  tagName:string,
   attributes:object,
   props:object
+}
+
+export interface  IStoreCtx {
+  store:Store,
+  storeSelector?:string,
 }

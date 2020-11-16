@@ -8,6 +8,6 @@ app.use(express.static('static'));
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
     res.sendFile(path.resolve("static", "index.html"));
 });

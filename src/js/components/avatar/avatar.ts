@@ -6,9 +6,14 @@ import {template as itemTemplate} from "./avatar.tmpl";
 export default class Avatar extends Component {
 
   constructor(props: IAvatarCtx, attr:object = {}) {
-    super("div", itemTemplate, attr, props);
+    super(attr, props);
   }
-
+  get tagName(){
+    return "div";
+  }
+  get template(){
+    return itemTemplate;
+  }
   setProps(props:IAvatarCtx){
     super.setProps(props);
   }

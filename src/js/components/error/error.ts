@@ -6,9 +6,14 @@ import {template as itemTemplate} from "./error.tmpl";
 export default class Error extends Component {
 
   constructor(props: IErrorCtx, attr:object) {
-    super("div", itemTemplate, attr, props);
+    super(attr, props);
   }
-
+  get tagName(){
+    return "div";
+  }
+  get template(){
+    return itemTemplate;
+  }
   setProps(props:IErrorCtx){
     super.setProps(props);
   }

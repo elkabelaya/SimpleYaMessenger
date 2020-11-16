@@ -18,6 +18,12 @@ export default class MessagesWidget extends FormWidget {
       });
 
     }
-    super("div", itemTemplate, {class:"widget-chat-chat__content"}, undefined, undefined, data);
+    super({class:"widget-chat-chat__content"}, undefined, data);
+  }
+  get tagName(){
+    return "div";
+  }
+  get template(){
+    return itemTemplate;
   }
 }

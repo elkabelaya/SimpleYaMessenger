@@ -18,7 +18,14 @@ export default class ChatListWidget extends FormWidget {
         componentAttrs:{}
       });
 
+    }
+    super({class:"widget-chat-list__list"}, undefined, data);
   }
-  super("aside", itemTemplate, {class:"widget-chat-list__list"}, undefined, undefined, data);
-}
+
+  get tagName(){
+    return "aside";
+  }
+  get template(){
+    return itemTemplate;
+  }
 }

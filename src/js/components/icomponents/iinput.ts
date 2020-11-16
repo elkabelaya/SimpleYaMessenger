@@ -1,4 +1,6 @@
-export interface IInputCtx{
+
+
+export interface IInputCtx {
     name?: string,
     type?: string,
     placeholder?: string,

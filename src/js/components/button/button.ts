@@ -6,9 +6,14 @@ import {IButtonCtx} from "../../components/icomponents/ibutton";
 export default class Button extends Component {
 
   constructor(props: IButtonCtx, attr:object) {
-    super("div", buttonItemTemplate, attr, props);
+    super( attr, props);
   }
-
+  get tagName(){
+    return "div";
+  }
+  get template(){
+    return buttonItemTemplate;
+  }
   setProps(props:IButtonCtx){
     super.setProps(props);
   }

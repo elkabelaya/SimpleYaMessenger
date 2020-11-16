@@ -7,7 +7,7 @@ export enum METHOD {
 
 export interface IRequestCTX {
   method: METHOD,
-  data?: object,
+  data?: unknown,
   headers?: Map<string,string>,
 
 }

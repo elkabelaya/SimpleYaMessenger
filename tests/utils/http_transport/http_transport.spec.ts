@@ -2,13 +2,14 @@ import HTTPTransport  from "../../../src/js/utils/http_transport/http_transport"
 import {mockXMLHttpRequest, unMockXMLHttpRequest, xhrMockClass} from "../../_mocks/_xml_http_request"
 
 let requestsSended:xhrMockClass[];
-
+let htttpTransport:HTTPTransport;
 beforeEach(() => {
-
+  htttpTransport = new HTTPTransport("https://someurl.ru");
   requestsSended = mockXMLHttpRequest();
 });
 
 afterEach(() => {
+
   unMockXMLHttpRequest();
 });
 
@@ -19,7 +20,7 @@ describe("HTTPTransport", () => {
     let headers:Map<string,string> = new Map();
     headers.set("someHeaderKey","someHeaderValue");
     let request: xhrMockClass;
-    HTTPTransport.get("https://someurl.ru", {data:{"a":"s","b":"d"},headers: headers})
+    htttpTransport.get( "/full/", {data:{"a":"s","b":"d"},headers: headers})
     .then(xhr=>{
       expect(xhr.response).toBe("someRespond");
     })
@@ -29,7 +30,7 @@ describe("HTTPTransport", () => {
     expect(requestsSended.length).toBe(1);
     request = requestsSended[0];
     expect(request.headers.get("someHeaderKey")).toBe("someHeaderValue");
-    expect(request.url).toBe("https://someurl.ru?a=s&b=d");
+    expect(request.url).toBe("https://someurl.ru/full/?a=s&b=d");
     expect(request.method).toBe("GET");
     expect(request.body).toBe(undefined);
 
@@ -44,7 +45,7 @@ describe("HTTPTransport", () => {
     let headers:Map<string,string> = new Map();
     headers.set("someHeaderKey","someHeaderValue");
     let request: xhrMockClass;
-    HTTPTransport.post("https://someurl.ru", {data:{"a":"s","b":"d"},headers: headers})
+    htttpTransport.post("",{data:{"a":"s","b":"d"},headers: headers})
 
     request = requestsSended[0];
     expect(request.headers.get("someHeaderKey")).toBe("someHeaderValue");
@@ -61,7 +62,7 @@ describe("HTTPTransport", () => {
     let headers:Map<string,string> = new Map();
     headers.set("someHeaderKey","someHeaderValue");
     let request: xhrMockClass;
-    HTTPTransport.put("https://someurl.ru", {data:{"a":"s","b":"d"},headers: headers})
+    htttpTransport.put("", {data:{"a":"s","b":"d"},headers: headers})
 
     request = requestsSended[0];
     expect(request.headers.get("someHeaderKey")).toBe("someHeaderValue");
@@ -78,7 +79,7 @@ describe("HTTPTransport", () => {
     let headers:Map<string,string> = new Map();
     headers.set("someHeaderKey","someHeaderValue");
     let request: xhrMockClass;
-    HTTPTransport.delete("https://someurl.ru", {data:{"a":"s","b":"d"},headers: headers})
+    htttpTransport.delete("",{data:{"a":"s","b":"d"},headers: headers})
 
     request = requestsSended[0];
     expect(request.headers.get("someHeaderKey")).toBe("someHeaderValue");

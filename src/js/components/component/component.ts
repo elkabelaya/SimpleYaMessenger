@@ -20,24 +20,28 @@ export default class Component implements IComponent{
   _eventBus:EventBus;
   _children:IComponentChild<IComponent>[];
 
-  constructor(tagName: string = "div", template: string = componentTemplate,
-              attributes: object = {}, props: object = {},
-              templator: Templator = new Templator(template), children:IComponentChild<IComponent>[]=[]) {
+  constructor(attributes: object = {}, props: object = {}, children:IComponentChild<IComponent>[]=[]) {
 
 
    const eventBus = new EventBus();
     this._meta = {
-      tagName,
       attributes,
       props
     };
-    this._templator = templator;
+    this._templator = new Templator(this.template);
     this._props = this._makePropsProxy(props);
 
     this._eventBus = eventBus;
     this._children = children;
     this._registerEvents(eventBus);
     eventBus.emit(Component.EVENTS.FLOW_INIT);
+  }
+  protected get tagName(): string {
+    return "div";
+  }
+
+  protected get template(): string {
+    return componentTemplate;
   }
 
   _registerEvents(eventBus:EventBus) {
@@ -49,7 +53,7 @@ export default class Component implements IComponent{
   }
 
   _createResources() {
-    this._element = this._createDocumentElement(this._meta.tagName, this._meta.attributes);
+    this._element = this._createDocumentElement(this.tagName, this._meta.attributes);
   }
 
   init() {

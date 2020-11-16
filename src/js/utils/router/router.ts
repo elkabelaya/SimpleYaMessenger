@@ -1,5 +1,5 @@
 import Route from "./route";
-import { getRoutePath } from "./router_helpers";
+
 
 export default class Router {
   private static __instance: Router;
@@ -7,8 +7,9 @@ export default class Router {
   private _history: History;
   private _currentRoute: any;
   private _rootQuery: string;
+  private _errorPath: string;
 
-  constructor(rootQuery:string) {
+  constructor(rootQuery:string = "", errorPath:string="") {
     if (Router.__instance) {
       return Router.__instance;
     }
@@ -17,6 +18,7 @@ export default class Router {
     this._history = window.history;
     this._currentRoute = null;
     this._rootQuery = rootQuery;
+    this._errorPath = errorPath;
     Router.__instance = this;
   }
 
@@ -32,25 +34,27 @@ export default class Router {
 
     const clickEventName: string = document && document.ontouchstart ? 'touchstart' : 'click';
     window.addEventListener(clickEventName, ((event:any ) => {
-        event.preventDefault();
-      this.go(event.target.href);
+      if(event.target.pathname){
+       event.preventDefault();
+       this.go(event.target.pathname);
+     }
 
     }).bind(this));
 
 
     window.onpopstate = ((event:any) => {
       console.log("onpopstate",event.currentTarget.location.href);
-      this.go(event.currentTarget.location.href);
+      this.go(event.currentTarget.location.pathname);
     }).bind(this);
 
-    this.go(window.location.href);
+    this.go(window.location.pathname);
   }
 
   _onRoute(path?:string) {
     if(path != null){
 
 
-      const route:Route = this._routes.get(path);
+      const route:Route = this._routes.get(path) || this._routes.get(this._errorPath);
       console.log("_onRoute", path, route,this._routes);
       if (route) {
         if (this._currentRoute) {
@@ -63,10 +67,11 @@ export default class Router {
 
 
   go(pathname?: string) {
-    let path:string|null = getRoutePath(pathname);
-    if(path){
+
+    console.log("go", pathname);
+    if(pathname){
       this._history.pushState({}, "", pathname);
-      this._onRoute(path);
+      this._onRoute(pathname);
     }
   }
 

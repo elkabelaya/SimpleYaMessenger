@@ -6,7 +6,14 @@ import {IChatItemCtx} from "../../components/icomponents/ichat_item"
 export default class ChatItem extends Component {
 
   constructor(props: IChatItemCtx) {
-    super("li", chatItemTemplate, {class:"chat_item"}, props);
+    super({class:"chat_item"}, props);
+  }
+
+  get tagName(){
+    return "li";
+  }
+  get template(){
+    return chatItemTemplate;
   }
 
   setProps(props:IChatItemCtx){

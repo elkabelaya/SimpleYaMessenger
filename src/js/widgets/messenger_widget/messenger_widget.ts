@@ -26,6 +26,13 @@ export default class MessengerWidget extends Component {
     ];
 
 
-    super("div", itemTemplate, {}, {}, undefined, data);
+    super( {}, {}, data);
+  }
+
+  get tagName(){
+    return "div";
+  }
+  get template(){
+    return itemTemplate;
   }
 }

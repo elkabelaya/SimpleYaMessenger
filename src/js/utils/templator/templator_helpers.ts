@@ -1,6 +1,5 @@
+import { getValueFromObject, isObjectKey } from "../data/data_helpers";
 
-
-  const OBJECT_PATH_DELIMITER:string = '.';
   const HTML_ESCAPE_SYMBOLS:Map<string, string> = new Map([
       ['&', '&amp;'],
       ['<', '&lt;'],
@@ -14,37 +13,16 @@
 
 
 
-  export function isObjectKey( key: string) {
-    return key.indexOf(OBJECT_PATH_DELIMITER) > 0;
+  export function fillTemplates(template: string, ctx?: object, fillUncknown:boolean=true){
+    return template.replace( TEMPLATE_REGEXP, ( _fullMatch:string, group1:string )=>getParamForTemplateKey( group1, ctx, fillUncknown ) );
   }
 
-  export function getValueFromObject( path:string, obj: any,  defaultValue: string|number) {
-    const keys:string[] = path.split(OBJECT_PATH_DELIMITER);
-
-    let result = obj;
-    for (let key of keys) {
-      result = result[key];
-      if (result === undefined) {
-        return defaultValue;
-      }
-    }
-    //0 ->0
-    // null -> defaultValue
-    // undefined -> defaultValue
-    // someValue -> someValue
-    return result == null? defaultValue: result;
-  }
-
-  export function fillTemplates(template: string, ctx: object){
-    return template.replace( TEMPLATE_REGEXP, ( _fullMatch:string, group1:string )=>getParamForTemplateKey( group1, ctx ) );
-  }
-
-  export function getParamForTemplateKey( key:string, ctx:any){
-    const element:unknown = isObjectKey(key)? getValueFromObject(key, ctx, ""): ctx[key];
+  export function getParamForTemplateKey( key:string, ctx?:any, fillUncknown: boolean =true):string{
+    const element:unknown = isObjectKey(key)? getValueFromObject(key, ctx, ""): ctx ? ctx[key] : undefined;
 
     switch (typeof element){
         case "undefined":
-          return "";
+          return !fillUncknown ? `{{${key}}}` : ``;
         case "string":
         case "number":
           return sanitise(String(element));
@@ -68,6 +46,7 @@
     return (new DOMParser()).parseFromString(html, "text/html").body.children;
   }
 
-  export function compileTemplate(template:string, ctx:object): HTMLCollection {
-    return parseHtmlToObject( fillTemplates(template, ctx));
+  export function compileTemplate(template:string, ctx:object, routes?: object): HTMLCollection {
+
+    return parseHtmlToObject( fillTemplates(fillTemplates(template, routes, false),ctx));
   }
