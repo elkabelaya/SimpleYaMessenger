@@ -25,7 +25,7 @@
     "lessc": "lessc",
     "build:js": "tsc && node importer.js",
     "build:css": "lessc src/less/styles.less > static/css/styles.css",
-    "build": "tsc && && node importer.js && lessc src/less/styles.less > static/css/styles.css",
+    "build": "tsc && node importer.js && lessc src/less/styles.less > static/css/styles.css",
     "serve": "node server.js"
   },
   "repository": {
