@@ -43,7 +43,6 @@ export default class Router {
 
 
     window.onpopstate = ((event:any) => {
-      console.log("onpopstate",event.currentTarget.location.href);
       this.go(event.currentTarget.location.pathname);
     }).bind(this);
 
@@ -55,7 +54,6 @@ export default class Router {
 
 
       const route:Route = this._routes.get(path) || this._routes.get(this._errorPath);
-      console.log("_onRoute", path, route,this._routes);
       if (route) {
         if (this._currentRoute) {
           this._currentRoute.leave();
