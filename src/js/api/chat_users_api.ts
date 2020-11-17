@@ -11,7 +11,7 @@ export class ChatUsersAPI extends BaseAPI {
     }
     //Delete users from chat
     request(data:object):Promise<XMLHttpRequest> {
-      return chatUsersApiInstance.delete('/full', {data:data});
+      return chatUsersApiInstance.delete('/', {data:data});
     }
 
 }

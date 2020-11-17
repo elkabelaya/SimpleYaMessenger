@@ -3,12 +3,16 @@ import { BaseAPI } from "./base_api";
 
 export class UserAPI extends BaseAPI {
 
-    create():Promise<XMLHttpRequest> {
-      return userApiInstance.post('/');
-    }
+  update(data?:object):Promise<XMLHttpRequest>  {
+    return userApiInstance.put('/profile',{data:data});
+  }
 
-    request():Promise<XMLHttpRequest>  {
-      return userApiInstance.get('/');
-    }
+  updateAvatar(data:object):Promise<XMLHttpRequest>  {
+    return userApiInstance.put('/profile/avatar', {data:data});
+  }
+
+  updatePassword(data:object):Promise<XMLHttpRequest>  {
+    return userApiInstance.put('/password', {data:data});
+  }
 
 }

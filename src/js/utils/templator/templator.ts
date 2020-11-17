@@ -9,7 +9,6 @@ export default class Templator implements ITemplator{
   }
 
   compile(ctx:object): HTMLCollection {
-    console.log("compile", ctx, ROUTES);
     return compileTemplate(this._template, ctx, ROUTES);
   }
 }

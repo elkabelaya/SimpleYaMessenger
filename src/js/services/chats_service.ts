@@ -1,10 +1,8 @@
 
 import { IApi } from "../api/iapi/iapi";
-import { AuthAPI } from "../api/auth_api";
+import { ChatAPI } from "../api/chat_api";
 import { IStore } from "../stores/istore";
-import Router from "../utils/router/router";
 import FormService from "./form_service";
-import { ROUTE_LOGIN } from "../utils/router/routes";
 
 export default class ChatsService extends FormService {
 
@@ -12,22 +10,29 @@ export default class ChatsService extends FormService {
   private _api: IApi;
   private  onSuccess(xhr:XMLHttpRequest){
     this._store.set(JSON.parse(xhr.response));
-    (new Router()).go(ROUTE_LOGIN);
+
   }
 
   private onError(_xhr:XMLHttpRequest){
-    this._store.set({});
-    (new Router()).go("/logout_widget/");
+    //сейчас всегда 500, замокаем для отладки
+    this._store.set([{
+      logo: "../../../images/empty_logo.jpg",
+      name: "Baся",
+      message: "привет",
+      time: "12:30",
+      alert: "4"
+    }]);
+    //TODO error display
 
   }
   constructor(store:IStore){
     super();
     this._store = store;
-    this._api = new AuthAPI();
+    this._api = new ChatAPI();
   }
-
-  submit(_data:object){
-    this._api.request(_data)
+  start(){
+    //всегда 500 (((, TODO: проверить!
+    this._api.request()
     .then( xhr => {
       this.onSuccess(xhr);
     })

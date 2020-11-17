@@ -92,6 +92,12 @@ export default class Component implements IComponent{
     this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldProps, this._props);
   };
 
+  setChildren(children: IComponentChild<IComponent>[]) {
+    let oldChildren = this._children;
+    this._children = children;
+    this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldChildren, this._children);
+  };
+
   get element(): HTMLElement  {
     return this._element;
   }

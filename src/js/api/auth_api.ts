@@ -13,6 +13,15 @@ export class AuthAPI extends BaseAPI {
       return authApiInstance.post('/signin',{data:data});
     }
 
+    update():Promise<XMLHttpRequest>  {
+      return authApiInstance.get('/user');
+    }
+    
+    delete():Promise<XMLHttpRequest> {
+      return authApiInstance.post('/logout');
+    }
+
+
 
 
 

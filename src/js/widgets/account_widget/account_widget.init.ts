@@ -21,7 +21,7 @@ export const initData:IComponentChild<IComponent>[] = [
           value: "Василий",
           name: "second_name",
           placeholder: "Фамилия",
-          pattern:"[А-Яа-я\\-]]{2,15}",
+          pattern:"[А-Яа-я\\-]{2,15}",
           requirments: "Используйте русские буквы, дефис"
         },
         rootElement:".register-widget__content",
@@ -32,7 +32,7 @@ export const initData:IComponentChild<IComponent>[] = [
         componentCtx: {
           name: "first_name",
           placeholder: "Имя",
-          pattern:"[А-Яа-я\\-]]{2,15}",
+          pattern:"[А-Яа-я\\-]{2,15}",
           requirments: "Используйте русские буквы, дефис"
         },
         rootElement:".register-widget__content",
@@ -43,7 +43,7 @@ export const initData:IComponentChild<IComponent>[] = [
         componentCtx: {
           name: "login",
           placeholder: "Логин",
-          pattern:"[А-Яа-я\\-]]{2,15}",
+          pattern:"[А-Яа-я\\-]{2,15}",
           requirments: "Используйте латинские буквы, цифры, подчеркивание"
         },
         rootElement:".register-widget__content",
@@ -55,9 +55,8 @@ export const initData:IComponentChild<IComponent>[] = [
           value:"Пупок",
 
           name: "display_name",
-          type: "email",
           placeholder: "Ник",
-          pattern:"[А-Яа-я\\-]]{2,15}",
+          pattern:"[А-Яа-я\\-]{2,15}",
           requirments: "Введите ник"
         },
         rootElement:".register-widget__content",

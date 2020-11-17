@@ -1,21 +1,21 @@
 
 import { IApi } from "../api/iapi/iapi";
-import { UserAPI } from "../api/user_api";
+import { AuthAPI } from "../api/auth_api";
 import { IStore } from "../stores/istore";
 import Router from "../utils/router/router";
 import { ROUTE_LOGIN, ROUTE_SAMPLE_CHATLIST } from "../utils/router/routes";
 
-export default class UserService {
+export default class CheckAuthService {
   private _store:IStore
   private _api: IApi;
 
   constructor(store:IStore){
     this._store = store;
-    this._api = new UserAPI();
+    this._api = new AuthAPI();
   }
 
   start(){
-    this._api.request()
+    this._api.update()
     .then( xhr => {
       this._store.set(JSON.parse(xhr.response));
       (new Router()).go(ROUTE_SAMPLE_CHATLIST);
