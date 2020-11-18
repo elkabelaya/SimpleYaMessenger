@@ -88,9 +88,13 @@ export default class Component implements IComponent{
     }
     let oldProps: object = Object.assign({},this._props);
 
-    this._props = Object.assign(this._props, nextProps);
+    this._props = Object.assign(this._props, setAndSplitChildProps(nextProps,this._children));
+
+
     this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldProps, this._props);
   };
+
+
 
   setChildren(children: IComponentChild<IComponent>[]) {
     let oldChildren = this._children;
@@ -112,16 +116,15 @@ export default class Component implements IComponent{
     this._element.innerHTML = "";
     const compiled = this._templator.compile(this._props);
     let query;
-    let component:HTMLElement;
     while(compiled.length){
       this._element.appendChild(compiled[0]);
     }
 
     for (let child of this._children){
       query = this._element.querySelector(child.rootElement);
-      if (!!query){
-        component = new child.componentClass(child.componentCtx,child.componentAttrs).element;
-        query.appendChild( component );
+      if (query){
+        child.componentInstance = new child.componentClass(child.componentCtx,child.componentAttrs);
+        query.appendChild( child.componentInstance.element );
       }
     }
     //return element;
@@ -153,4 +156,15 @@ export default class Component implements IComponent{
   hide() {
     this.element.style.display = "none";
   }
+}
+
+function setAndSplitChildProps(props:any, children:IComponentChild<IComponent>[]):unknown{
+  props = Object.assign({},props);
+  children.forEach(  child => {
+    if (child.componentName){
+      child.componentInstance?.setProps(props[child.componentName]);
+      props[child.componentName] = undefined;
+    }
+  });
+  return props;
 }

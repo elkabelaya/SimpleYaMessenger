@@ -7,7 +7,7 @@ export default class Route {
     private _block?: Component;
     private _props: any;
 
-    constructor(view:any, props:IRoutCTX) {
+    constructor(view:unknown , props:IRoutCTX) {
         this._blockClass = view;
         this._block = undefined;
         this._props = props;

@@ -5,7 +5,7 @@ export default class Router {
   private static __instance: Router;
   private _routes: Map<string,any>;
   private _history: History;
-  private _currentRoute: any;
+  private _currentRoute?: Route;
   private _rootQuery: string;
   private _errorPath: string;
 
@@ -16,13 +16,12 @@ export default class Router {
 
     this._routes = new Map();
     this._history = window.history;
-    this._currentRoute = null;
     this._rootQuery = rootQuery;
     this._errorPath = errorPath;
     Router.__instance = this;
   }
 
-  use(pathname:string, block:any) {
+  use(pathname:string, block:unknown) {
         const route = new Route( block, {rootQuery: this._rootQuery});
 
         this._routes.set(pathname,route);
@@ -50,7 +49,9 @@ export default class Router {
   }
 
   _onRoute(path?:string) {
-    if(path !== undefined){
+    if(path != null){
+
+
       const route:Route = this._routes.get(path) || this._routes.get(this._errorPath);
       if (route) {
         if (this._currentRoute) {

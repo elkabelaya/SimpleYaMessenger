@@ -5,7 +5,7 @@ import {IStore} from "./istore"
 export default  class Store  extends EventBus implements IStore {
   private _data:object;
 
-  get(selector?:string):any {
+  get(selector?:string) {
     return selector? getValueFromObject(selector,this._data):this._data ;
   }
 
