@@ -9,3 +9,4 @@ export const ROUTE_SAMPLE_HEADER = "/widget_header/";
 export const ROUTE_SAMPLE_INPUT = "/input/";
 export const ROUTE_SAMPLE_BUTTON = "/button/";
 export const ROUTE_SAMPLE_CHATLIST = "/chat_list/";
+export const ROUTE_SAMPLE_CHATITEM = "/chat_item/";//теперь используется в app.js
