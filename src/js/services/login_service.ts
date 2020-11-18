@@ -9,6 +9,13 @@ import { ROUTE_LOGIN, ROUTE_MESSENGER } from "../utils/router/routes";
 export default class LoginService extends FormService {
   private _store:IStore
   private _api: IApi;
+
+  constructor(store:IStore){
+    super();
+    this._store = store;
+    this._api = new AuthAPI();
+  }
+
   private  onSuccess(xhr:XMLHttpRequest){
     this._store.set(JSON.parse(xhr.response));
     (new Router()).go(ROUTE_MESSENGER);
@@ -18,12 +25,7 @@ export default class LoginService extends FormService {
     this._store.set({});
     (new Router()).go(ROUTE_LOGIN);
   }
-  constructor(store:IStore){
-    super();
-    this._store = store;
-    this._api = new AuthAPI();
-  }
-
+  
   submit(_data:object){
     this._api.request(_data)
     .then( xhr => {
