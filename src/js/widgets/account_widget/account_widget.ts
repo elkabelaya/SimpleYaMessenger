@@ -14,18 +14,19 @@ export default class AccountWidget extends FormWidget {
       this.setProps( userStoreInstance.get());
     })
 
-    userStoreInstance.on("change", ()=> {
+    /*userStoreInstance.on("change", ()=> {
       let  fields:object[] = userStoreInstance.get("");
       let data:IComponentChild<IComponent>[] = new Array(fields.length);
-      for (let i = 0; i<chats.length; i++){
+      for (let i = 0; i<fields.length; i++){
         data[i]= ({
+          component
           componentCtx: fields[i],
         });
 
       }
 
       this.setChildren(data);
-    })
+    })*/
 
 
   }

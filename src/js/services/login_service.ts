@@ -25,20 +25,14 @@ export default class LoginService extends FormService {
     this._store.set({});
     (new Router()).go(ROUTE_LOGIN);
   }
-  
+
   submit(_data:object){
     this._api.request(_data)
     .then( xhr => {
       this.onSuccess(xhr);
     })
     .catch( xhr => {
-      //WTF? 400: {error: "bad format", reason: "login is empty, but required"}
-      // but login was sent and really - user was logged successfully
-      if(xhr.status === 400){
-        this.onSuccess(xhr);
-      } else {
-        this.onError(xhr);
-      }
+      this.onError(xhr);
     }
 
     )

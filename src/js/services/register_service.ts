@@ -30,13 +30,7 @@ export default class RegisterService extends FormService {
       this.onSuccess(xhr);
     })
     .catch( xhr => {
-      //WTF? 400: "error":"bad format","reason":"first_name is empty, but required"
-      // but really - user was authorised successfully
-      if(xhr.status === 400){
-        this.onSuccess(xhr);
-      } else {
-        this.onError(xhr);
-      }
+      this.onError(xhr);
     }
 
     )

@@ -92,12 +92,6 @@ export default class Component implements IComponent{
     this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldProps, this._props);
   };
 
-  updateChildren(children: IComponentChild<IComponent>[]) {
-    let oldChildren = this._children;
-    this._children = Object.assign(this._children,children);
-    this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldChildren, this._children);
-  };
-
   setChildren(children: IComponentChild<IComponent>[]) {
     let oldChildren = this._children;
     this._children = children;
