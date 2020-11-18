@@ -50,9 +50,7 @@ export default class Router {
   }
 
   _onRoute(path?:string) {
-    if(path != null){
-
-
+    if(path !== undefined){
       const route:Route = this._routes.get(path) || this._routes.get(this._errorPath);
       if (route) {
         if (this._currentRoute) {
