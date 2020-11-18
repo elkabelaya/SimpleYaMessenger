@@ -50,7 +50,7 @@ export const dataInit:IComponentChild<IComponent>[] = [
   {
     componentClass: Input,
     componentCtx: {
-      name: "login",
+      name: "email",
       type: "email",
       placeholder: "Почта",
       requirments: "Невалидный адрес"

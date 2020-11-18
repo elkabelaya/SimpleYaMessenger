@@ -70,7 +70,7 @@ export default class Component implements IComponent{
   componentDidMount() {}
 
   _componentDidUpdate(oldProps: object, newProps: object) {
-
+    console.log("_componentDidUpdate", oldProps, newProps, oldProps == newProps)
     if(this.componentDidUpdate(oldProps, newProps)){
        this._render();
     }
@@ -92,6 +92,12 @@ export default class Component implements IComponent{
     this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldProps, this._props);
   };
 
+  updateChildren(children: IComponentChild<IComponent>[]) {
+    let oldChildren = this._children;
+    this._children = Object.assign(this._children,children);
+    this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldChildren, this._children);
+  };
+
   setChildren(children: IComponentChild<IComponent>[]) {
     let oldChildren = this._children;
     this._children = children;
@@ -108,6 +114,7 @@ export default class Component implements IComponent{
   }
 
   render() {
+    console.log("render");
     this._element.innerHTML = "";
     const compiled = this._templator.compile(this._props);
     let query;

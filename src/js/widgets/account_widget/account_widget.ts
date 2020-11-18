@@ -10,7 +10,21 @@ export default class AccountWidget extends FormWidget {
   constructor() {
     super({}, {}, initData);
     userStoreInstance.on("change", ()=> {
+      console.log("change", userStoreInstance.get());
       this.setProps( userStoreInstance.get());
+    })
+
+    userStoreInstance.on("change", ()=> {
+      let  fields:object[] = userStoreInstance.get("");
+      let data:IComponentChild<IComponent>[] = new Array(fields.length);
+      for (let i = 0; i<chats.length; i++){
+        data[i]= ({
+          componentCtx: fields[i],
+        });
+
+      }
+
+      this.setChildren(data);
     })
 
 
@@ -21,7 +35,7 @@ export default class AccountWidget extends FormWidget {
     let service = accountService;
     service.start(this.element.querySelector("form"));
   }
-  
+
   get tagName(){
     return "div";
   }

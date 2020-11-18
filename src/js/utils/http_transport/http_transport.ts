@@ -2,6 +2,8 @@ import { IHTTPTransportCtx } from "../iutils/ihttp_transport";
 import { IRequestCTX, METHOD } from "../iutils/ihttp_request";
 import { httpRequest } from "./http_request";
 
+const CONTENT_TYPE_HEADER: string[] = ['Content-type','application/json; charset=utf-8'];
+
 export default class HTTPTransport {
 	private _url: string
 	constructor (url: string){
@@ -28,9 +30,13 @@ export default class HTTPTransport {
 }
 
 function prepareRequestCTX( method: METHOD, useBody:Boolean, options: IHTTPTransportCtx = {}):IRequestCTX{
+	let headers = options?.headers ||new Map();
+	if (!headers.has(CONTENT_TYPE_HEADER[0])){
+		headers.set(CONTENT_TYPE_HEADER[0], CONTENT_TYPE_HEADER[1]);
+	}
 	return {
 		method: method,
-		headers: options?.headers,
+		headers: headers,
 		data: useBody ? options?.data : undefined
 
 	}

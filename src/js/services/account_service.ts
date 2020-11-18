@@ -27,7 +27,7 @@ export default class AccountService extends FormService {
 
     super.start(form);
     if (!this._store.get()){
-      this._requestApi.request("").then( xhr => {
+      this._requestApi.update().then( xhr => {
         this._store.set(JSON.parse(xhr.response));
       }).catch( _xhr => {
         this._store.set({});
