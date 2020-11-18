@@ -36,7 +36,6 @@ new Router(".app", ROUTE_ERROR_404)
 .use(ROUTE_SAMPLE_INPUT, Input)
 .use(ROUTE_SAMPLE_BUTTON, Button)
 .use(ROUTE_SAMPLE_CHATLIST, ChatListWidget)
-.use(ROUTE_SAMPLE_CHATLIST, ChatItem)
+.use(ROUTE_SAMPLE_CHATITEM , ChatItem)
 .use(ROUTE_ERROR_404, ErrorWidget)
-.use(ROUTE_SAMPLE_CHATLIST, ChatItem)
 .start();
