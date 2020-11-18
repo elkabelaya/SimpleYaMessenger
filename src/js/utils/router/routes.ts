@@ -1,4 +1,4 @@
-export const ROUTE_UNCKNOWN = "/";
+export const ROUTE_UNKNOWN = "/";
 export const ROUTE_LOGIN = "/login_widget/";
 export const ROUTE_REGISTER = "/register_widget/";
 export const ROUTE_ACCOUNT = "/account_widget/";

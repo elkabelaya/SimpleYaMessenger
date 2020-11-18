@@ -15,7 +15,7 @@ import {
   ROUTE_SAMPLE_CHATLIST,
   ROUTE_SAMPLE_HEADER,
   ROUTE_SAMPLE_INPUT,
-  ROUTE_UNCKNOWN
+  ROUTE_UNKNOWN
 } from './utils/router/routes';
 import AccountWidget from './widgets/account_widget/account_widget';
 import ChatListWidget from './widgets/chat_list_widget/chat_list_widget';
@@ -26,7 +26,7 @@ import RegisterWidget from './widgets/register_widget/register_widget';
 import StartWidget from './widgets/start_widget/start_widget';
 
 new Router(".app", ROUTE_ERROR_404)
-.use(ROUTE_UNCKNOWN, StartWidget)
+.use(ROUTE_UNKNOWN, StartWidget)
 .use(ROUTE_LOGIN, LoginWidget)
 .use(ROUTE_REGISTER, RegisterWidget)
 .use(ROUTE_ACCOUNT, AccountWidget)
