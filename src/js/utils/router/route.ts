@@ -1,13 +1,14 @@
 import Component from '../../components/component/component';
 import {render} from '../render_dom';
 import { IRoutCTX } from '../iutils/irout';
+import { INewable } from '../custom_types';
 
 export default class Route {
-    private _blockClass: unknown;
+    private _blockClass: INewable<Component>;
     private _block?: Component;
-    private _props: unknown;
+    private _props: IRoutCTX;
 
-    constructor(view:unknown , props:IRoutCTX) {
+    constructor(view:INewable<Component> , props:IRoutCTX) {
         this._blockClass = view;
         this._block = undefined;
         this._props = props;

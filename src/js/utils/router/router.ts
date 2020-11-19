@@ -1,3 +1,5 @@
+import Component from "../../components/component/component";
+import { INewable } from "../custom_types";
 import Route from "./route";
 
 
@@ -21,7 +23,7 @@ export default class Router {
     Router.__instance = this;
   }
 
-  use(pathname:string, block:unknown) {
+  use(pathname:string, block:INewable<Component>) {
         const route = new Route( block, {rootQuery: this._rootQuery});
 
         this._routes.set(pathname,route);
