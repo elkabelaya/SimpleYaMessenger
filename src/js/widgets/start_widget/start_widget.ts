@@ -9,6 +9,10 @@ export default class StartWidget extends FormWidget {
 
   constructor() {
     super({}, {},);
+  }
+
+  render(){
+    super.render();
     let service = checkAuthService;
     service.start();
   }

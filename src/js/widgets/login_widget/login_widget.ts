@@ -8,8 +8,11 @@ import { loginService } from "../../services/service_instances";
 export default class LoginWidget extends FormWidget {
 
   constructor() {
-
     super( {}, {}, initData);
+  }
+
+  render(){
+    super.render();
     let service = loginService;
     service.start(this.element.querySelector("form"));
   }

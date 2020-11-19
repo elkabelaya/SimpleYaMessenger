@@ -28,18 +28,18 @@ export default class AccountService extends FormService {
     super.start(form);
     if (this._store.get()) {
       return;
-    } else {
-      this._requestApi.update().then( xhr => {
-        this._store.set(JSON.parse(xhr.response));
-      }).catch( _xhr => {
-        this._store.set({});
-      })
     }
+
+    this._requestApi.update().then( xhr => {
+      this._store.set(JSON.parse(xhr.response));
+    }).catch( _xhr => {
+      this._store.set({});
+    })
+
 
   }
 
   submit(_data:any){
-    console.log("submit", _data);
     let promises =[ this._updateApi.update(_data),
                     this._updateApi.updateAvatar(_data)
                   ];
@@ -53,15 +53,7 @@ export default class AccountService extends FormService {
       this.onSuccess();
     })
     .catch( xhr => {
-      //WTF? 400: {error: "bad format", reason: "login is empty, but required"}
-      // but login was sent and really - user was logged successfully
-      if(xhr.status === 400){
-        this.onSuccess();
-      } else {
-        this.onError(xhr);
-      }
-    }
-
-    )
+      this.onError(xhr);
+    })
   }
 }

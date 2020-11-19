@@ -9,8 +9,11 @@ import { registerService } from "../../services/service_instances";
 export default class RegisterWidget extends Component {
 
   constructor() {
-
     super( {}, {}, dataInit);
+  }
+  
+  render(){
+    super.render();
     let service = registerService;
     service.start(this.element.querySelector("form"));
   }

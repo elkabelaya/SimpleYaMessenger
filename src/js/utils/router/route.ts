@@ -27,6 +27,7 @@ export default class Route {
 
 
         }
+        this._block!.render();
         render(this._props.rootQuery, this._block!);
         this._block!.show();
     }
