@@ -1,7 +1,7 @@
 export default class FormService{
   protected _form?:HTMLFormElement;
   start(form?:HTMLFormElement|null){
-    console.log("start",form);
+    
     if (form){
       this._form = form;
       form.setAttribute("novalidate", "true");

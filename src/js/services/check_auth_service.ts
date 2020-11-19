@@ -3,7 +3,7 @@ import { IApi } from "../api/iapi/iapi";
 import { AuthAPI } from "../api/auth_api";
 import { IStore } from "../stores/istore";
 import Router from "../utils/router/router";
-import { ROUTE_LOGIN, ROUTE_SAMPLE_CHATLIST } from "../utils/router/routes";
+import { ROUTE_LOGIN, ROUTE_MESSENGER } from "../utils/router/routes";
 
 export default class CheckAuthService {
   private _store:IStore
@@ -15,11 +15,10 @@ export default class CheckAuthService {
   }
 
   start(){
-    console.log("CheckAuthService start")
     this._api.update()
     .then( xhr => {
       this._store.set(JSON.parse(xhr.response));
-      (new Router()).go(ROUTE_SAMPLE_CHATLIST);
+      (new Router()).go(ROUTE_MESSENGER);
     })
     .catch( _xhr => {
       this._store.set({});

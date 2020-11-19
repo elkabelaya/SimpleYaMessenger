@@ -9,26 +9,10 @@ export default class AccountWidget extends FormWidget {
 
   constructor() {
     super({}, {}, initData);
+    this.setProps( userStoreInstance.get());
     userStoreInstance.on("change", ()=> {
-      console.log("change", userStoreInstance.get());
       this.setProps( userStoreInstance.get());
     })
-
-    /*userStoreInstance.on("change", ()=> {
-      let  fields:object[] = userStoreInstance.get("");
-      let data:IComponentChild<IComponent>[] = new Array(fields.length);
-      for (let i = 0; i<fields.length; i++){
-        data[i]= ({
-          component
-          componentCtx: fields[i],
-        });
-
-      }
-
-      this.setChildren(data);
-    })*/
-
-
   }
 
   render(){
