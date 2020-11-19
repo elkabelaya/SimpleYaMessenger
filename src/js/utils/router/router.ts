@@ -32,13 +32,13 @@ export default class Router {
   start() {
 
     const clickEventName: string = document && document.ontouchstart ? 'touchstart' : 'click';
-    window.addEventListener(clickEventName, ((event:any ) => {
+    window.addEventListener(clickEventName, (event:any ) => {
       if(event.target.pathname){
        event.preventDefault();
        this.go(event.target.pathname);
      }
 
-    }).bind(this));
+    });
 
 
     window.onpopstate = ((event:any) => {
@@ -49,7 +49,7 @@ export default class Router {
   }
 
   _onRoute(path?:string) {
-    if(path != null){
+    if(path !== undefined){
 
 
       const route:Route = this._routes.get(path) || this._routes.get(this._errorPath);
