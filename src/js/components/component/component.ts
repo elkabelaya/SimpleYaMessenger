@@ -3,6 +3,7 @@ import EventBus from "../../utils/event_bus/event_bus"
 import Templator from "../../utils/templator/templator"
 import {IComponentMeta, IComponent} from "../../components/icomponents/icomponent"
 import { IComponentChild } from "../icomponents/icomponent_child";
+import { stringKeyObject } from "../../utils/custom_types";
 
 
 export default class Component implements IComponent{
@@ -70,7 +71,6 @@ export default class Component implements IComponent{
   componentDidMount() {}
 
   _componentDidUpdate(oldProps: object, newProps: object) {
-    console.log("_componentDidUpdate", oldProps, newProps, oldProps == newProps)
     if(this.componentDidUpdate(oldProps, newProps)){
        this._render();
     }
@@ -88,8 +88,8 @@ export default class Component implements IComponent{
     }
     let oldProps: object = Object.assign({},this._props);
 
-    this._props = Object.assign(this._props, setAndSplitChildProps(nextProps,this._children));
-
+    this._props = Object.assign(this._props, nextProps);
+    setChildProps(nextProps as stringKeyObject,this._children);
 
     this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldProps, this._props);
   };
@@ -112,7 +112,9 @@ export default class Component implements IComponent{
   }
 
   render() {
-    console.log("render");
+    //TODO: переделать, при смене props нужно перерендеривать только child-ны,
+    //сейчас меняется весь родительский компонент
+
     this._element.innerHTML = "";
     const compiled = this._templator.compile(this._props);
     let query;
@@ -127,7 +129,7 @@ export default class Component implements IComponent{
         query.appendChild( child.componentInstance.element );
       }
     }
-    //return element;
+
 
   }
 
@@ -158,13 +160,14 @@ export default class Component implements IComponent{
   }
 }
 
-function setAndSplitChildProps(props:any, children:IComponentChild<IComponent>[]):unknown{
+function setChildProps(props:stringKeyObject, children:IComponentChild<IComponent>[]):void{
   props = Object.assign({},props);
   children.forEach(  child => {
-    if (child.componentName){
-      child.componentInstance?.setProps(props[child.componentName]);
-      props[child.componentName] = undefined;
+    let componentCtx = child.componentCtx as stringKeyObject
+    let name: string = componentCtx["name"] as unknown as string;
+    if (name && props[name]){
+      child.componentCtx = Object.assign(child.componentCtx,{value:props[name]})
     }
   });
-  return props;
+
 }

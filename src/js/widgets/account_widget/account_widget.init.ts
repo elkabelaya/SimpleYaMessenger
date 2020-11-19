@@ -7,6 +7,7 @@ import { IComponentChild } from "../../components/icomponents/icomponent_child";
 
 export const initData:IComponentChild<IComponent>[] = [
       {
+        componentName:"avatar",
         componentClass: Avatar,
         componentAttrs: {},
         componentCtx: {
@@ -16,9 +17,9 @@ export const initData:IComponentChild<IComponent>[] = [
         rootElement:".account_widget__avatar"
       },
       {
+        componentName:"second_name",
         componentClass: Input,
         componentCtx: {
-          value: "Василий",
           name: "second_name",
           placeholder: "Фамилия",
           pattern:"[А-Яа-я\\-]{2,15}",
@@ -52,8 +53,6 @@ export const initData:IComponentChild<IComponent>[] = [
       {
         componentClass: Input,
         componentCtx: {
-          value:"Пупок",
-
           name: "display_name",
           placeholder: "Ник",
           pattern:"[А-Яа-я\\-]{2,15}",
@@ -65,7 +64,7 @@ export const initData:IComponentChild<IComponent>[] = [
       {
         componentClass: Input,
         componentCtx: {
-          name: "login",
+          name: "email",
           type: "email",
           placeholder: "Почта",
           requirments: "Невалидный адрес"

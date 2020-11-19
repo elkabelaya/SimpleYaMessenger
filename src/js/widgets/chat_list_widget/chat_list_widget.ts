@@ -15,6 +15,7 @@ export default class ChatListWidget extends FormWidget {
     super({class:"widget-chat-list__list"});
 
     chatStoreInstance.on("change", ()=> {
+      console.log("chatStoreInstance", chatStoreInstance.get(""));
       let chats:object[] = chatStoreInstance.get("");
       let data:IComponentChild<IComponent>[] = new Array(chats.length);
       for (let i = 0; i<chats.length; i++){

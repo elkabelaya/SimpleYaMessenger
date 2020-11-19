@@ -10,11 +10,8 @@ export default class ChatsService extends FormService {
   private _api: IApi;
   private  onSuccess(xhr:XMLHttpRequest){
     this._store.set(JSON.parse(xhr.response));
-
-  }
-
-  private onError(_xhr:XMLHttpRequest){
-    //сейчас всегда 500, замокаем для отладки
+    //пока не реализован функционал добавления чата,  замокаем для отладки
+    // TODO: изменить!
     this._store.set([{
       logo: "../../../images/empty_logo.jpg",
       name: "Baся",
@@ -22,6 +19,11 @@ export default class ChatsService extends FormService {
       time: "12:30",
       alert: "4"
     }]);
+    //TODO error display
+  }
+
+  private onError(_xhr:XMLHttpRequest){
+    this._store.set([]);
     //TODO error display
 
   }
@@ -31,7 +33,6 @@ export default class ChatsService extends FormService {
     this._api = new ChatAPI();
   }
   start(){
-    //всегда 500 (((, TODO: проверить!
     this._api.request()
     .then( xhr => {
       this.onSuccess(xhr);
