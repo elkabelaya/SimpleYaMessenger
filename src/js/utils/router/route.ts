@@ -3,9 +3,9 @@ import {render} from '../render_dom';
 import { IRoutCTX } from '../iutils/irout';
 
 export default class Route {
-    private _blockClass: any;
+    private _blockClass: unknown;
     private _block?: Component;
-    private _props: any;
+    private _props: unknown;
 
     constructor(view:unknown , props:IRoutCTX) {
         this._blockClass = view;
