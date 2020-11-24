@@ -16,7 +16,7 @@ export class AuthAPI extends BaseAPI {
     update():Promise<XMLHttpRequest>  {
       return authApiInstance.get('/user');
     }
-    
+
     delete():Promise<XMLHttpRequest> {
       return authApiInstance.post('/logout');
     }
