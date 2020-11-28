@@ -51,7 +51,8 @@
     "build:js": "node ./node_modules/.bin/webpack ",
     "build:css": "lessc src/less/styles.less > static/css/styles.css",
     "build": "npm-run-all --parallel build:js",
-    "serve": "node server.js"
+    "postinstall": "npm run build",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",

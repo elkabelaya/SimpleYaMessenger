@@ -6,5 +6,8 @@
 ## Netlify
 https://eager-tereshkova-2a5c34.netlify.app/
 
+## Heroky
+https://immense-shore-35249.herokuapp.com/ | https://git.heroku.com/immense-shore-35249.git
+
 ##Локальный запуск
 npm install && node server.js
