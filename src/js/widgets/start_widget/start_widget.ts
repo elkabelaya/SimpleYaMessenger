@@ -2,8 +2,7 @@
 import {template as itemTemplate} from "./start_widget.tmpl";
 import FormWidget from "../form_widget/form_widget";
 import { checkAuthService } from "../../services/service_instances";
-
-//import style from "../../../css/account_widget.css";
+import "../../../less/base.less";
 
 export default class StartWidget extends FormWidget {
 

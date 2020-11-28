@@ -4,8 +4,7 @@ import Component from "../../components/component/component";
 import { IComponentChild } from "../../components/icomponents/icomponent_child";
 import ChatListWidget from "../chat_list_widget/chat_list_widget";
 import MessagesWidget from "../messages_widget/messages_widget";
-
-//import style from "../../../css/account_widget.css";
+import "./messenger_widget.less";
 
 export default class MessengerWidget extends Component {
 

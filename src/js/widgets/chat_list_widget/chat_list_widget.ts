@@ -6,7 +6,7 @@ import { IComponentChild } from "../../components/icomponents/icomponent_child";
 import FormWidget from "../form_widget/form_widget";
 import { chatsService } from "../../services/service_instances";
 import { chatStoreInstance } from "../../stores/store_instances";
-//import style from "../../../css/account_widget.css";
+import "./chat_list_widget.less";
 
 export default class ChatListWidget extends FormWidget {
 

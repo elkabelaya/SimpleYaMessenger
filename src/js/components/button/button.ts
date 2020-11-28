@@ -1,7 +1,7 @@
 import Component from "../component/component";
 import {template as buttonItemTemplate} from "./button.tmpl";
 import {IButtonCtx} from "../../components/icomponents/ibutton";
-//import style from "../../../css/button.css";
+import "./button.less";
 
 export default class Button extends Component {
 

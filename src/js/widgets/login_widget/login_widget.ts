@@ -3,7 +3,7 @@ import {template as loginWidgetTemplate} from "./login_widget.tmpl";
 import FormWidget from "../form_widget/form_widget";
 import {initData} from "./login_widget.init";
 import { loginService } from "../../services/service_instances";
-//import style from "../../../css/account_widget.css";
+import "./login_widget.less";
 
 export default class LoginWidget extends FormWidget {
 

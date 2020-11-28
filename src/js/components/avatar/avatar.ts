@@ -1,7 +1,7 @@
 import Component from "../component/component";
 import { IAvatarCtx } from "../icomponents/iavatar";
 import {template as itemTemplate} from "./avatar.tmpl";
-//import style from "../../../css/button.css";
+import "./avatar.less";
 
 export default class Avatar extends Component {
 

@@ -1,7 +1,7 @@
 import Component from "../component/component";
 import {template as inputTemplate} from "./input.tmpl";
 import {IInputCtx} from "../../components/icomponents/iinput"
-//import style from "../../../css/input.css";
+import "./input.less";
 
 export default class Input extends Component {
 
