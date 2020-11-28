@@ -1,5 +1,5 @@
 export interface IAvatarCtx {
 
-    url: string,
-    
+	url: string;
+
 }

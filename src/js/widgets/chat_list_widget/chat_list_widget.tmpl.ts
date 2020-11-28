@@ -1,4 +1,4 @@
-export const template:string =  `
+export const template = `
         <a class="widget-chat-list__profile" href="{{ROUTE_ACCOUNT}}"> Профиль &gt; </a>
 
         <form method="POST" class="widget-chat-list__search">

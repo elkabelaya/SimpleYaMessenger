@@ -1,4 +1,4 @@
-export const template:string =  `<div class="page">
+export const template = `<div class="page">
   <nav class="page__back">
     <a href="{{ROUTE_MESSENGER}}"><img src="../../../images/chat_back_button.png"></a>
   </nav>

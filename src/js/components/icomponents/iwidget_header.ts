@@ -1,6 +1,5 @@
 export interface IWidgetHeaderCtx {
 
-    title: string,
-
+	title: string;
 
 }

@@ -1,6 +1,6 @@
 export interface IButtonCtx {
 
-    title: string,
-    width?: number
+	title: string;
+	width?: number;
 
 }

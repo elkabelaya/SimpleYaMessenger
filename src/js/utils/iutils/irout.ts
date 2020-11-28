@@ -1,5 +1,5 @@
 
 export interface IRoutCTX {
-  rootQuery:string
+	rootQuery: string;
 
 }

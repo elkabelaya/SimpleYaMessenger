@@ -1,4 +1,4 @@
-export const template:string =  `
+export const template = `
           <header class="widget-chat-chat__header">
             <img src="../../../images/empty_logo.jpg" alt="avatar">
 

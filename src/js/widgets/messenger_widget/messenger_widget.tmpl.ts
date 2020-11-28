@@ -1,4 +1,4 @@
-export const template:string =  `<div class="widget-chat-list__content">
+export const template = `<div class="widget-chat-list__content">
 
                                     <div class="widget-chat-list"/></div>
 

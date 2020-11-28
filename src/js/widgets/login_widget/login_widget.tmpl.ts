@@ -1,4 +1,4 @@
-export const template:string =  `<div class="widget">
+export const template = `<div class="widget">
                                   <div class="login-widget">
                                       <div  class="login-widget__header"></div>
                                       <main class="login-widget__main">

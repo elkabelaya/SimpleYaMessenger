@@ -1,3 +1,3 @@
 export interface ITemplator{
-  compile(ctx:object): HTMLCollection;
+	compile(ctx: Record<string, unknown>): HTMLCollection;
 }

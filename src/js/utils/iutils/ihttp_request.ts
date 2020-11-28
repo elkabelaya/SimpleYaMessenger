@@ -1,13 +1,13 @@
 export enum METHOD {
 		    GET = 'GET',
-        PUT = 'PUT',
-        POST ='POST',
-        DELETE = 'DELETE'
-};
+	PUT = 'PUT',
+	POST = 'POST',
+	DELETE = 'DELETE'
+}
 
 export interface IRequestCTX {
-  method: METHOD,
-  data?: unknown,
-  headers?: Map<string,string>,
+	method: METHOD;
+	data?: unknown;
+	headers?: Map<string, string>;
 
 }

@@ -1,2 +1,2 @@
 
-export const template:string = `<div/>`;
+export const template = '<div/>';

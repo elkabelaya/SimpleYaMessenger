@@ -1,17 +1,12 @@
-import { IComponent } from "./icomponent";
+import {IComponent} from './icomponent';
 
-
-
-export interface  IComponentChild<T> {
-  componentName?: string,
-  componentClass: INewableComponent<T>,
-  componentInstance?: IComponent,
-  componentCtx: object | object[],
-  componentAttrs: object,
-  rootElement: string,
+export interface IComponentChild<T> {
+	componentName?: string;
+	componentClass: INewableComponent<T>;
+	componentInstance?: IComponent;
+	componentCtx: Record<string, unknown> | Array<Record<string, unknown>>;
+	componentAttrs: Record<string, unknown>;
+	rootElement: string;
 }
 
-
-export interface INewableComponent<T> {
-	new( ...props: any[] ): T;
-}
+export type INewableComponent<T> = new(...props: any[]) => T;

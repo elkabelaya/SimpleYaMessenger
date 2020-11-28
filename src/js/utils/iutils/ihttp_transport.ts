@@ -1,7 +1,7 @@
 export interface IHTTPTransportCtx {
 
-    data?: unknown,
-		headers?: Map<string,string>
-		timeout?: number
+	data?: unknown;
+	headers?: Map<string, string>;
+	timeout?: number;
 
 }

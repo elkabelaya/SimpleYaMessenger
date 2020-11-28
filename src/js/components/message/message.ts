@@ -1,32 +1,33 @@
-import Component from "../component/component";
-import { EMessageType, IMessageCtx } from "../icomponents/imessage";
-import {template as itemTemplate} from "./message.tmpl";
-//import style from "../../../css/button.css";
+import Component from '../component/component';
+import {EMessageType, IMessageCtx} from '../icomponents/imessage';
+import {template as itemTemplate} from './message.tmpl';
+// Import style from "../../../css/button.css";
 
 export default class Message extends Component {
+	constructor(props: IMessageCtx) {
+		super({class: getMessageClassByType(props.type)}, props);
+	}
 
-  constructor(props: IMessageCtx) {
-    super({class: getMessageClassByType(props.type)} , props);
-  }
-  get tagName(){
-    return "div";
-  }
-  get template(){
-    return itemTemplate;
-  }
-  setProps(props:IMessageCtx){
-    super.setProps(props);
-  }
+	get tagName() {
+		return 'div';
+	}
 
+	get template() {
+		return itemTemplate;
+	}
+
+	setProps(props: IMessageCtx) {
+		super.setProps(props);
+	}
 }
 
-function getMessageClassByType(type:EMessageType){
-  switch(type){
-    case EMessageType.date:
-      return "widget-chat-chat__item-time";
-    case EMessageType.in:
-      return "widget-chat-chat__item-message";
-    default:
-       return "widget-chat-chat__item-response-message";
-     }
-  }
+function getMessageClassByType(type: EMessageType) {
+	switch (type) {
+		case EMessageType.date:
+			return 'widget-chat-chat__item-time';
+		case EMessageType.in:
+			return 'widget-chat-chat__item-message';
+		default:
+			return 'widget-chat-chat__item-response-message';
+	}
+}

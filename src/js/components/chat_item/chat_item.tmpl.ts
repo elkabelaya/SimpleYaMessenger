@@ -1,4 +1,4 @@
-export const template:string =  `<img src="{{logo}}" alt="avatar" />
+export const template = `<img src="{{logo}}" alt="avatar" />
             <div class="widget-chat-list__about">
               <div class="chat_item-name">{{name}}</div>
               <div class="chat_item-message">{{message}}</div>

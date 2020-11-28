@@ -1,78 +1,69 @@
-import Component from "../../components/component/component";
-import { INewable } from "../custom_types";
-import Route from "./route";
-
+import Component from '../../components/component/component';
+import {INewable} from '../custom_types';
+import Route from './route';
 
 export default class Router {
-  private static __instance: Router;
-  private _routes: Map<string,any>;
-  private _history: History;
-  private _currentRoute?: Route;
-  private _rootQuery: string;
-  private _errorPath: string;
+	private static __instance: Router;
+	private readonly _routes: Map<string, any>;
+	private readonly _history: History;
+	private readonly _currentRoute?: Route;
+	private readonly _rootQuery: string;
+	private readonly _errorPath: string;
 
-  constructor(rootQuery:string = "", errorPath:string="") {
-    if (Router.__instance) {
-      return Router.__instance;
-    }
+	constructor(rootQuery = '', errorPath = '') {
+		if (Router.__instance) {
+			return Router.__instance;
+		}
 
-    this._routes = new Map();
-    this._history = window.history;
-    this._rootQuery = rootQuery;
-    this._errorPath = errorPath;
-    Router.__instance = this;
-  }
+		this._routes = new Map();
+		this._history = window.history;
+		this._rootQuery = rootQuery;
+		this._errorPath = errorPath;
+		Router.__instance = this;
+	}
 
-  use(pathname:string, block:INewable<Component>) {
-        const route = new Route( block, {rootQuery: this._rootQuery});
+	use(pathname: string, block: INewable<Component>) {
+		const route = new Route(block, {rootQuery: this._rootQuery});
 
-        this._routes.set(pathname,route);
+		this._routes.set(pathname, route);
 
-        return this;
-  }
+		return this;
+	}
 
-  start() {
+	start() {
+		const clickEventName: string = document && document.ontouchstart ? 'touchstart' : 'click';
+		window.addEventListener(clickEventName, (event: any) => {
+			if (event.target.pathname) {
+				event.preventDefault();
+				this.go(event.target.pathname);
+			}
+		});
 
-    const clickEventName: string = document && document.ontouchstart ? 'touchstart' : 'click';
-    window.addEventListener(clickEventName, (event:any ) => {
-      if(event.target.pathname){
-       event.preventDefault();
-       this.go(event.target.pathname);
-     }
+		window.onpopstate = ((event: any) => {
+			this.go(event.currentTarget.location.pathname);
+		});
 
-    });
+		this.go(window.location.pathname);
+	}
 
+	_onRoute(path?: string) {
+		if (path !== undefined) {
+			const route: Route = this._routes.get(path) || this._routes.get(this._errorPath);
+			if (route) {
+				if (this._currentRoute) {
+					this._currentRoute.leave();
+				}
 
-    window.onpopstate = ((event:any) => {
-      this.go(event.currentTarget.location.pathname);
-    }).bind(this);
+				route.render();
+			}
+		}
+	}
 
-    this.go(window.location.pathname);
-  }
-
-  _onRoute(path?:string) {
-    if(path !== undefined){
-
-
-      const route:Route = this._routes.get(path) || this._routes.get(this._errorPath);
-      if (route) {
-        if (this._currentRoute) {
-          this._currentRoute.leave();
-        }
-        route.render();
-      }
-    }
-  }
-
-
-  go(pathname?: string) {
-
-    console.log("go", pathname);
-    if(pathname){
-      this._history.pushState({}, "", pathname);
-      this._onRoute(pathname);
-    }
-  }
-
-
+	go(pathname?: string) {
+		console.log('go', pathname);
+		if (pathname) {
+			this._history.pushState({}, '', pathname);
+			this._onRoute(pathname);
+		}
+	}
 }

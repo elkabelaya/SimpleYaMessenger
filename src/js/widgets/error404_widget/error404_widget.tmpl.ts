@@ -1,1 +1,1 @@
-export const template:string =  ``;
+export const template = '';

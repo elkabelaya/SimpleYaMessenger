@@ -1,6 +1,6 @@
 export interface IErrorCtx {
 
-    code: string,
-    text:string,
+	code: string;
+	text: string;
 
 }
