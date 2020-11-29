@@ -38,7 +38,8 @@
     "webpack-cli": "4.2.0"
   },
   "scripts": {
-    "test": "npx jest --watchAll",
+    "test": "npx jest",
+    "testw": "npx jest --watchAll",
     "tsc": "tsc",
     "lessc": "lessc",
     "lint:ts": "eslint src/**/**/**/**.ts",
@@ -57,7 +58,8 @@
   },
   "husky": {
    "hooks": {
-      "pre-commit": "npx jest"
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
    }
   },
   "author": "elkabelaya",
