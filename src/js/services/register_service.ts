@@ -5,7 +5,7 @@ import { IStore } from "../stores/istore";
 import Router from "../utils/router/router";
 import FormService from "./form_service";
 import { ROUTE_REGISTER } from "../utils/router/routes";
-import { stringKeyObject } from "../utils/custom_types";
+import { stringKeyString } from "../utils/custom_types";
 
 export default class RegisterService extends FormService {
   private _store:IStore
@@ -25,7 +25,7 @@ export default class RegisterService extends FormService {
     this._store.set({});
     (new Router()).go(ROUTE_REGISTER);
   }
-  submit(_data:stringKeyObject){
+  submit(_data:stringKeyString){
     this._api.create(_data)
     .then( xhr => {
       this.onSuccess(xhr);

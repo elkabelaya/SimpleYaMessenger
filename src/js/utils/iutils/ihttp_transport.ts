@@ -1,8 +1,8 @@
-import {stringKeyObject} from '../custom_types';
+import {stringKeyString} from '../custom_types';
 
 export interface IHTTPTransportCtx {
 
-	data?: stringKeyObject;
+	data?: stringKeyString;
 	headers?: Map<string, string>;
 	timeout?: number;
 

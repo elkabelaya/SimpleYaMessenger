@@ -5,6 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "express": "4.17.1",
+    "identity-obj-proxy": "3.0.0",
     "ts-loader": "^8.0.11"
   },
   "devDependencies": {
@@ -40,11 +41,8 @@
   "scripts": {
     "test": "npx jest",
     "testw": "npx jest --watchAll",
-    "tsc": "tsc",
-    "lessc": "lessc",
     "lint:ts": "eslint src/**/**/**/**.ts",
     "build:js": "node ./node_modules/.bin/webpack",
-    "build:css": "lessc src/less/styles.less > static/css/styles.css",
     "build": "eslint src/**/**/**/**.ts && node ./node_modules/.bin/webpack",
     "postinstall": "npm run build && husky-run install",
     "start": "node server.js"
@@ -57,10 +55,10 @@
     "*.ts": "npm run lint:ts"
   },
   "husky": {
-   "hooks": {
+    "hooks": {
       "pre-commit": "npm test",
       "pre-push": "npm test"
-   }
+    }
   },
   "author": "elkabelaya",
   "license": "ISC",

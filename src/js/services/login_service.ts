@@ -5,7 +5,7 @@ import { IStore } from "../stores/istore";
 import Router from "../utils/router/router";
 import FormService from "./form_service";
 import { ROUTE_LOGIN, ROUTE_MESSENGER } from "../utils/router/routes";
-import { stringKeyObject } from "../utils/custom_types";
+import { stringKeyString } from "../utils/custom_types";
 export default class LoginService extends FormService {
   private _store:IStore
   private _api: IApi;
@@ -26,7 +26,7 @@ export default class LoginService extends FormService {
     (new Router()).go(ROUTE_LOGIN);
   }
 
-  submit(_data:stringKeyObject){
+  submit(_data:stringKeyString){
     this._api.request(_data)
     .then( xhr => {
       this.onSuccess(xhr);

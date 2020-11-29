@@ -1,16 +1,16 @@
 import { IApi } from "./iapi/iapi";
-import { stringKeyObject } from "../utils/custom_types";
+import { stringKeyString } from "../utils/custom_types";
 export class BaseAPI implements IApi {
 
-    create(_data?:stringKeyObject):Promise<XMLHttpRequest> {
+    create(_data?:stringKeyString):Promise<XMLHttpRequest> {
       throw new Error("Method not implemented.");
     }
 
-    request(_data?:stringKeyObject):Promise<XMLHttpRequest> {
+    request(_data?:stringKeyString):Promise<XMLHttpRequest> {
       throw new Error("Method not implemented.");
     }
 
-    update(_data?:stringKeyObject):Promise<XMLHttpRequest>  {
+    update(_data?:stringKeyString):Promise<XMLHttpRequest>  {
       throw new Error("Method not implemented.");
     }
     delete():Promise<XMLHttpRequest>  {

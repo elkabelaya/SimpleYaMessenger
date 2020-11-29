@@ -5,7 +5,7 @@ import { IStore } from "../stores/istore";
 import Router from "../utils/router/router";
 import FormService from "./form_service";
 import { ROUTE_LOGIN } from "../utils/router/routes";
-import { stringKeyObject } from "../utils/custom_types";
+import { stringKeyString } from "../utils/custom_types";
 
 export default class LogoutService extends FormService {
     //TODO отрисовать дизайн разлогина, сейчас такого функционала нет
@@ -27,7 +27,7 @@ export default class LogoutService extends FormService {
     this._api = new AuthAPI();
   }
 
-  submit(_data:stringKeyObject){
+  submit(_data:stringKeyString){
     this._api.request(_data)
     .then( xhr => {
       this.onSuccess(xhr);

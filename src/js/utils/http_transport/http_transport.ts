@@ -1,7 +1,7 @@
 import {IHTTPTransportCtx} from '../iutils/ihttp_transport';
 import {IRequestCTX, METHOD} from '../iutils/ihttp_request';
 import {httpRequest} from './http_request';
-import {stringKeyObject} from '../custom_types';
+import {stringKeyString} from '../custom_types';
 
 const CONTENT_TYPE_HEADER: string[] = ['Content-type', 'application/json; charset=utf-8'];
 
@@ -42,7 +42,7 @@ function prepareRequestCTX(method: METHOD, useBody: boolean, options: IHTTPTrans
 	};
 }
 
-function queryStringify(data?: stringKeyObject): string {
+function queryStringify(data?: stringKeyString): string {
 	let result = '';
 	if (data) {
 		/* eslint-disable-next-line @typescript-eslint/ban-types */
