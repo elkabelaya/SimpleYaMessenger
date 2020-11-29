@@ -4,7 +4,7 @@ import {IButtonCtx} from '../../components/icomponents/ibutton';
 import './button.less';
 
 export default class Button extends Component {
-	constructor(props: IButtonCtx, attr: Record<string, unknown>) {
+	constructor(props: IButtonCtx, attr: unknown) {
 		super(attr, props);
 	}
 

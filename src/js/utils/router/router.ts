@@ -12,6 +12,8 @@ export default class Router {
 
 	constructor(rootQuery = '', errorPath = '') {
 		if (Router.__instance) {
+			// TODO: переписать класс без варнинга
+			/* eslint-disable-next-line no-constructor-return */
 			return Router.__instance;
 		}
 
@@ -24,14 +26,12 @@ export default class Router {
 
 	use(pathname: string, block: INewable<Component>) {
 		const route = new Route(block, {rootQuery: this._rootQuery});
-
 		this._routes.set(pathname, route);
-
 		return this;
 	}
 
 	start() {
-		const clickEventName: string = document && document.ontouchstart ? 'touchstart' : 'click';
+		const clickEventName: string = document?.ontouchstart ? 'touchstart' : 'click';
 		window.addEventListener(clickEventName, (event: any) => {
 			if (event.target.pathname) {
 				event.preventDefault();

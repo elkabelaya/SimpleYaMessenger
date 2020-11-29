@@ -3,7 +3,7 @@ import {IErrorCtx} from '../icomponents/ierror';
 import {template as itemTemplate} from './error.tmpl';
 import './error.less';
 export default class Error extends Component {
-	constructor(props: IErrorCtx, attr: Record<string, unknown>) {
+	constructor(props: IErrorCtx, attr: unknown) {
 		super(attr, props);
 	}
 

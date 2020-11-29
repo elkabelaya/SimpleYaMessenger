@@ -12,7 +12,7 @@ export default class LoginWidget extends FormWidget {
 
 	render() {
 		super.render();
-		let service = loginService;
+		const service = loginService;
 		service.start(this.element.querySelector('form'));
 	}
 

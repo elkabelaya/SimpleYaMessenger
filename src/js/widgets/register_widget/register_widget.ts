@@ -13,7 +13,7 @@ export default class RegisterWidget extends Component {
 
 	render() {
 		super.render();
-		let service = registerService;
+		const service = registerService;
 		service.start(this.element.querySelector('form'));
 	}
 

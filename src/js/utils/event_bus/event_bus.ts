@@ -18,8 +18,8 @@ export default class EventBus implements IEventBus {
 	}
 
 	off(event: string, callback: IEventBusCallbackFunction): void {
-		let eventListeners: IEventBusCallbackFunction[]|undefined = this._listeners.get(event);
-	  if (!eventListeners) {
+		const eventListeners: IEventBusCallbackFunction[]|undefined = this._listeners.get(event);
+		if (!eventListeners) {
 			throw new Error(`Нет события: ${event}`);
 		}
 
@@ -28,9 +28,9 @@ export default class EventBus implements IEventBus {
 		));
 	}
 
-	emit(event: string, ...args: Array<Record<string, unknown>>): void {
-		let eventListeners: IEventBusCallbackFunction[]|undefined = this._listeners.get(event);
-	  if (!eventListeners) {
+	emit(event: string, ...args: unknown[]): void {
+		const eventListeners: IEventBusCallbackFunction[]|undefined = this._listeners.get(event);
+		if (!eventListeners) {
 			return;
 		}
 

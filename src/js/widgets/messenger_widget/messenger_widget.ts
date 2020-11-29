@@ -7,8 +7,8 @@ import MessagesWidget from '../messages_widget/messages_widget';
 import './messenger_widget.less';
 
 export default class MessengerWidget extends Component {
-	constructor(chats: Array<Record<string, unknown>> = [], messages: Array<Record<string, unknown>> = []) {
-		let data: Array<IComponentChild<IComponent>> = [
+	constructor(chats: unknown[] = [], messages: unknown[] = []) {
+		const data: Array<IComponentChild<IComponent>> = [
 			{
 				componentClass: ChatListWidget,
 				componentCtx: chats,

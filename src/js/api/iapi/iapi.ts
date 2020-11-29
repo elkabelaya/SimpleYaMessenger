@@ -1,6 +1,7 @@
+import {stringKeyObject} from '../../utils/custom_types';
 export interface IApi {
-	create(_data?: unknown): Promise<XMLHttpRequest>;
-	request(_data?: unknown): Promise<XMLHttpRequest>;
-	update(_data?: unknown): Promise<XMLHttpRequest>;
+	create(_data?: stringKeyObject): Promise<XMLHttpRequest>;
+	request(_data?: stringKeyObject): Promise<XMLHttpRequest>;
+	update(_data?: stringKeyObject): Promise<XMLHttpRequest>;
 	delete(): Promise<XMLHttpRequest>;
 }

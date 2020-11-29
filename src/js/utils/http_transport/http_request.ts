@@ -1,6 +1,6 @@
 import {IRequestCTX} from '../iutils/ihttp_request';
 
-export function httpRequest(url: string, options: IRequestCTX, timeout = 5000): Promise<XMLHttpRequest> {
+export async function httpRequest(url: string, options: IRequestCTX, timeout = 5000): Promise<XMLHttpRequest> {
 	return new Promise((resolve, reject) => {
 		const xhr: any = new window.XMLHttpRequest();
 		xhr.onreadystatechange = (_e: ProgressEvent) => {

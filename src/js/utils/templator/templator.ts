@@ -8,7 +8,7 @@ export default class Templator implements ITemplator {
 		this._template = template;
 	}
 
-	compile(ctx: Record<string, unknown>): HTMLCollection {
+	compile(ctx: unknown): HTMLCollection {
 		return compileTemplate(this._template, ctx, ROUTES);
 	}
 }

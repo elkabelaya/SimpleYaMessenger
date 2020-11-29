@@ -1,7 +1,7 @@
 import Component from '../component/component';
 import {EMessageType, IMessageCtx} from '../icomponents/imessage';
 import {template as itemTemplate} from './message.tmpl';
-// Import style from "../../../css/button.css";
+import './message.less';
 
 export default class Message extends Component {
 	constructor(props: IMessageCtx) {

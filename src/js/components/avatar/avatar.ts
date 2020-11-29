@@ -4,7 +4,7 @@ import {template as itemTemplate} from './avatar.tmpl';
 import './avatar.less';
 
 export default class Avatar extends Component {
-	constructor(props: IAvatarCtx, attr: Record<string, unknown> = {}) {
+	constructor(props: IAvatarCtx, attr: unknown = {}) {
 		super(attr, props);
 	}
 

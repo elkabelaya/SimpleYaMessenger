@@ -1,7 +1,7 @@
 export default class FormService{
   protected _form?:HTMLFormElement;
   start(form?:HTMLFormElement|null){
-    
+
     if (form){
       this._form = form;
       form.setAttribute("novalidate", "true");
@@ -16,7 +16,7 @@ export default class FormService{
   }
   _submitForm (event:Event): void {
     event.preventDefault();
-    if (validateForm(event.target) && this != null){
+    if (validateForm(event.target) && !!this){
       var formObject:any = {};
       var formData = new FormData(this._form);
       formData.forEach(function(value, key){

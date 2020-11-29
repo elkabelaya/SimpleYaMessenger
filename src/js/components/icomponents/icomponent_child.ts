@@ -4,8 +4,8 @@ export interface IComponentChild<T> {
 	componentName?: string;
 	componentClass: INewableComponent<T>;
 	componentInstance?: IComponent;
-	componentCtx: Record<string, unknown> | Array<Record<string, unknown>>;
-	componentAttrs: Record<string, unknown>;
+	componentCtx: unknown | unknown[];
+	componentAttrs: unknown;
 	rootElement: string;
 }
 

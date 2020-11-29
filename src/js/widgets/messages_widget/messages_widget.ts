@@ -6,8 +6,8 @@ import FormWidget from '../form_widget/form_widget';
 import './messages_widget.less';
 
 export default class MessagesWidget extends FormWidget {
-	constructor(chats: Array<Record<string, unknown>> = []) {
-		let data: Array<IComponentChild<IComponent>> = new Array(chats.length);
+	constructor(chats: unknown[] = []) {
+		const data: Array<IComponentChild<IComponent>> = new Array(chats.length);
 		for (let i = 0; i < chats.length; i++) {
 			data[i] = ({
 				componentClass: Message,

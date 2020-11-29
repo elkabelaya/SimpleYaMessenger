@@ -16,11 +16,11 @@ export default class Component implements IComponent {
 	_element: HTMLElement;
 	_meta: IComponentMeta;
 	_templator: Templator;
-	_props: Record<string, unknown>;
+	_props: unknown;
 	_eventBus: EventBus;
 	_children: Array<IComponentChild<IComponent>>;
 
-	constructor(attributes: Record<string, unknown> = {}, props: Record<string, unknown> = {}, children: Array<IComponentChild<IComponent>> = []) {
+	constructor(attributes: unknown = {}, props: unknown = {}, children: Array<IComponentChild<IComponent>> = []) {
 		const eventBus = new EventBus();
 		this._meta = {
 			attributes,
@@ -59,30 +59,32 @@ export default class Component implements IComponent {
 	}
 
 	_componentDidMount() {
-  	this.componentDidMount();
+		this.componentDidMount();
 		this._eventBus.emit(Component.EVENTS.FLOW_CDU, {}, this._props);
 	}
 
 	// Может переопределять пользователь, необязательно трогать
-	componentDidMount() {}
+	componentDidMount() {
+        // eslint-disable-line
+	}
 
-	_componentDidUpdate(oldProps: Record<string, unknown>, newProps: Record<string, unknown>) {
+	_componentDidUpdate(oldProps: unknown, newProps: unknown) {
 		if (this.componentDidUpdate(oldProps, newProps)) {
 			this._render();
 		}
 	}
 
 	// Может переопределять пользователь, необязательно трогать
-	componentDidUpdate(oldProps: Record<string, unknown>, newProps: Record<string, unknown>) {
-		return oldProps != newProps;
+	componentDidUpdate(oldProps: unknown, newProps: unknown) {
+		return oldProps !== newProps;
 	}
 
-	setProps(nextProps: Record<string, unknown>) {
+	setProps(nextProps: unknown) {
 		if (!nextProps) {
 			return;
 		}
 
-		let oldProps: Record<string, unknown> = Object.assign({}, this._props);
+		const oldProps: unknown = Object.assign({}, this._props);
 
 		this._props = Object.assign(this._props, nextProps);
 		setChildProps(nextProps as stringKeyObject, this._children);
@@ -91,7 +93,7 @@ export default class Component implements IComponent {
 	}
 
 	setChildren(children: Array<IComponentChild<IComponent>>) {
-		let oldChildren = this._children;
+		const oldChildren = this._children;
 		this._children = children;
 		this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldChildren, this._children);
 	}
@@ -116,17 +118,19 @@ export default class Component implements IComponent {
 			this._element.appendChild(compiled[0]);
 		}
 
-		for (let child of this._children) {
+		for (const child of this._children) {
 			query = this._element.querySelector(child.rootElement);
 			if (query) {
+				/* eslint-disable-next-line new-cap */
 				child.componentInstance = new child.componentClass(child.componentCtx, child.componentAttrs);
 				query.appendChild(child.componentInstance.element);
 			}
 		}
 	}
 
-	_makePropsProxy(props: Record<string, unknown>) {
-		return new Proxy(props, {
+	_makePropsProxy(props: unknown) {
+		/* eslint-disable-next-line @typescript-eslint/ban-types */
+		return new Proxy(props as object, {
 			deleteProperty() {
 				throw new Error('error');
 			}
@@ -134,7 +138,7 @@ export default class Component implements IComponent {
 	}
 
 	_createDocumentElement(tagName: string, attributes: any) {
-		let element = document.createElement(tagName);
+		const element = document.createElement(tagName);
 		Object.keys(attributes).forEach(item => {
 			element.setAttribute(item, attributes[item]);
 		});
@@ -154,8 +158,8 @@ export default class Component implements IComponent {
 function setChildProps(props: stringKeyObject, children: Array<IComponentChild<IComponent>>): void {
 	props = Object.assign({}, props);
 	children.forEach(child => {
-		let componentCtx = child.componentCtx as stringKeyObject;
-		let name: string = componentCtx.name as unknown as string;
+		const componentCtx = child.componentCtx as stringKeyObject;
+		const name: string = componentCtx.name as unknown as string;
 		if (name && props[name]) {
 			child.componentCtx = Object.assign(child.componentCtx, {value: props[name]});
 		}

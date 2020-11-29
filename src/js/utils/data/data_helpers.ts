@@ -9,7 +9,7 @@ export function getValueFromObject(path: string, obj: any, defaultValue?: string
 	const keys: string[] = path.split(OBJECT_PATH_DELIMITER);
 
 	let result = obj;
-	for (let key of keys) {
+	for (const key of keys) {
 		result = result[key];
 		if (result === undefined) {
 			return defaultValue;
@@ -20,5 +20,5 @@ export function getValueFromObject(path: string, obj: any, defaultValue?: string
 	// null -> defaultValue
 	// undefined -> defaultValue
 	// someValue -> someValue
-	return result == null ? defaultValue : result;
+	return result === undefined ? defaultValue : result;
 }

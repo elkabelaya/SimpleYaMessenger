@@ -5,10 +5,17 @@ import { IStore } from "../stores/istore";
 import Router from "../utils/router/router";
 import FormService from "./form_service";
 import { ROUTE_REGISTER } from "../utils/router/routes";
+import { stringKeyObject } from "../utils/custom_types";
 
 export default class RegisterService extends FormService {
   private _store:IStore
   private _api: IApi;
+
+  constructor(store:IStore){
+    super();
+    this._store = store;
+    this._api = new AuthAPI();
+  }
   private  onSuccess(xhr:XMLHttpRequest){
     this._store.set(JSON.parse(xhr.response));
     (new Router()).go("/");
@@ -18,13 +25,7 @@ export default class RegisterService extends FormService {
     this._store.set({});
     (new Router()).go(ROUTE_REGISTER);
   }
-  constructor(store:IStore){
-    super();
-    this._store = store;
-    this._api = new AuthAPI();
-  }
-
-  submit(_data:object){
+  submit(_data:stringKeyObject){
     this._api.create(_data)
     .then( xhr => {
       this.onSuccess(xhr);

@@ -4,7 +4,7 @@ import {IInputCtx} from '../../components/icomponents/iinput';
 import './input.less';
 
 export default class Input extends Component {
-	constructor(props: IInputCtx, attr: Record<string, unknown>) {
+	constructor(props: IInputCtx, attr: unknown) {
 		super(Object.assign({class: 'input__input-group'}, attr), props);
 	}
 

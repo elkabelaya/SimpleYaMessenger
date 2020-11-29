@@ -5,15 +5,15 @@ export interface IComponent {
 	render(): void;
 	show(): void;
 	hide(): void;
-	setProps(nextProps: Record<string, unknown>): void;
-	componentDidMount(oldProps: Record<string, unknown>): void;
-	componentDidMount(oldProps: Record<string, unknown>): void;
-	componentDidUpdate(oldProps: Record<string, unknown>, newProps: Record<string, unknown>): void;
+	setProps(nextProps: unknown): void;
+	componentDidMount(oldProps: unknown): void;
+	componentDidMount(oldProps: unknown): void;
+	componentDidUpdate(oldProps: unknown, newProps: unknown): void;
 }
 
 export interface IComponentMeta {
-	attributes: Record<string, unknown>;
-	props: Record<string, unknown>;
+	attributes: unknown;
+	props: unknown;
 }
 
 export interface IStoreCtx {

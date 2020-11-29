@@ -1,7 +1,7 @@
 import Component from '../component/component';
 import {template as widgetHeaderTemplate} from './widget_header.tmpl';
 import {IWidgetHeaderCtx} from '../../components/icomponents/iwidget_header';
-// Import style from "../../../css/widget_header.css";
+import './widget_header.less';
 
 export default class WidgetHeader extends Component {
 	constructor(props: IWidgetHeaderCtx) {
