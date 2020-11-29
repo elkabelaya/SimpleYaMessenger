@@ -41,7 +41,7 @@
     "test": "npx jest --watchAll",
     "tsc": "tsc",
     "lessc": "lessc",
-    "lint": "eslint src/**/**/**/**.ts",
+    "lint:ts": "eslint src/**/**/**/**.ts",
     "build:js": "node ./node_modules/.bin/webpack",
     "build:css": "lessc src/less/styles.less > static/css/styles.css",
     "build": "eslint src/**/**/**/**.ts && node ./node_modules/.bin/webpack",
@@ -51,6 +51,14 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elkabelaya/mf.messenger.praktikum.yandex.git"
+  },
+  "lint-staged": {
+    "*.ts": "npm run lint:ts"
+  },
+  "husky": {
+   "hooks": {
+      "pre-commit": "lint-staged"
+   }
   },
   "author": "elkabelaya",
   "license": "ISC",
