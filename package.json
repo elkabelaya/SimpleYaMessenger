@@ -42,6 +42,7 @@
     "test": "npx jest",
     "testw": "npx jest --watchAll",
     "lint:ts": "eslint src/**/**/**/**.ts",
+    "lint:csss": "npx stylelint src/**/*.{less,css}",
     "build:js": "node ./node_modules/.bin/webpack",
     "build": "eslint src/**/**/**/**.ts && node ./node_modules/.bin/webpack",
     "postinstall": "npm run build && husky-run install",
