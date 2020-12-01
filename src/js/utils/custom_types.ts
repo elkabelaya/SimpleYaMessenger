@@ -8,3 +8,7 @@ export interface stringKeyString {
 export interface INewable<T> {
  new( ...args: any[] ): T;
 }
+
+export interface Event<T = EventTarget> {
+  target: T;
+}

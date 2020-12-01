@@ -17,6 +17,9 @@ export function fillTemplates(template: string, ctx?: unknown, fillUncknown = tr
 
 export function getParamForTemplateKey(key: string, ctx?: unknown, fillUncknown = true): string {
 	const element: unknown = isObjectKey(key) ? getValueFromObject(key, ctx, '') : ctx ? (ctx as stringKeyObject)[key] : undefined;
+	if (element === null) {
+		return fillUncknown ? '' : `{{${key}}}`;
+	}
 
 	switch (typeof element) {
 		case 'undefined':

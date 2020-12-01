@@ -9,16 +9,17 @@ export default class ChatsService extends FormService {
   private _store:IStore
   private _api: IApi;
   private  onSuccess(xhr:XMLHttpRequest){
-    this._store.set(JSON.parse(xhr.response));
+    //this._store.set(JSON.parse(xhr.response));
+    console.log(JSON.parse(xhr.response));
+    console.log([{
+      avatar: "../../../images/empty_logo.jpg",
+      title: "Baся",
+      id:110
+
+  }]);
     //пока не реализован функционал добавления чата,  замокаем для отладки
     // TODO: изменить!
-    this._store.set([{
-      logo: "../../../images/empty_logo.jpg",
-      name: "Baся",
-      message: "привет",
-      time: "12:30",
-      alert: "4"
-    }]);
+    this._store.set(JSON.parse('[{"id":110,"title":"мой чат1","avatar":null,"created_by":772}]'));
     //TODO error display
   }
 
