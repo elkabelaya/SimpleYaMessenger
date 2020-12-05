@@ -1,3 +1,4 @@
+import {stringKeyString} from '../custom_types';
 export enum METHOD {
 	GET = 'GET',
 	PUT = 'PUT',
@@ -8,6 +9,6 @@ export enum METHOD {
 export interface IRequestCTX {
 	method: METHOD;
 	data?: unknown;
-	headers?: Map<string, string>;
+	headers?: stringKeyString;
 
 }

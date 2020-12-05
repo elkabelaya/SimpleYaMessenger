@@ -19,12 +19,12 @@ export async function httpRequest(url: string, options: IRequestCTX, timeout = 5
 
 		xhr.open(options.method, url);
 		if (options.headers) {
-			options.headers.forEach((value, header) => {
+			Object.entries(options.headers).forEach(([header, value]) => {
 				xhr.setRequestHeader(header, value);
 			});
 		}
 
 		xhr.withCredentials = true;
-		xhr.send(JSON.stringify(options.data));
+		xhr.send(options.data);
 	});
 }

@@ -19,7 +19,7 @@ export default class ChatsService extends FormService {
   }]);
     //пока не реализован функционал добавления чата,  замокаем для отладки
     // TODO: изменить!
-    this._store.set(JSON.parse('[{"id":110,"title":"мой чат1","avatar":null,"created_by":772}]'));
+    //this._store.set(JSON.parse('[{"id":110,"title":"мой чат1","avatar":null,"created_by":772}]'));
     //TODO error display
   }
 

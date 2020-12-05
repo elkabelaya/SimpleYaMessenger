@@ -7,7 +7,7 @@ export class UserAPI extends BaseAPI {
     return userApiInstance.put('/profile',{data:data});
   }
 
-  updateAvatar(data:stringKeyString):Promise<XMLHttpRequest>  {
+  updateAvatar(data:FormData):Promise<XMLHttpRequest>  {
     return userApiInstance.put('/profile/avatar', {data:data});
   }
 

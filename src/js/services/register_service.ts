@@ -25,6 +25,7 @@ export default class RegisterService extends FormService {
     this._store.set({});
     (new Router()).go(ROUTE_REGISTER);
   }
+
   submit(_data:stringKeyString){
     this._api.create(_data)
     .then( xhr => {
@@ -32,8 +33,6 @@ export default class RegisterService extends FormService {
     })
     .catch( xhr => {
       this.onError(xhr);
-    }
-
-    )
+    })
   }
 }

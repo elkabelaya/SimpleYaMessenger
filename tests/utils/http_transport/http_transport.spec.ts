@@ -17,8 +17,7 @@ describe("HTTPTransport", () => {
   it("get", () => {
 
 
-    let headers:Map<string,string> = new Map();
-    headers.set("someHeaderKey","someHeaderValue");
+    let headers={"someHeaderKey":"someHeaderValue"};
     let request: xhrMockClass;
     htttpTransport.get( "/full/", {data:{"a":"s","b":"d"},headers: headers})
     .then(xhr=>{
@@ -42,8 +41,7 @@ describe("HTTPTransport", () => {
   it("post", () => {
 
 
-    let headers:Map<string,string> = new Map();
-    headers.set("someHeaderKey","someHeaderValue");
+    let headers = {"someHeaderKey":"someHeaderValue"};
     let request: xhrMockClass;
     htttpTransport.post("",{data:{"a":"s","b":"d"},headers: headers})
 
@@ -59,8 +57,7 @@ describe("HTTPTransport", () => {
   it("put", () => {
 
 
-    let headers:Map<string,string> = new Map();
-    headers.set("someHeaderKey","someHeaderValue");
+    let headers = {"someHeaderKey":"someHeaderValue"};
     let request: xhrMockClass;
     htttpTransport.put("", {data:{"a":"s","b":"d"},headers: headers})
 
@@ -76,8 +73,7 @@ describe("HTTPTransport", () => {
   it("delete", () => {
 
 
-    let headers:Map<string,string> = new Map();
-    headers.set("someHeaderKey","someHeaderValue");
+    let headers={"someHeaderKey":"someHeaderValue"};
     let request: xhrMockClass;
     htttpTransport.delete("",{data:{"a":"s","b":"d"},headers: headers})
 

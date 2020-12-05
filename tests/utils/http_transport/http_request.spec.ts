@@ -16,8 +16,7 @@ describe("request", () => {
   it("get successfully", () => {
 
 
-    let headers:Map<string,string> = new Map();
-    headers.set("someHeaderKey","someHeaderValue");
+    let headers={"someHeaderKey":"someHeaderValue"};
     let request: xhrMockClass;
 
     httpRequest ("https://someurl.ru?a=b", {method:METHOD.GET, headers: headers})
@@ -40,7 +39,7 @@ describe("request", () => {
   it("post error", () => {
 
 
-    let headers = new Map();//["someHeaderKey","someHeaderValue"]);
+    let headers = {};
     let request: xhrMockClass;
 
     httpRequest ("https://someurl.ru?a=b", {method:METHOD.POST, headers: headers})

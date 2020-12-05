@@ -49,9 +49,17 @@ export default class AccountService extends FormService {
   }
 
   submit(_data:any){
-    let promises =[ this._updateApi.update(_data),
-                    this._updateApi.updateAvatar(_data)
-                  ];
+
+
+    let promises =[ this._updateApi.update(_data)];
+
+
+      if(this._avatarInput && this._avatarInput.files && this._avatarInput?.files.length > 0){
+          let formData = new FormData();
+          formData.append('avatar', this._avatarInput.files[0]);
+          promises.push(this._updateApi.updateAvatar(formData));
+      }
+
     if (_data.old_password !== _data.newpassword){
       promises.push(this._updateApi.updatePassword({"oldpassword": _data.old_password, "newpassword": _data.new_password}));
     }
@@ -74,6 +82,7 @@ export default class AccountService extends FormService {
           console.log("handleAvatar1");
           var reader = new FileReader();
           reader.onload = ()=>{
+
               console.log("handleAvatar2",reader.result as string);
               if (this !== undefined){
                   const imgs = this._form?.getElementsByTagName("img");

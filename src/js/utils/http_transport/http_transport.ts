@@ -3,7 +3,9 @@ import {IRequestCTX, METHOD} from '../iutils/ihttp_request';
 import {httpRequest} from './http_request';
 import {stringKeyString} from '../custom_types';
 
-const CONTENT_TYPE_HEADER: string[] = ['Content-type', 'application/json; charset=utf-8'];
+const JSON_HEADER: stringKeyString = {
+	'Content-type': 'application/json; charset=utf-8'
+};
 
 export default class HTTPTransport {
 	private readonly _url: string;
@@ -12,7 +14,7 @@ export default class HTTPTransport {
 	}
 
 	async get(path: string, options?: IHTTPTransportCtx) {
-		return httpRequest(this._url + path + queryStringify(options?.data), prepareRequestCTX(METHOD.GET, false, options), options?.timeout);
+		return httpRequest(this._url + path + queryStringify(options?.data as stringKeyString), prepareRequestCTX(METHOD.GET, false, options), options?.timeout);
 	}
 
 	async put(path: string, options?: IHTTPTransportCtx) {
@@ -29,15 +31,12 @@ export default class HTTPTransport {
 }
 
 function prepareRequestCTX(method: METHOD, useBody: boolean, options: IHTTPTransportCtx = {}): IRequestCTX {
-	const headers = options?.headers ?? new Map();
-	if (!headers.has(CONTENT_TYPE_HEADER[0])) {
-		headers.set(CONTENT_TYPE_HEADER[0], CONTENT_TYPE_HEADER[1]);
-	}
+	const headers: stringKeyString|null = {...getContentType(options?.data), ...options.headers};
 
 	return {
 		method: method,
 		headers: headers,
-		data: useBody ? options?.data : undefined
+		data: useBody ? getBody(options?.data) : undefined
 
 	};
 }
@@ -52,4 +51,34 @@ function queryStringify(data?: stringKeyString): string {
 	}
 
 	return result;
+}
+
+function getContentType(data?: stringKeyString|FormData): stringKeyString|null {
+	if (!data) {
+		return null;
+	}
+
+	// FormData bodies rely on the browser's content type assignment.
+	if (data instanceof FormData) {
+		return null;
+	}
+
+	// Objectswill be encoded as JSON.
+	if (typeof data === 'object') {
+		return JSON_HEADER;
+	}
+
+	return null;
+}
+
+function getBody(data?: stringKeyString|FormData): string|FormData|null {
+	if (data instanceof FormData) {
+		return data;
+	}
+
+	if (typeof data === 'object') {
+		return JSON.stringify(data);
+	}
+
+	return String(data);
 }
