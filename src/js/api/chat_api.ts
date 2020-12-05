@@ -6,7 +6,7 @@ export class ChatAPI extends BaseAPI {
     //TODO - дизайн и логика для "создать новый чат"
     //создать новый чат
     create(_data?:stringKeyString):Promise<XMLHttpRequest> {
-      return chatApiInstance.post('/');
+      return chatApiInstance.post('/', {data:_data});
     }
 
     //список чатов пользователя

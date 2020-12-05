@@ -38,7 +38,7 @@
 .widget-chat-list__search {
   display: flex;
   position: relative;
-  border-bottom: 1px solid @main-delimiter-color;
+  border-bottom: @main-active-text-color;;
 }
 
 .widget-chat-list__search-input {
@@ -92,4 +92,11 @@
   flex-direction: column;
   margin-left: auto;
   text-align: right;
+}
+
+.widget-chat-list__link{
+    display: flex;
+    margin-top: auto;
+    border-top: 1px solid #EAEAEA;
+    justify-content: center;
 }

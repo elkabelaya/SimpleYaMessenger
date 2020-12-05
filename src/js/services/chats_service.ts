@@ -9,7 +9,7 @@ export default class ChatsService extends FormService {
   private _store:IStore
   private _api: IApi;
   private  onSuccess(xhr:XMLHttpRequest){
-    //this._store.set(JSON.parse(xhr.response));
+    this._store.set(JSON.parse(xhr.response));
     console.log(JSON.parse(xhr.response));
     console.log([{
       avatar: "../../../images/empty_logo.jpg",

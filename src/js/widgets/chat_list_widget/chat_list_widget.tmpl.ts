@@ -5,6 +5,7 @@ export const template = `
           <input id="search" name="search" class="widget-chat-list__search-input" type="text" placeholder=" ">
           <label for="search"><span class="widget-chat-list_search-placeholder"> </span> Поиск</label>
         </form>
-
-
-        <ul class="widget-chat-list__items"></ul>`;
+        <ul class="widget-chat-list__items"></ul>
+        <div class="widget-chat-list__link">
+            <a class="login-widget__link" href="/create_chat_widget/">Добавить чат</a>
+        </div>`;

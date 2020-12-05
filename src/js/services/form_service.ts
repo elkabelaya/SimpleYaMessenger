@@ -19,6 +19,7 @@ export default class FormService{
     if (validateForm(event.target) && !!this){
       var formObject:any = {};
       var formData = new FormData(this._form);
+      console.log(formData, event.target);
       formData.forEach(function(value, key){
           formObject[key] = value;
       });

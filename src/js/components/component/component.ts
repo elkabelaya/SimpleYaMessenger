@@ -18,7 +18,7 @@ export default class Component implements IComponent {
 	_templator: Templator;
 	_props: unknown;
 	_eventBus: EventBus;
-	_children: Array<IComponentChild<IComponent>>;
+	_children: Array<IComponentChild<IComponent>> = [];
 
 	constructor(attributes: unknown = {}, props: unknown = {}, children: Array<IComponentChild<IComponent>> = []) {
 		const eventBus = new EventBus();
@@ -27,11 +27,10 @@ export default class Component implements IComponent {
 			props
 		};
 		this._templator = new Templator(this.template);
-		this._props = this._makePropsProxy(props);
-
 		this._eventBus = eventBus;
-		this._children = children;
 		this._registerEvents(eventBus);
+		this.setChildren(children);
+		this.setProps(props);
 		eventBus.emit(Component.EVENTS.FLOW_INIT);
 	}
 
@@ -84,9 +83,10 @@ export default class Component implements IComponent {
 			return;
 		}
 
-		const oldProps: unknown = Object.assign({}, this._props);
+		const oldProps: unknown = Object.assign({}, this._props || {});
+		console.log('setProps', oldProps);
 
-		this._props = Object.assign(this._props, nextProps);
+		this._props = this._makePropsProxy(Object.assign(this._props || {}, nextProps));
 		setChildProps(nextProps as stringKeyObject, this._children);
 
 		this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldProps, this._props);
@@ -94,7 +94,7 @@ export default class Component implements IComponent {
 
 	setChildren(children: Array<IComponentChild<IComponent>>) {
 		const oldChildren = this._children;
-		this._children = children;
+		this._children = children || [];
 		this._eventBus.emit(Component.EVENTS.FLOW_CDU, oldChildren, this._children);
 	}
 
@@ -103,6 +103,10 @@ export default class Component implements IComponent {
 	}
 
 	_render() {
+		if (!this._element) {
+			return;
+		}
+
 		this.render();
 		this._eventBus.emit(Component.EVENTS.FLOW_RENDER);
 	}

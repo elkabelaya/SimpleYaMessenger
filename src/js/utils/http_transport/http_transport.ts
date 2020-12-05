@@ -32,7 +32,7 @@ export default class HTTPTransport {
 
 function prepareRequestCTX(method: METHOD, useBody: boolean, options: IHTTPTransportCtx = {}): IRequestCTX {
 	const headers: stringKeyString|null = {...getContentType(options?.data), ...options.headers};
-
+	console.log('headers', headers);
 	return {
 		method: method,
 		headers: headers,
@@ -54,6 +54,7 @@ function queryStringify(data?: stringKeyString): string {
 }
 
 function getContentType(data?: stringKeyString|FormData): stringKeyString|null {
+	console.log('getContentType', data, typeof data, typeof data === 'object');
 	if (!data) {
 		return null;
 	}

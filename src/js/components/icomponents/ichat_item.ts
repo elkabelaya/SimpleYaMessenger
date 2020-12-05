@@ -1,5 +1,5 @@
 export interface IChatItemCtx{
-	logo: string;
+	avatar: string;
 	name: string;
 	message: string;
 	time: string;

@@ -15,6 +15,7 @@ export default class ChatListWidget extends FormWidget {
 		chatStoreInstance.on('change', () => {
 			const chats: unknown[] = chatStoreInstance.get('');
 			const data: Array<IComponentChild<IComponent>> = new Array(chats.length);
+
 			for (let i = 0; i < chats.length; i++) {
 				data[i] = ({
 					componentClass: ChatItem,
@@ -26,6 +27,7 @@ export default class ChatListWidget extends FormWidget {
 
 			this.setChildren(data);
 		});
+
 		const service = chatsService;
 		service.start();
 	}
