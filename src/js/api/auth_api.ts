@@ -1,23 +1,23 @@
 import { stringKeyString } from "../utils/custom_types";
-import { authApiInstance } from "./api_instances";
+import { authTransportInstance } from "./transport_instances";
 import { BaseAPI } from "./base_api";
-export class AuthAPI extends BaseAPI {
+export default class AuthAPI extends BaseAPI {
 
 
     create(data:stringKeyString):Promise<XMLHttpRequest> {
-      return authApiInstance.post('/signup',{data:data});
+      return authTransportInstance.post('/signup',{data:data});
     }
 
     request(data:stringKeyString):Promise<XMLHttpRequest> {
-      return authApiInstance.post('/signin',{data:data});
+      return authTransportInstance.post('/signin',{data:data});
     }
 
     update():Promise<XMLHttpRequest>  {
-      return authApiInstance.get('/user');
+      return authTransportInstance.get('/user');
     }
 
     delete():Promise<XMLHttpRequest> {
-      return authApiInstance.post('/logout');
+      return authTransportInstance.post('/logout');
     }
 
 

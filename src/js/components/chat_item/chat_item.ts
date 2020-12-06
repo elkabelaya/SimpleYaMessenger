@@ -5,7 +5,7 @@ import {DEFAULT_AVATAR_PATH} from '../../default/default_images';
 import './chat_item.less';
 export default class ChatItem extends Component {
 	constructor(props: IChatItemCtx) {
-		super({class: 'chat_item'}, props);
+		super({class: 'chat_item', id: props.id}, props);
 	}
 
 	get tagName() {
@@ -17,7 +17,6 @@ export default class ChatItem extends Component {
 	}
 
 	setProps(props: IChatItemCtx) {
-		console.log('setProps');
 		if (!props.avatar) {
 			props.avatar = DEFAULT_AVATAR_PATH;
 		}

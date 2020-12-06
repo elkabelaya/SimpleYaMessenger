@@ -1,39 +1,27 @@
+import ListService from "./list_service";
+import {
+    STORE_CHATS_LIST,
+    STORE_CHATS_CURRENT,
+} from "../stores/store_fields";
+import {IChatItemCtx} from  "../components/icomponents/ichat_item"
+export default class ChatsService extends ListService {
 
-import { IApi } from "../api/iapi/iapi";
-import { ChatAPI } from "../api/chat_api";
-import { IStore } from "../stores/istore";
-import FormService from "./form_service";
+ private  onSuccess(xhr:XMLHttpRequest){
+    this._store.set(JSON.parse(xhr.response), STORE_CHATS_LIST);
 
-export default class ChatsService extends FormService {
-
-  private _store:IStore
-  private _api: IApi;
-  private  onSuccess(xhr:XMLHttpRequest){
-    this._store.set(JSON.parse(xhr.response));
-    console.log(JSON.parse(xhr.response));
-    console.log([{
-      avatar: "../../../images/empty_logo.jpg",
-      title: "Baся",
-      id:110
-
-  }]);
-    //пока не реализован функционал добавления чата,  замокаем для отладки
-    // TODO: изменить!
-    //this._store.set(JSON.parse('[{"id":110,"title":"мой чат1","avatar":null,"created_by":772}]'));
-    //TODO error display
   }
 
   private onError(_xhr:XMLHttpRequest){
-    this._store.set([]);
-    //TODO error display
+    this._store.set([], STORE_CHATS_LIST);
 
   }
-  constructor(store:IStore){
-    super();
-    this._store = store;
-    this._api = new ChatAPI();
-  }
-  start(){
+
+  start(list){
+      super.start(list);
+      if (this._store.get(STORE_CHATS_LIST)){
+          return;
+      }
+
     this._api.request()
     .then( xhr => {
       this.onSuccess(xhr);
@@ -43,5 +31,14 @@ export default class ChatsService extends FormService {
     }
 
     )
+  }
+
+  select(id:number):void{
+
+      let chatsArray:Array<IChatItemCtx> = this._store.get(STORE_CHATS_LIST) as Array<IChatItemCtx>;
+      let chat = chatsArray.filter(element => {
+          return element.id === id;
+      })[0];
+      this._store.set(chat,STORE_CHATS_CURRENT);
   }
 }

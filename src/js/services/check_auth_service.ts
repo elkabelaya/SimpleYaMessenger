@@ -1,18 +1,8 @@
-
-import { IApi } from "../api/iapi/iapi";
-import { AuthAPI } from "../api/auth_api";
-import { IStore } from "../stores/istore";
+import BaseService from "./base_service"
 import Router from "../utils/router/router";
 import { ROUTE_LOGIN, ROUTE_MESSENGER } from "../utils/router/routes";
 
-export default class CheckAuthService {
-  private _store:IStore
-  private _api: IApi;
-
-  constructor(store:IStore){
-    this._store = store;
-    this._api = new AuthAPI();
-  }
+export default class CheckAuthService extends BaseService {
 
   start(){
     this._api.update()

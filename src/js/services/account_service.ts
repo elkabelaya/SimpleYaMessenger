@@ -1,13 +1,12 @@
-import { AuthAPI } from "../api/auth_api";
-import { UserAPI } from "../api/user_api";
-import { IStore } from "../stores/istore";
+import { IApi } from "../api/iapi/iapi";
+import {IStore} from "../stores/istore"
+import  UserAPI  from "../api/user_api";
 import FormService from "./form_service";
+
 //import {stringKeyObject} from "../utils/custom_types"
 
 export default class AccountService extends FormService {
-  private _store:IStore
   private _updateApi: UserAPI;
-  private _requestApi: AuthAPI;
   private _avatarInput?:HTMLInputElement;
 
   private  onSuccess(){
@@ -18,28 +17,26 @@ export default class AccountService extends FormService {
 
     //TODO отображение ошибки
   }
-  constructor(store:IStore){
-    super();
+  constructor(store:IStore, requestApi:IApi, updateApi:UserAPI){
+    super(store, requestApi);
 
-    this._store = store;
-    this._updateApi = new UserAPI();
-    this._requestApi = new AuthAPI();
+    this._updateApi = updateApi;
 
   }
 
-  start(form?:HTMLFormElement|null){
+  start(form:HTMLFormElement){
 
     super.start(form);
 
-    if (form){
-        this._avatarInput = form?.elements.namedItem("avatar") as HTMLInputElement;
-        this._avatarInput?.addEventListener("change",this.handleAvatar.bind(this));
-        if (this._store.get()) {
-          return;
-        }
+
+    this._avatarInput = form?.elements.namedItem("avatar") as HTMLInputElement;
+    this._avatarInput?.addEventListener("change",this.handleAvatar.bind(this));
+    if (this._store.get()) {
+      return;
     }
 
-    this._requestApi.update().then( xhr => {
+
+    this._api.update().then( xhr => {
       this._store.set(JSON.parse(xhr.response));
     }).catch( _xhr => {
       this._store.set({});

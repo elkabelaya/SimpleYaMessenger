@@ -1,19 +1,20 @@
-export default class FormService{
-  protected _form?:HTMLFormElement;
-  start(form?:HTMLFormElement|null){
+import BaseService from './base_service'
 
-    if (form){
+export default class FormService extends BaseService {
+  protected _form?:HTMLFormElement;
+
+  start(form:HTMLFormElement){
       this._form = form;
       form.setAttribute("novalidate", "true");
       form.addEventListener("submit", this._submitForm.bind(this));
       form.addEventListener("focus", handleForm, true);
       form.addEventListener("blur", handleForm, true);
-    }
   }
 
   submit(_data?:unknown){
     throw new Error("Method not implemented.");
   }
+
   _submitForm (event:Event): void {
     event.preventDefault();
     if (validateForm(event.target) && !!this){

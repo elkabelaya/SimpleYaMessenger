@@ -11,7 +11,7 @@ export const initData: Array<IComponentChild<IComponent>> = [
 		componentClass: Avatar,
 		componentAttrs: {},
 		componentCtx: {
-			url: '../../../images/empty_logo.jpg'
+			url: ''
 
 		},
 		rootElement: '.account_widget__avatar'

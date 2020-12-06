@@ -13,7 +13,7 @@ export default class CreateChatWidget extends FormWidget {
 	render() {
 		super.render();
 		const service = createChatsService;
-		service.start(this.element.querySelector('form'));
+		service.start(this.element.querySelector('form')!);
 	}
 
 	get tagName() {

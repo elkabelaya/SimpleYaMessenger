@@ -17,7 +17,7 @@ export default class AccountWidget extends FormWidget {
 	render() {
 		super.render();
 		const service = accountService;
-		service.start(this.element.querySelector('form'));
+		service.start(this.element.querySelector('form')!);
 	}
 
 	get tagName() {

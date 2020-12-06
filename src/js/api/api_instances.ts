@@ -1,8 +1,10 @@
-import HTTPTransport from "../utils/http_transport/http_transport";
+import AuthAPI from "./auth_api";
+import ChatAPI from "./chat_api";
+import ChatUsersAPI from "./chat_users_api";
+import UserAPI from "./user_api";
 
-export const authApiInstance = new HTTPTransport("https://ya-praktikum.tech/api/v2/auth");
-export const chatApiInstance = new HTTPTransport("https://ya-praktikum.tech/api/v2/chats");
-export const chatUsersApiInstance = new HTTPTransport("https://ya-praktikum.tech/api/v2/chats/users");
-export const leaderboardApiInstance = new HTTPTransport("https://ya-praktikum.tech/api/v2/leaderboard");
-export const oauthApiInstance = new HTTPTransport("https://ya-praktikum.tech/api/v2/oauth");
-export const userApiInstance = new HTTPTransport("https://ya-praktikum.tech/api/v2/user");
+
+export const authApiInstance = new AuthAPI();
+export const chatApiInstance = new ChatAPI();
+export const chatUsersApiInstance = new ChatUsersAPI();
+export const userApiInstance = new UserAPI();

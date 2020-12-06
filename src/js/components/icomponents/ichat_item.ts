@@ -4,4 +4,5 @@ export interface IChatItemCtx{
 	message: string;
 	time: string;
 	alert: string;
+	id: number;
 }

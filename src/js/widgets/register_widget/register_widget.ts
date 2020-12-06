@@ -14,7 +14,7 @@ export default class RegisterWidget extends Component {
 	render() {
 		super.render();
 		const service = registerService;
-		service.start(this.element.querySelector('form'));
+		service.start(this.element.querySelector('form')!);
 	}
 
 	get tagName() {

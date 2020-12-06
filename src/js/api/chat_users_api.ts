@@ -1,17 +1,17 @@
 
-import { chatUsersApiInstance } from "./api_instances";
+import { chatUsersTransportInstance } from "./transport_instances";
 import { BaseAPI } from "./base_api";
 import { stringKeyString } from "../utils/custom_types";
-export class ChatUsersAPI extends BaseAPI {
+export default class ChatUsersAPI extends BaseAPI {
   //TODO отрисовать дизайн - не предусмотрены элементы для этого функционала
 
   //Add users to chat
     create(data:stringKeyString):Promise<XMLHttpRequest> {
-      return chatUsersApiInstance.put('/', {data:data});
+      return chatUsersTransportInstance.put('/', {data:data});
     }
     //Delete users from chat
     request(data:stringKeyString):Promise<XMLHttpRequest> {
-      return chatUsersApiInstance.delete('/', {data:data});
+      return chatUsersTransportInstance.delete('/', {data:data});
     }
 
 }

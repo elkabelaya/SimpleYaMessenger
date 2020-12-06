@@ -1,20 +1,12 @@
 
 import { IApi } from "../api/iapi/iapi";
-import { AuthAPI } from "../api/auth_api";
+
 import { IStore } from "../stores/istore";
 import Router from "../utils/router/router";
 import FormService from "./form_service";
 import { ROUTE_LOGIN, ROUTE_MESSENGER } from "../utils/router/routes";
 import { stringKeyString } from "../utils/custom_types";
 export default class LoginService extends FormService {
-  private _store:IStore
-  private _api: IApi;
-
-  constructor(store:IStore){
-    super();
-    this._store = store;
-    this._api = new AuthAPI();
-  }
 
   private  onSuccess(xhr:XMLHttpRequest){
     this._store.set(JSON.parse(xhr.response));

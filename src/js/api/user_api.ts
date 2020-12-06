@@ -1,18 +1,19 @@
-import { userApiInstance } from "./api_instances";
+import { userTransportInstance } from "./transport_instances";
 import { BaseAPI } from "./base_api";
 import { stringKeyString } from "../utils/custom_types";
-export class UserAPI extends BaseAPI {
+
+export default class UserAPI extends BaseAPI {
 
   update(data?:stringKeyString):Promise<XMLHttpRequest>  {
-    return userApiInstance.put('/profile',{data:data});
+    return userTransportInstance.put('/profile',{data:data});
   }
 
   updateAvatar(data:FormData):Promise<XMLHttpRequest>  {
-    return userApiInstance.put('/profile/avatar', {data:data});
+    return userTransportInstance.put('/profile/avatar', {data:data});
   }
 
   updatePassword(data:stringKeyString):Promise<XMLHttpRequest>  {
-    return userApiInstance.put('/password', {data:data});
+    return userTransportInstance.put('/password', {data:data});
   }
 
 }
