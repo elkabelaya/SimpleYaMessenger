@@ -1,4 +1,4 @@
-import {getRoutePath}  from "../../../src/js/utils/router/router_helpers"
+import {getRoutePath}  from "../../../src/utils/router/router_helpers"
 
 
 

@@ -1,4 +1,4 @@
-import EventBus  from "../../../src/js/utils/event_bus/event_bus"
+import EventBus  from "../../../src/utils/event_bus/event_bus"
 
 let eventBus:EventBus;
 

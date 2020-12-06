@@ -1,5 +1,5 @@
-import Avatar from "../../../src/js/components/avatar/avatar"
-//import { IAvatarCtx } from "../../../src/js/components/icomponents/iavatar";
+import Avatar from "../../../src/components/avatar/avatar"
+//import { IAvatarCtx } from "../../../src/components/icomponents/iavatar";
 
 describe("Avatar", () => {
   it("returns avatar", () => {

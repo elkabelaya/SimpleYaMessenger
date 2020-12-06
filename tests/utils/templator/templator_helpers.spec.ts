@@ -4,7 +4,7 @@ import {
   sanitise,
   parseHtmlToObject,
   compileTemplate
-} from "../../../src/js/utils/templator/templator_helpers"
+} from "../../../src/utils/templator/templator_helpers"
 
 
 describe("fillTemplates", () => {

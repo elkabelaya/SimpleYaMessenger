@@ -1,4 +1,4 @@
-import HTTPTransport  from "../../../src/js/utils/http_transport/http_transport"
+import HTTPTransport  from "../../../src/utils/http_transport/http_transport"
 import {mockXMLHttpRequest, unMockXMLHttpRequest, xhrMockClass} from "../../_mocks/_xml_http_request"
 
 let requestsSended:xhrMockClass[];

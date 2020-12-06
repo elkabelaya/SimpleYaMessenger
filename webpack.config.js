@@ -3,7 +3,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     mode: 'production',
-    entry: './src/js/app.ts',
+    entry: './src/app.ts',
     output: {
         path: path.resolve(__dirname, 'static/js'),
         filename: 'chat.bundle.js'

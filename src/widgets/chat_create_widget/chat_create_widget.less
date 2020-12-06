@@ -1,0 +1,110 @@
+@import "../../utils/less/base.less";
+
+.widget-user {
+  height: 460px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  background: @main-background-color;
+}
+
+.widget-login__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.widget-login__header {
+  .flex-center-mixin();
+
+  font-size: 20px;
+  height: 120px;
+}
+
+.widget-login__content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.widget-login__input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.widget-login__input,
+.widget-login__input:focus {
+  .font-active-mixin();
+
+  order: 2;
+  border: 0;
+  border-bottom: 1px @main-components-color solid;
+  padding-top: 12px;
+  padding-bottom: 4px;
+}
+
+.widget-login__input-label {
+  order: 1;
+  font-size: @main-label-size;
+  color: @main-inactive-text-color;
+  visibility: visible;
+  margin-top: 8px;
+}
+
+input:placeholder-shown + .widget-login__input-label {
+  visibility: hidden;
+}
+
+input:focus + .widget-login__input-label {
+  visibility: visible;
+}
+
+.widget-login__requirements {
+  order: 3;
+  align-self: flex-start;
+  font-size: @main-label-size;
+  color: @main-error-text-color;
+  margin-top: 4px;
+  visibility: hidden;
+}
+
+input:invalid ~ .widget-login__requirements {
+  visibility: visible;
+  max-height: 10px;
+}
+
+input:invalid:focus ~ .widget-login__requirements {
+  visibility: hidden;
+  max-height: 0;
+}
+
+input:invalid:placeholder-shown ~ .widget-login__requirements {
+  visibility: hidden;
+  max-height: 0;
+}
+
+.widget-login__action {
+  display: flex;
+  flex-direction: column;
+  margin-top: auto;
+}
+
+.widget-login__link {
+  cursor: pointer;
+  font-size: 11px;
+  align-self: center;
+  padding-top: 13px;
+  color: @main-components-color;
+}
+
+.widget-register__input-group {
+  display: flex;
+  flex-direction: row;
+}
+
+.widget-register__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

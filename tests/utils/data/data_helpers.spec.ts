@@ -2,7 +2,7 @@ import {
   isObjectKey,
   getValueFromObject,
 
-} from "../../../src/js/utils/data/data_helpers"
+} from "../../../src/utils/data/data_helpers"
 
 describe("isObjectKey", () => {
   it("detects object keys", () => {
@@ -31,5 +31,8 @@ describe("getValueFromObject", () => {
   });
   it("returns default", () => {
     expect(getValueFromObject("", {f:{g:5}},0) === 0);
+  });
+  it("returns default if no object passed", () => {
+    expect(getValueFromObject("", undefined, 0) === 0);
   });
 });

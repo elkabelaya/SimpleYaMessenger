@@ -1,5 +1,5 @@
-import {httpRequest}  from "../../../src/js/utils/http_transport/http_request"
-import { METHOD } from "../../../src/js/utils/iutils/ihttp_request";
+import {httpRequest}  from "../../../src/utils/http_transport/http_request"
+import { METHOD } from "../../../src/utils/iutils/ihttp_request";
 import {mockXMLHttpRequest, unMockXMLHttpRequest, xhrMockClass} from "../../_mocks/_xml_http_request"
 
 let requestsSended:xhrMockClass[];
