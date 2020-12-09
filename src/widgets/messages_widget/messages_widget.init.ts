@@ -1,8 +1,9 @@
-import {IComponent} from '../../components/icomponents/icomponent';
-import {IComponentChild} from '../../components/icomponents/icomponent_child';
-import ChatHeaderWidget from '../chat_header_widget/chat_header_widget';
-import ChatReadWidget from '../chat_read_widget/chat_read_widget';
-import ChatSendWidget from '../chat_send_widget/chat_send_widget';
+import {IComponent} from 'components/icomponents/icomponent';
+import {IComponentChild} from 'components/icomponents/icomponent_child';
+import ChatHeaderWidget from 'widgets/chat_header_widget/chat_header_widget';
+import ChatReadWidget from 'widgets/chat_read_widget/chat_read_widget';
+import ChatSendWidget from 'widgets/chat_send_widget/chat_send_widget';
+
 export const initData: Array<IComponentChild<IComponent>> = [
 	{
 		componentClass: ChatHeaderWidget,

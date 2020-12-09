@@ -1,9 +1,8 @@
-
-import Input from '../../components/input/input';
-import Button from '../../components/button/button';
-import Avatar from '../../components/avatar/avatar';
-import {IComponent} from '../../components/icomponents/icomponent';
-import {IComponentChild} from '../../components/icomponents/icomponent_child';
+import Input from 'components/input/input';
+import Button from 'components/button/button';
+import Avatar from 'components/avatar/avatar';
+import {IComponent} from 'components/icomponents/icomponent';
+import {IComponentChild} from 'components/icomponents/icomponent_child';
 
 export const initData: Array<IComponentChild<IComponent>> = [
 	{

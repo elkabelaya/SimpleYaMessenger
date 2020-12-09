@@ -11,4 +11,4 @@ https://rocky-crag-62204.herokuapp.com/
 
 
 ##Локальный запуск
-npm install && node server.js
+npm install && node_modules/.bin/webpack serve

@@ -1,8 +1,6 @@
-
 import {template as itemTemplate} from './error404_widget.tmpl';
 import {initData} from './error404_widget.init';
-import Component from '../../components/component/component';
-// Import style from "../../../css/account_widget.css";
+import Component from 'components/component/component';
 
 export default class ErrorWidget extends Component {
 	constructor() {

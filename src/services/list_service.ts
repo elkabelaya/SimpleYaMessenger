@@ -1,4 +1,4 @@
-import BaseService from './base_service';
+import BaseService from 'services/base_service';
 
 export default abstract class ListService extends BaseService {
 	protected _list: HTMLCollection;

@@ -1,4 +1,4 @@
-import HTTPTransport from '../utils/http_transport/http_transport';
+import HTTPTransport from 'utils/http_transport/http_transport';
 
 export const authTransportInstance = new HTTPTransport('https://ya-praktikum.tech/api/v2/auth');
 export const chatTransportInstance = new HTTPTransport('https://ya-praktikum.tech/api/v2/chats');

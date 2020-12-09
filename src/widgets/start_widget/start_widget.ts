@@ -1,8 +1,7 @@
-
-import {template as itemTemplate} from './start_widget.tmpl';
-import FormWidget from '../form_widget/form_widget';
-import {checkAuthService} from '../../services/service_instances';
-import '../../utils/less/base.less';
+import {template as itemTemplate} from 'widgets/start_widget/start_widget.tmpl';
+import FormWidget from 'widgets/form_widget/form_widget';
+import {checkAuthService} from 'services/service_instances';
+import 'utils/less/base.less';
 
 export default class StartWidget extends FormWidget {
 	constructor() {

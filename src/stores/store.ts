@@ -1,6 +1,6 @@
-import {getValueFromObject} from '../utils/data/data_helpers';
-import EventBus from '../utils/event_bus/event_bus';
-import {IStore} from './istore';
+import {getValueFromObject} from 'utils/data/data_helpers';
+import EventBus from 'utils/event_bus/event_bus';
+import {IStore} from 'stores/istore';
 
 export default class Store extends EventBus implements IStore {
 	private _data: Record<string, unknown>;

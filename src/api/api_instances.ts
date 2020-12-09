@@ -1,7 +1,7 @@
-import AuthAPI from './auth_api';
-import ChatAPI from './chat_api';
-import ChatUsersAPI from './chat_users_api';
-import UserAPI from './user_api';
+import AuthAPI from 'api/auth_api';
+import ChatAPI from 'api/chat_api';
+import ChatUsersAPI from 'api/chat_users_api';
+import UserAPI from 'api/user_api';
 
 export const authApiInstance = new AuthAPI();
 export const chatApiInstance = new ChatAPI();

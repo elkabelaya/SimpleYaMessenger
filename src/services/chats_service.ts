@@ -1,9 +1,9 @@
-import ListService from './list_service';
+import ListService from 'services/list_service';
 import {
 	STORE_CHATS_LIST,
 	STORE_CHATS_CURRENT
-} from '../stores/store_fields';
-import {IChatItemCtx} from '../components/icomponents/ichat_item';
+} from 'stores/store_fields';
+import {IChatItemCtx} from 'components/icomponents/ichat_item';
 
 export default class ChatsService extends ListService {
 	start(list) {
@@ -18,9 +18,7 @@ export default class ChatsService extends ListService {
 			})
 			.catch(xhr => {
 				this.onError(xhr);
-			}
-
-			);
+			});
 	}
 
 	select(id: number): void {

@@ -1,7 +1,7 @@
-import Component from '../component/component';
-import {EMessageType, IMessageCtx} from '../icomponents/imessage';
-import {template as itemTemplate} from './message.tmpl';
-import './message.less';
+import Component from 'components/component/component';
+import {EMessageType, IMessageCtx} from 'components/icomponents/imessage';
+import {template as itemTemplate} from 'components/message/message.tmpl';
+import 'components/message/message.less';
 
 export default class Message extends Component {
 	constructor(props: IMessageCtx) {

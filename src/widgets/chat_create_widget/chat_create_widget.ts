@@ -1,9 +1,9 @@
-import {createChatsService} from '../../services/service_instances';
-import {template as itemTemplate} from './chat_create_widget.tmpl';
-import FormWidget from '../form_widget/form_widget';
-import {initData} from './chat_create_widget.init';
-import {userStoreInstance} from '../../stores/store_instances';
-import './chat_create_widget.less';
+import {createChatsService} from 'services/service_instances';
+import {template as itemTemplate} from 'widgets/chat_create_widget/chat_create_widget.tmpl';
+import FormWidget from 'widgets/form_widget/form_widget';
+import {initData} from 'widgets/chat_create_widget/chat_create_widget.init';
+import {userStoreInstance} from 'stores/store_instances';
+import 'widgets/chat_create_widget/chat_create_widget.less';
 
 export default class CreateChatWidget extends FormWidget {
 	constructor() {

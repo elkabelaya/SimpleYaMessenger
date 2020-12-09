@@ -1,6 +1,6 @@
-import Component from '../../components/component/component';
-import {INewable} from '../custom_types';
-import Route from './route';
+import Component from 'components/component/component';
+import {INewable} from 'utils/custom_types';
+import Route from 'utils/router/route';
 
 export default class Router {
 	private static __instance: Router;

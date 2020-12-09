@@ -1,7 +1,7 @@
-import Component from '../component/component';
-import {template as inputTemplate} from './link.tmpl';
-import {ILinkCtx} from '../../components/icomponents/ilink';
-import './ilink.less';
+import Component from 'components/component/component';
+import {template as inputTemplate} from 'components/link/link.tmpl';
+import {ILinkCtx} from 'components/icomponents/ilink';
+import 'components/link/ilink.less';
 
 export default class Link extends Component {
 	constructor(props: ILinkCtx, attr: unknown) {

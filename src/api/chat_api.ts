@@ -1,7 +1,7 @@
 
-import {chatTransportInstance} from './transport_instances';
-import {BaseAPI} from './base_api';
-import {stringKeyString} from '../utils/custom_types';
+import {chatTransportInstance} from 'api/transport_instances';
+import {BaseAPI} from 'api/base_api';
+import {stringKeyString} from 'utils/custom_types';
 
 export default class ChatAPI extends BaseAPI {
 	async create(_data?: stringKeyString): Promise<XMLHttpRequest> {

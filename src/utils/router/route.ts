@@ -1,7 +1,7 @@
-import Component from '../../components/component/component';
-import {render} from '../render_dom';
-import {IRoutCTX} from '../iutils/irout';
-import {INewable} from '../custom_types';
+import Component from 'components/component/component';
+import {render} from 'utils/render_dom';
+import {IRoutCTX} from 'utils/iutils/irout';
+import {INewable} from 'utils/custom_types';
 
 export default class Route {
 	private readonly _blockClass: INewable<Component>;

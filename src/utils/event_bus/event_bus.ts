@@ -1,4 +1,4 @@
-import {IEventBus, IEventBusCallbackFunction} from './ievent_bus';
+import {IEventBus, IEventBusCallbackFunction} from 'utils/event_bus/ievent_bus';
 
 export default class EventBus implements IEventBus {
 	_listeners: Map<string, IEventBusCallbackFunction[]>;

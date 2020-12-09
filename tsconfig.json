@@ -2,7 +2,7 @@
   "compilerOptions":
   {
     "moduleResolution":"node",
-    
+
     "sourceMap": true,
     "strictNullChecks": true,
     "target": "es6",
@@ -10,9 +10,22 @@
     "allowJs": true,
     "plugins": [{ "name": "typescript-plugin-css-modules" }],
     "types": [
-      "jest"
-  ],
-    "lib": ["es2017", "dom"]
+          "jest"
+      ],
+    "lib": ["es2017", "dom"],
+    "baseUrl": "src",
+    "paths": {
+       "utils": ["utils"],
+
+       "api": ["api"],
+       "components": ["components"],
+       "default": ["default"],
+       "services":  ["services"],
+       "stores":  ["stores"],
+
+       "widgets": ["widgets"],
+     }
+
   },
   "include": ["src/**/*"],
 

@@ -1,4 +1,3 @@
-
 const OBJECT_PATH_DELIMITER = '.';
 
 export function isObjectKey(key: string) {

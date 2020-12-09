@@ -1,7 +1,7 @@
-import {IApi} from '../api/iapi/iapi';
-import {IStore} from '../stores/istore';
-import UserAPI from '../api/user_api';
-import FormService from './form_service';
+import {IApi} from 'api/iapi/iapi';
+import {IStore} from 'stores/istore';
+import UserAPI from 'api/user_api';
+import FormService from 'services/form_service';
 
 export default class AccountService extends FormService {
 	private readonly _updateApi: UserAPI;

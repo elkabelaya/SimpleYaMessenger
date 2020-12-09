@@ -1,4 +1,4 @@
-import {IRequestCTX} from '../iutils/ihttp_request';
+import {IRequestCTX} from 'utils/iutils/ihttp_request';
 
 export async function httpRequest(url: string, options: IRequestCTX, timeout = 5000): Promise<XMLHttpRequest> {
 	return new Promise((resolve, reject) => {

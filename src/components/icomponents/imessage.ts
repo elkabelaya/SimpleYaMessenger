@@ -3,7 +3,6 @@ export enum EMessageType {
 	out,
 	img,
 	date
-
 }
 
 export interface IMessageCtx {
@@ -11,5 +10,4 @@ export interface IMessageCtx {
 	value?: string;
 	url?: string;
 	time: string;
-
 }

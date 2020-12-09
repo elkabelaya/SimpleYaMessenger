@@ -1,7 +1,7 @@
-import Router from '../utils/router/router';
-import FormService from './form_service';
-import {ROUTE_LOGIN} from '../utils/router/routes';
-import {stringKeyString} from '../utils/custom_types';
+import Router from 'utils/router/router';
+import FormService from 'services/form_service';
+import {ROUTE_LOGIN} from 'utils/router/routes';
+import {stringKeyString} from 'utils/custom_types';
 
 export default class LogoutService extends FormService {
 	submit(_data: stringKeyString) {
@@ -11,9 +11,7 @@ export default class LogoutService extends FormService {
 			})
 			.catch(xhr => {
 				this.onError(xhr);
-			}
-
-			);
+			});
 	}
 
 	private onSuccess(xhr: XMLHttpRequest) {

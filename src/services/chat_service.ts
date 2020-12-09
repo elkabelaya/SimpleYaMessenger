@@ -1,4 +1,4 @@
-import BaseService from './base_service';
+import BaseService from 'services/base_service';
 
 export default class ChatService extends BaseService {
 	start() {
@@ -8,8 +8,6 @@ export default class ChatService extends BaseService {
 			})
 			.catch(_xhr => {
 				this._store.set({});
-			}
-
-			);
+			});
 	}
 }

@@ -1,4 +1,5 @@
-import Store from '../../stores/store';
+import Store from 'stores/store';
+
 export interface IComponent {
 	readonly element: HTMLElement;
 	init(): void;

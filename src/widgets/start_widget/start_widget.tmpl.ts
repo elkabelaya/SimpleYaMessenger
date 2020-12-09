@@ -1,3 +1,4 @@
-export const template = `<div class="page">
+export const template = `
+<div class="page">
   Подождите...
 </div>`;

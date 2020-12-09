@@ -1,15 +1,14 @@
-import Button from '../../components/button/button';
-import {IComponent} from '../../components/icomponents/icomponent';
-import {IComponentChild} from '../../components/icomponents/icomponent_child';
-import Input from '../../components/input/input';
-import WidgetHeader from '../../components/widget_header/widget_header';
+import Button from 'components/button/button';
+import {IComponent} from 'components/icomponents/icomponent';
+import {IComponentChild} from 'components/icomponents/icomponent_child';
+import Input from 'components/input/input';
+import WidgetHeader from 'components/widget_header/widget_header';
 
 export const dataInit: Array<IComponentChild<IComponent>> = [
 	{
 		componentClass: WidgetHeader,
 		componentCtx: {
 			title: 'Регистрация'
-
 		},
 		rootElement: '.login-widget__header',
 		componentAttrs: {}
@@ -86,7 +85,6 @@ export const dataInit: Array<IComponentChild<IComponent>> = [
 		componentClass: Button,
 		componentCtx: {
 			title: 'Зарегистрироваться'
-
 		},
 		rootElement: '.login-widget__action',
 		componentAttrs: {}

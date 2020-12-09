@@ -1,9 +1,9 @@
 import {template as componentTemplate} from './component.tmpl';
-import EventBus from '../../utils/event_bus/event_bus';
-import Templator from '../../utils/templator/templator';
-import {IComponentMeta, IComponent} from '../../components/icomponents/icomponent';
-import {IComponentChild} from '../icomponents/icomponent_child';
-import {stringKeyObject} from '../../utils/custom_types';
+import EventBus from 'utils/event_bus/event_bus';
+import Templator from 'utils/templator/templator';
+import {IComponentMeta, IComponent} from 'components/icomponents/icomponent';
+import {IComponentChild} from 'components/icomponents/icomponent_child';
+import {stringKeyObject} from 'utils/custom_types';
 
 export default class Component implements IComponent {
 	static EVENTS = {

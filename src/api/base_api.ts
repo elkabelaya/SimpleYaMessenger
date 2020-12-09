@@ -1,5 +1,5 @@
-import {IApi} from './iapi/iapi';
-import {stringKeyString} from '../utils/custom_types';
+import {IApi} from 'api/iapi/iapi';
+import {stringKeyString} from 'utils/custom_types';
 export class BaseAPI implements IApi {
 	async create(_data?: stringKeyString): Promise<XMLHttpRequest> {
 		throw new Error('Method not implemented.');

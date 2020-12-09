@@ -1,9 +1,8 @@
-
-import {template as loginWidgetTemplate} from './login_widget.tmpl';
-import FormWidget from '../form_widget/form_widget';
-import {initData} from './login_widget.init';
-import {loginService} from '../../services/service_instances';
-import './login_widget.less';
+import {template as loginWidgetTemplate} from 'widgets/login_widget/login_widget.tmpl';
+import FormWidget from 'widgets/form_widget/form_widget';
+import {initData} from 'widgets/login_widget/login_widget.init';
+import {loginService} from 'services/service_instances';
+import 'widgets/login_widget/login_widget.less';
 
 export default class LoginWidget extends FormWidget {
 	constructor() {

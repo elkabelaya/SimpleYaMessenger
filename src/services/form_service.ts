@@ -1,4 +1,4 @@
-import BaseService from './base_service';
+import BaseService from 'services/base_service';
 
 export default class FormService extends BaseService {
 	protected _form?: HTMLFormElement;
@@ -18,9 +18,9 @@ export default class FormService extends BaseService {
 	_submitForm(event: Event): void {
 		event.preventDefault();
 		if (validateForm(event.target) && Boolean(this)) {
-			var formObject: any = {};
-			var formData = new FormData(this._form);
-			console.log(formData, event.target);
+			let formObject: any = {};
+			let formData = new FormData(this._form);
+
 			formData.forEach(function (value, key) {
 				formObject[key] = value;
 			});

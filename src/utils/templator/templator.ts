@@ -1,6 +1,7 @@
-import {ITemplator} from './itemplator';
+import {ITemplator} from 'utils/templator/itemplator';
 import {compileTemplate} from './templator_helpers';
-import * as ROUTES from '../router/routes';
+import * as ROUTES from 'utils/router/routes';
+
 export default class Templator implements ITemplator {
 	_template: string;
 

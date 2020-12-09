@@ -1,9 +1,9 @@
-import Router from '../utils/router/router';
-import FormService from './form_service';
-import {ROUTE_MESSENGER} from '../utils/router/routes';
-import {stringKeyString} from '../utils/custom_types';
-import {STORE_CHATS_LIST} from '../stores/store_fields';
-import {IChatItemCtx} from '../components/icomponents/ichat_item';
+import Router from 'utils/router/router';
+import FormService from 'services/form_service';
+import {ROUTE_MESSENGER} from 'utils/router/routes';
+import {stringKeyString} from 'utils/custom_types';
+import {STORE_CHATS_LIST} from 'stores/store_fields';
+import {IChatItemCtx} from 'components/icomponents/ichat_item';
 export default class CreateChatService extends FormService {
 	submit(_data: stringKeyString) {
 		this._api.create(_data)

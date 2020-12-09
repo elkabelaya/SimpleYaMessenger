@@ -1,7 +1,7 @@
-import Component from '../component/component';
-import {IErrorCtx} from '../icomponents/ierror';
+import Component from 'components/component/component';
+import {IErrorCtx} from 'components/icomponents/ierror';
 import {template as itemTemplate} from './error.tmpl';
-import './error.less';
+import 'components/error/error.less';
 export default class Error extends Component {
 	constructor(props: IErrorCtx, attr: unknown) {
 		super(attr, props);

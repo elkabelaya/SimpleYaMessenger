@@ -1,7 +1,7 @@
-import Component from '../component/component';
-import {template as inputTemplate} from './input.tmpl';
-import {IInputCtx} from '../../components/icomponents/iinput';
-import './input.less';
+import Component from 'components/component/component';
+import {template as inputTemplate} from 'components/input/input.tmpl';
+import {IInputCtx} from 'components/icomponents/iinput';
+import 'components/input/input.less';
 
 export default class Input extends Component {
 	constructor(props: IInputCtx, attr: unknown) {
